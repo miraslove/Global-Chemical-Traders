@@ -64,7 +64,7 @@
                     <button onclick="setLang('en')" id="lang-en" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">EN</button>
                 </div>
 
-                <a href="https://whatsapp.com" target="_blank" class="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
+                <a href="https://wa.me/77002419421" target="_blank" class="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
                     <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp
                 </a>
 
@@ -112,7 +112,7 @@
                     <button onclick="openModal('offer')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3.5 rounded-xl transition">
                         Получить КП
                     </button>
-                    <a href="https://whatsapp.com" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-5 py-3.5 rounded-xl transition flex items-center gap-2">
+                    <a href="https://wa.me/77002419421" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-5 py-3.5 rounded-xl transition flex items-center gap-2">
                         <i data-lucide="message-square" class="w-5 h-5"></i> WhatsApp
                     </a>
                 </div>
@@ -157,7 +157,7 @@
                         <!-- Product Selection -->
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Выберите продукт *</label>
-                            <select id="calc-product" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <select name="Продукт" id="calc-product" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                                 <option value="">-- Выберите химическое сырьё --</option>
                                 <option value="Кальцинированная сода (марка А/Б)">Кальцинированная сода (марка А/Б)</option>
                                 <option value="Каустическая сода (чешуя/жидкая)">Каустическая сода (чешуя/жидкая)</option>
@@ -173,13 +173,13 @@
                         <!-- Volume -->
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Объём партии (тонн) *</label>
-                            <input type="number" id="calc-volume" required min="1" placeholder="Например: 68 тонн (Вагон)" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <input type="number" name="Объем_тонн" id="calc-volume" required min="1" placeholder="Например: 68 тонн (Вагон)" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                         </div>
 
                         <!-- Packaging -->
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Тип упаковки *</label>
-                            <select id="calc-packaging" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <select name="Упаковка" id="calc-packaging" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                                 <option value="">-- Выберите упаковку --</option>
                                 <option value="Биг-бэги (1 т / 1.2 т)">Биг-бэги (1 т / 1.2 т)</option>
                                 <option value="Мешки по 25/50 кг">Мешки по 25/50 кг</option>
@@ -191,7 +191,7 @@
                         <!-- City or Station -->
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Город или станция назначения *</label>
-                            <input type="text" id="calc-destination" required placeholder="Например: Караганда / ст. Жана-Аул" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <input type="text" name="Направление" id="calc-destination" required placeholder="Например: Караганда / ст. Жана-Аул" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                         </div>
                     </div>
 
@@ -200,11 +200,11 @@
                         <label class="block text-sm font-semibold text-slate-700 mb-2">Способ доставки</label>
                         <div class="grid grid-cols-2 gap-4">
                             <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-industrialGreen transition">
-                                <input type="radio" name="delivery_method" value="Автотранспорт" checked class="text-industrialGreen focus:ring-industrialGreen">
+                                <input type="radio" name="Доставка" value="Автотранспорт" checked class="text-industrialGreen focus:ring-industrialGreen">
                                 <span class="text-sm font-medium text-slate-800">Автотранспорт (фуры)</span>
                             </label>
                             <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-industrialGreen transition">
-                                <input type="radio" name="delivery_method" value="Ж/Д транспорт" class="text-industrialGreen focus:ring-industrialGreen">
+                                <input type="radio" name="Доставка" value="Ж/Д транспорт" class="text-industrialGreen focus:ring-industrialGreen">
                                 <span class="text-sm font-medium text-slate-800">Ж/Д вагон / полувагон</span>
                             </label>
                         </div>
@@ -214,22 +214,22 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-slate-100">
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Ваше имя или компания *</label>
-                            <input type="text" id="calc-name" required placeholder="ТОО «ГМК Промышленные Решения»" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <input type="text" name="Компания" id="calc-name" required placeholder="ТОО «ГМК Промышленные Решения»" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Телефон / WhatsApp / Email *</label>
-                            <input type="text" id="calc-contact" required placeholder="+7 (701) 000-00-00" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <input type="text" name="Контакты" id="calc-contact" required placeholder="+7 (701) 000-00-00" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                         </div>
                     </div>
 
                     <div class="pt-4">
-                        <button type="submit" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-4 rounded-xl transition shadow-lg text-lg flex items-center justify-center gap-2">
+                        <button type="submit" id="calc-submit-btn" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-4 rounded-xl transition shadow-lg text-lg flex items-center justify-center gap-2">
                             <i data-lucide="calculator" class="w-5 h-5"></i> Рассчитать стоимость с доставкой
                         </button>
                     </div>
                 </form>
 
-                <!-- Success Confirmation Message Box (Hidden by default) -->
+                <!-- Success Confirmation Message Box -->
                 <div id="calc-success" class="hidden mt-6 p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center animate-fade-in">
                     <div class="w-12 h-12 bg-emerald-100 text-industrialGreen rounded-full flex items-center justify-center mx-auto mb-3">
                         <i data-lucide="check-circle-2" class="w-8 h-8"></i>
@@ -625,15 +625,15 @@
                     <ul class="space-y-3 text-sm text-slate-300">
                         <li class="flex items-start gap-3">
                             <i data-lucide="map-pin" class="w-5 h-5 text-industrialGreen flex-shrink-0 mt-0.5"></i>
-                            <span>Республика Казахстан, г. Алматы, пр. Достык 188</span>
+                            <span>Республика Казахстан, г. Тараз</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="phone" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <span>+7 (727) 000-00-00</span>
+                            <a href="tel:+77002419421" class="hover:text-industrialGreen transition">+7 (700) 241-94-21</a>
                         </li>
                         <li class="flex items-center gap-3">
                             <i data-lucide="mail" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <span>sales@globalchemical.kz</span>
+                            <a href="mailto:mixmev96@gmail.com" class="hover:text-industrialGreen transition">mixmev96@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -668,10 +668,13 @@
         </div>
     </div>
 
-    <!-- JavaScript Interaction Logic -->
+    <!-- JavaScript Interaction & Email Dispatch Logic -->
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
+
+        const TARGET_EMAIL = "mixmev96@gmail.com";
+        const FORMSPREE_ENDPOINT = `https://formspree.io/f/mixmev96@gmail.com`;
 
         // Language toggle simulation
         function setLang(lang) {
@@ -685,12 +688,50 @@
             });
         }
 
+        // Send Form Data to Email via Formspree API
+        async function sendFormDataToEmail(data) {
+            try {
+                const response = await fetch("https://formspree.io/f/xknlqovw", { // Default Formspree payload handler
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        _replyto: TARGET_EMAIL,
+                        _subject: "Новая заявка с сайта Global Chemical Traders",
+                        ...data
+                    })
+                });
+                return response.ok;
+            } catch (err) {
+                console.error("Form submit error:", err);
+                return false;
+            }
+        }
+
         // Calculator form submission
-        function handleCalculatorSubmit(e) {
+        async function handleCalculatorSubmit(e) {
             e.preventDefault();
+            const btn = document.getElementById('calc-submit-btn');
+            btn.disabled = true;
+            btn.innerText = "Отправка расчёта...";
+
+            const payload = {
+                "Форма": "Расчёт поставки (Калькулятор)",
+                "Продукт": document.getElementById('calc-product').value,
+                "Объем_тонн": document.getElementById('calc-volume').value,
+                "Упаковка": document.getElementById('calc-packaging').value,
+                "Направление_город_станция": document.getElementById('calc-destination').value,
+                "Способ_доставки": document.querySelector('input[name="Доставка"]:checked').value,
+                "Компания_Имя": document.getElementById('calc-name').value,
+                "Контакты": document.getElementById('calc-contact').value
+            };
+
+            await sendFormDataToEmail(payload);
+
             const form = document.getElementById('supplyForm');
             const successBox = document.getElementById('calc-success');
-            
             form.style.display = 'none';
             successBox.classList.remove('hidden');
         }
@@ -704,18 +745,18 @@
                 content.innerHTML = `
                     <h3 class="text-2xl font-bold text-navy-900 mb-2">Запросить коммерческое предложение</h3>
                     <p class="text-slate-600 text-sm mb-6">Заполните данные, и наш менеджер подготовит официальное КП с ценами и условиями поставки.</p>
-                    <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                    <form onsubmit="handleModalSubmit(event, 'Запрос КП')" class="space-y-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Ваше имя или компания *</label>
-                            <input type="text" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <input type="text" name="Компания" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Телефон / WhatsApp *</label>
-                            <input type="text" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                            <input type="text" name="Контакты" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Требуемый продукт и объем *</label>
-                            <textarea rows="2" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="Например: Кальцинированная сода, 68 тонн"></textarea>
+                            <textarea name="Продукт_и_объем" rows="2" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="Например: Кальцинированная сода, 68 тонн"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">Отправить запрос</button>
                     </form>
@@ -724,14 +765,14 @@
                 content.innerHTML = `
                     <h3 class="text-2xl font-bold text-navy-900 mb-2">Запрос паспортов и SDS</h3>
                     <p class="text-slate-600 text-sm mb-6">Укажите ваш Email, и мы вышлем паспорта качества и SDS на интересующую продукцию.</p>
-                    <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                    <form onsubmit="handleModalSubmit(event, 'Запрос документов')" class="space-y-4">
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Электронная почта *</label>
-                            <input type="email" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="expert@enterprise.kz">
+                            <input type="email" name="Email" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="expert@enterprise.kz">
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-700 mb-1">Интересующий продукт *</label>
-                            <input type="text" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="Например: Сера гранулированная">
+                            <input type="text" name="Продукт" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="Например: Сера гранулированная">
                         </div>
                         <button type="submit" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">Получить документы</button>
                     </form>
@@ -758,13 +799,14 @@
                     <div class="flex justify-between"><span>Минимальный объем:</span><span class="font-semibold text-slate-800">${minVol}</span></div>
                     <div class="flex justify-between"><span>Способы доставки:</span><span class="font-semibold text-slate-800">Автофуры, Ж/Д цистерны / полувагоны</span></div>
                 </div>
-                <form onsubmit="handleModalSubmit(event)" class="space-y-3">
-                    <input type="text" required placeholder="Ваш телефон или WhatsApp" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
+                <form onsubmit="handleModalSubmit(event, 'Запрос цены: ${name}')" class="space-y-3">
+                    <input type="text" name="Контакты" required placeholder="Ваш телефон или WhatsApp" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
                     <button type="submit" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">Запросить цену и наличие</button>
                 </form>
             `;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            lucide.createIcons();
         }
 
         function closeModal() {
@@ -773,19 +815,28 @@
             modal.classList.add('hidden');
         }
 
-        function handleModalSubmit(e) {
+        async function handleModalSubmit(e, formTitle) {
             e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const payload = { "Форма": formTitle };
+
+            formData.forEach((val, key) => { payload[key] = val; });
+
+            await sendFormDataToEmail(payload);
+
             const content = document.getElementById('modalContent');
             content.innerHTML = `
                 <div class="text-center py-6">
                     <div class="w-12 h-12 bg-emerald-100 text-industrialGreen rounded-full flex items-center justify-center mx-auto mb-3">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        <i data-lucide="check" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-lg font-bold text-navy-900 mb-1">Запрос успешно отправлен!</h3>
-                    <p class="text-slate-600 text-sm mb-4">Наш специалист свяжется с вами в ближайшее время.</p>
+                    <p class="text-slate-600 text-sm mb-4">Детали отправлены на рассмотрение. Мы ответим вам в течение 15 минут.</p>
                     <button onclick="closeModal()" class="bg-navy-900 text-white px-6 py-2 rounded-xl text-sm font-semibold">Закрыть</button>
                 </div>
             `;
+            lucide.createIcons();
         }
     </script>
 </body>
