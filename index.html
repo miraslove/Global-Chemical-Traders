@@ -1,843 +1,652 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Chemical Traders — Поставка промышленного сырья в Казахстан и Центральную Азию</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            800: '#0F1D30',
-                            900: '#09111D',
-                        },
-                        graphite: '#1E293B',
-                        industrialGreen: '#10B981',
-                        industrialOrange: '#F97316'
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Font Inter & Lucide Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Chemical Traders</title>
+<meta name="description" content="Global Chemical Traders — поставки промышленного сырья в Казахстан и Центральную Азию.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { ink:'#071A2F', gold:'#F5B83D', teal:'#06B6D4', lime:'#22C55E' },
+  fontFamily: { sans:['Inter','sans-serif'], serif:['"Playfair Display"','serif'] }
+}}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html{scroll-padding-top:72px}
+  body{font-family:'Inter',sans-serif}
+  .grid-bg{background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:56px 56px}
+  .gold-text{background:linear-gradient(90deg,#FFD97A,#F5B83D,#FF9F43);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .card{transition:transform .25s,box-shadow .25s,border-color .25s}
+  .card:hover{transform:translateY(-6px)}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+  .reveal.in{opacity:1;transform:none}
+  .bgimg{background-size:cover;background-position:center;transition:opacity .8s}
+  input,select,textarea{font-size:16px}
+  .btn-glow{box-shadow:0 8px 30px -6px rgba(245,184,61,.6)}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-industrialGreen selection:text-white">
+<body class="bg-white text-slate-700 antialiased overflow-x-hidden selection:bg-gold selection:text-ink">
 
-    <header class="sticky top-0 z-50 bg-navy-900/95 backdrop-blur border-b border-slate-800 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logo & Title -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-industrialGreen to-emerald-700 flex items-center justify-center shadow-lg">
-                    <i data-lucide="layers" class="w-6 h-6 text-white"></i>
-                </div>
-                <div>
-                    <span class="text-lg font-bold tracking-tight block leading-tight">GLOBAL CHEMICAL</span>
-                    <span class="text-xs text-industrialGreen font-semibold tracking-widest uppercase">Traders</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#catalog" class="hover:text-industrialGreen transition">Каталог</a>
-                <a href="#industries" class="hover:text-industrialGreen transition">Отрасли</a>
-                <a href="#calculator" class="hover:text-industrialGreen transition font-semibold text-industrialGreen">Рассчитать поставку</a>
-                <a href="#logistics" class="hover:text-industrialGreen transition">Логистика</a>
-                <a href="#quality" class="hover:text-industrialGreen transition">Документы</a>
-                <a href="#about" class="hover:text-industrialGreen transition">О компании</a>
-                <a href="#contacts" class="hover:text-industrialGreen transition">Контакты</a>
-            </nav>
-
-            <!-- Actions & Lang Switcher -->
-            <div class="flex items-center gap-4">
-                <div class="hidden sm:flex items-center bg-navy-800 rounded-lg p-1 border border-slate-700 text-xs font-semibold">
-                    <button onclick="setLang('ru')" id="lang-ru" class="px-2.5 py-1 rounded bg-industrialGreen text-white transition">RU</button>
-                    <button onclick="setLang('kz')" id="lang-kz" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">KZ</button>
-                    <button onclick="setLang('en')" id="lang-en" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition">EN</button>
-                </div>
-
-                <a href="https://wa.me/77002419421" target="_blank" class="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-sm">
-                    <i data-lucide="message-square" class="w-4 h-4"></i> WhatsApp
-                </a>
-
-                <button onclick="openModal('offer')" class="bg-industrialGreen hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-md">
-                    Запросить цену
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <section class="relative bg-navy-900 text-white overflow-hidden py-24 lg:py-32">
-        <!-- Background industrial grid & image effect -->
-        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/90 to-transparent z-10"></div>
-        <div class="absolute right-0 top-0 w-full lg:w-1/2 h-full z-0 opacity-40 lg:opacity-75">
-            <img src="https://placehold.co/1200x800/0f1d30/334155?text=Industrial+Logistics+Kazakhstan" alt="Industrial Logistics" class="w-full h-full object-cover">
-        </div>
-
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-20">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-industrialGreen/10 border border-industrialGreen/30 text-industrialGreen text-xs font-semibold uppercase tracking-wider mb-6">
-                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Официальный промышленный поставщик
-                </div>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                    Промышленное сырьё с доставкой по <span class="text-industrialGreen">Казахстану и Центральной Азии</span>
-                </h1>
-                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                    Находим продукт, проверяем качество, организуем документы и доставляем до предприятия. Автомобильные и железнодорожные поставки партий от 20 тонн.
-                </p>
-
-                <!-- Core Products Quick Tags -->
-                <div class="flex flex-wrap gap-2 mb-10">
-                    <span class="bg-navy-800 text-slate-300 border border-slate-700 text-xs px-3 py-1.5 rounded-lg">Кальцинированная и каустическая сода</span>
-                    <span class="bg-navy-800 text-slate-300 border border-slate-700 text-xs px-3 py-1.5 rounded-lg">Метабисульфит натрия</span>
-                    <span class="bg-navy-800 text-slate-300 border border-slate-700 text-xs px-3 py-1.5 rounded-lg">Сера гранулированная</span>
-                    <span class="bg-navy-800 text-slate-300 border border-slate-700 text-xs px-3 py-1.5 rounded-lg">Баритовый концентрат</span>
-                    <span class="bg-navy-800 text-slate-300 border border-slate-700 text-xs px-3 py-1.5 rounded-lg">Бентонит & Соль</span>
-                </div>
-
-                <!-- Call to Actions -->
-                <div class="flex flex-wrap items-center gap-4">
-                    <a href="#calculator" class="bg-industrialGreen hover:bg-emerald-600 text-white font-semibold px-6 py-3.5 rounded-xl transition shadow-lg flex items-center gap-2">
-                        Рассчитать поставку <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <button onclick="openModal('offer')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-6 py-3.5 rounded-xl transition">
-                        Получить КП
-                    </button>
-                    <a href="https://wa.me/77002419421" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-5 py-3.5 rounded-xl transition flex items-center gap-2">
-                        <i data-lucide="message-square" class="w-5 h-5"></i> WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bg-white border-b border-slate-200 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div class="p-4 border-r border-slate-100 last:border-none">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-navy-900 mb-1">150 000+</div>
-                    <div class="text-sm text-slate-500 font-medium">Тонн сырья поставлено в год</div>
-                </div>
-                <div class="p-4 border-r border-slate-100 last:border-none">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-industrialGreen mb-1">KZ & CA</div>
-                    <div class="text-sm text-slate-500 font-medium">География поставок</div>
-                </div>
-                <div class="p-4 border-r border-slate-100 last:border-none">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-navy-900 mb-1">100%</div>
-                    <div class="text-sm text-slate-500 font-medium">Паспорта качества и SDS</div>
-                </div>
-                <div class="p-4">
-                    <div class="text-3xl lg:text-4xl font-extrabold text-navy-900 mb-1">ЖД / Авто</div>
-                    <div class="text-sm text-slate-500 font-medium">Прямые отгрузки со складов</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="calculator" class="py-20 bg-slate-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-industrialGreen font-semibold text-sm uppercase tracking-wider block mb-2">Интерактивный расчёт</span>
-                <h2 class="text-3xl font-extrabold text-navy-900">Рассчитать стоимость поставки</h2>
-                <p class="text-slate-600 mt-2">Заполните параметры партии, чтобы получить точный расчёт с учётом логистики до вашего предприятия.</p>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-200 p-6 sm:p-10">
-                <form id="supplyForm" onsubmit="handleCalculatorSubmit(event)" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <!-- Product Selection -->
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Выберите продукт *</label>
-                            <select name="Продукт" id="calc-product" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                                <option value="">-- Выберите химическое сырьё --</option>
-                                <option value="Кальцинированная сода (марка А/Б)">Кальцинированная сода (марка А/Б)</option>
-                                <option value="Каустическая сода (чешуя/жидкая)">Каустическая сода (чешуя/жидкая)</option>
-                                <option value="Метабисульфит натрия">Метабисульфит натрия</option>
-                                <option value="Сера гранулированная">Сера гранулированная</option>
-                                <option value="Баритовый концентрат (для бурения)">Баритовый концентрат (для бурения)</option>
-                                <option value="Бентонит">Бентонит</option>
-                                <option value="Техническая соль (галит)">Техническая соль (галит)</option>
-                                <option value="Известняк промышленный">Известняк промышленный</option>
-                            </select>
-                        </div>
-
-                        <!-- Volume -->
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Объём партии (тонн) *</label>
-                            <input type="number" name="Объем_тонн" id="calc-volume" required min="1" placeholder="Например: 68 тонн (Вагон)" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                        </div>
-
-                        <!-- Packaging -->
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Тип упаковки *</label>
-                            <select name="Упаковка" id="calc-packaging" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                                <option value="">-- Выберите упаковку --</option>
-                                <option value="Биг-бэги (1 т / 1.2 т)">Биг-бэги (1 т / 1.2 т)</option>
-                                <option value="Мешки по 25/50 кг">Мешки по 25/50 кг</option>
-                                <option value="Навалом / Насыпью">Навалом / Насыпью</option>
-                                <option value="Жидкое (автоцистерна / вагон-цистерна)">Жидкое (автоцистерна / вагон-цистерна)</option>
-                            </select>
-                        </div>
-
-                        <!-- City or Station -->
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Город или станция назначения *</label>
-                            <input type="text" name="Направление" id="calc-destination" required placeholder="Например: Караганда / ст. Жана-Аул" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                        </div>
-                    </div>
-
-                    <!-- Delivery Method -->
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 mb-2">Способ доставки</label>
-                        <div class="grid grid-cols-2 gap-4">
-                            <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-industrialGreen transition">
-                                <input type="radio" name="Доставка" value="Автотранспорт" checked class="text-industrialGreen focus:ring-industrialGreen">
-                                <span class="text-sm font-medium text-slate-800">Автотранспорт (фуры)</span>
-                            </label>
-                            <label class="flex items-center gap-3 p-4 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:border-industrialGreen transition">
-                                <input type="radio" name="Доставка" value="Ж/Д транспорт" class="text-industrialGreen focus:ring-industrialGreen">
-                                <span class="text-sm font-medium text-slate-800">Ж/Д вагон / полувагон</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Contact Details -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 border-t border-slate-100">
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Ваше имя или компания *</label>
-                            <input type="text" name="Компания" id="calc-name" required placeholder="ТОО «ГМК Промышленные Решения»" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-slate-700 mb-2">Телефон / WhatsApp / Email *</label>
-                            <input type="text" name="Контакты" id="calc-contact" required placeholder="+7 (701) 000-00-00" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-slate-800 focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                        </div>
-                    </div>
-
-                    <div class="pt-4">
-                        <button type="submit" id="calc-submit-btn" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-4 rounded-xl transition shadow-lg text-lg flex items-center justify-center gap-2">
-                            <i data-lucide="calculator" class="w-5 h-5"></i> Рассчитать стоимость с доставкой
-                        </button>
-                    </div>
-                </form>
-
-                <!-- Success Confirmation Message Box -->
-                <div id="calc-success" class="hidden mt-6 p-6 rounded-2xl bg-emerald-50 border border-emerald-200 text-center animate-fade-in">
-                    <div class="w-12 h-12 bg-emerald-100 text-industrialGreen rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i data-lucide="check-circle-2" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-navy-900 mb-1">Запрос успешно принят!</h3>
-                    <p class="text-slate-600 text-sm max-w-md mx-auto">Мы рассчитаем стоимость товара с доставкой и свяжемся с вами в течение 15 минут.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="catalog" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-                <div>
-                    <span class="text-industrialGreen font-semibold text-sm uppercase tracking-wider block mb-2">Ассортимент продукции</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900">Каталог промышленного сырья</h2>
-                </div>
-                <p class="text-slate-600 max-w-md mt-4 md:mt-0 text-sm">
-                    Прямые поставки от ведущих заводов-производителей. Каждая партия сопровождается полным пакетом сертификатов и паспортов качества.
-                </p>
-            </div>
-
-            <!-- Product Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Product 1 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full font-medium">ГОСТ / ТУ</span>
-                            <span class="text-xs text-slate-500 font-mono">Na2CO3</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-industrialGreen transition mb-2">Кальцинированная сода</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Марка А и Б. Применяется в стекольном, химическом производстве и металлургии.</p>
-                        <div class="space-y-2 text-xs text-slate-500 mb-6">
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Упаковка:</span>
-                                <span class="font-semibold text-slate-700">Биг-бэги 1т / мешки 50кг</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Мин. объем:</span>
-                                <span class="font-semibold text-slate-700">От 20 тонн (авто/жд)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="openProductModal('Кальцинированная сода', 'Na2CO3', 'Марка А (высший сорт) и Марка Б. Используется в стекольной промышленности, производстве синтетических моющих средств, цветной металлургии.', 'Биг-бэги по 1000 кг, мешки по 50 кг', '20 тонн')" class="w-full bg-navy-900 hover:bg-industrialGreen text-white py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
-                        Характеристики и запрос <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full font-medium">ГОСТ 55064</span>
-                            <span class="text-xs text-slate-500 font-mono">NaOH</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-industrialGreen transition mb-2">Каустическая сода</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Чешуированная и жидкая (натр едкий технический). Для водоочистки и нефтехимии.</p>
-                        <div class="space-y-2 text-xs text-slate-500 mb-6">
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Упаковка:</span>
-                                <span class="font-semibold text-slate-700">Мешки 25кг / Цистерны</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Мин. объем:</span>
-                                <span class="font-semibold text-slate-700">От 20 тонн</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="openProductModal('Каустическая сода', 'NaOH', 'Чешуя 98% и жидкий раствор 46%. Применяется в химической промышленности, нефтедобыче, цветной металлургии и водоподготовке.', 'Мешки 25 кг в п/э вкладышах, автоцистерны', '20 тонн')" class="w-full bg-navy-900 hover:bg-industrialGreen text-white py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
-                        Характеристики и запрос <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full font-medium">ГОСТ / ТУ</span>
-                            <span class="text-xs text-slate-500 font-mono">Na2S2O5</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-industrialGreen transition mb-2">Метабисульфит натрия</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Высокочистый реагент для горно-обогатительных комбинатов (флотация) и пищепрома.</p>
-                        <div class="space-y-2 text-xs text-slate-500 mb-6">
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Упаковка:</span>
-                                <span class="font-semibold text-slate-700">МКР (биг-бэги) 1000 кг</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Мин. объем:</span>
-                                <span class="font-semibold text-slate-700">От 20 тонн</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="openProductModal('Метабисульфит натрия', 'Na2S2O5', 'Применяется в горнодобывающей промышленности для процессов флотации руд цветных металлов, а также в водоочистке.', 'Биг-бэги по 1000 кг, мешки по 25 кг', '20 тонн')" class="w-full bg-navy-900 hover:bg-industrialGreen text-white py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
-                        Характеристики и запрос <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full font-medium">ГОСТ 127.1-93</span>
-                            <span class="text-xs text-slate-500 font-mono">S</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-industrialGreen transition mb-2">Сера гранулированная</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Высококачественная техническая сера для производства серной кислоты и удобрений.</p>
-                        <div class="space-y-2 text-xs text-slate-500 mb-6">
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Упаковка:</span>
-                                <span class="font-semibold text-slate-700">Навалом / Биг-бэги</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Мин. объем:</span>
-                                <span class="font-semibold text-slate-700">От 68 тонн (Ж/Д вагон)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="openProductModal('Сера гранулированная', 'S', 'Чистота от 99.5%. Основное сырье для химической промышленности, производства удобрений и резинотехнических изделий.', 'Ж/Д полувагоны насыпью, биг-бэги', '68 тонн')" class="w-full bg-navy-900 hover:bg-industrialGreen text-white py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
-                        Характеристики и запрос <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full font-medium">Нефтегаз</span>
-                            <span class="text-xs text-slate-500 font-mono">BaSO4</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-industrialGreen transition mb-2">Баритовый концентрат</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Утяжелитель буровых растворов для нефтегазодобывающей отрасли.</p>
-                        <div class="space-y-2 text-xs text-slate-500 mb-6">
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Упаковка:</span>
-                                <span class="font-semibold text-slate-700">Биг-бэги 1000/1500 кг</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Мин. объем:</span>
-                                <span class="font-semibold text-slate-700">От 20 тонн</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="openProductModal('Баритовый концентрат', 'BaSO4', 'Применяется при бурении нефтяных и газовых скважин для регулирования плотности буровых растворов.', 'Биг-бэги по 1-1.5 т', '20 тонн')" class="w-full bg-navy-900 hover:bg-industrialGreen text-white py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
-                        Характеристики и запрос <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition flex flex-col justify-between group">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-navy-900 text-white text-xs px-3 py-1 rounded-full font-medium">ГОСТ / ТУ</span>
-                            <span class="text-xs text-slate-500 font-mono">NaCl + Bentonite</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 group-hover:text-industrialGreen transition mb-2">Бентонит и Соль</h3>
-                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">Бентонитовая глина для бурения и литейного производства + Техническая соль (галит).</p>
-                        <div class="space-y-2 text-xs text-slate-500 mb-6">
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Упаковка:</span>
-                                <span class="font-semibold text-slate-700">МКР, мешки, россыпью</span>
-                            </div>
-                            <div class="flex justify-between border-b border-slate-200 pb-1">
-                                <span>Мин. объем:</span>
-                                <span class="font-semibold text-slate-700">От 20 тонн</span>
-                            </div>
-                        </div>
-                    </div>
-                    <button onclick="openProductModal('Бентонит и Техническая соль', 'NaCl / Bentonite', 'Широкий спектр применения: от буровых растворов и металлургии до дорожных реагентов и водоочистки.', 'МКР и насыпью', '20 тонн')" class="w-full bg-navy-900 hover:bg-industrialGreen text-white py-2.5 rounded-xl text-sm font-semibold transition flex items-center justify-center gap-2">
-                        Характеристики и запрос <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="industries" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-industrialGreen font-semibold text-sm uppercase tracking-wider block mb-2">Отраслевая экспертиза</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">Отраслевые решения</h2>
-                <p class="text-slate-400">Поставляем химические компоненты с учетом специфики технологических регламентов ключевых секторов экономики.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-navy-800 border border-slate-800 rounded-2xl p-6 hover:border-industrialGreen transition">
-                    <div class="w-12 h-12 bg-industrialGreen/10 rounded-xl flex items-center justify-center text-industrialGreen mb-4">
-                        <i data-lucide="mountain" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2">Горнодобывающая</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Поставка реагентов для флотации, баритового концентрата для бурения и солей.</p>
-                </div>
-
-                <div class="bg-navy-800 border border-slate-800 rounded-2xl p-6 hover:border-industrialGreen transition">
-                    <div class="w-12 h-12 bg-industrialGreen/10 rounded-xl flex items-center justify-center text-industrialGreen mb-4">
-                        <i data-lucide="factory" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2">Металлургия</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Кальцинированная и каустическая сода для технологических процессов выплавки.</p>
-                </div>
-
-                <div class="bg-navy-800 border border-slate-800 rounded-2xl p-6 hover:border-industrialGreen transition">
-                    <div class="w-12 h-12 bg-industrialGreen/10 rounded-xl flex items-center justify-center text-industrialGreen mb-4">
-                        <i data-lucide="droplets" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2">Водоочистка</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Коагулянты, флокулянты и реагенты для муниципальных и промышленных водоочистных сооружений.</p>
-                </div>
-
-                <div class="bg-navy-800 border border-slate-800 rounded-2xl p-6 hover:border-industrialGreen transition">
-                    <div class="w-12 h-12 bg-industrialGreen/10 rounded-xl flex items-center justify-center text-industrialGreen mb-4">
-                        <i data-lucide="fuel" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold mb-2">Нефтегаз</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Специализированные баритовые концентраты и сырье для буровых растворов.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="logistics" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-industrialGreen font-semibold text-sm uppercase tracking-wider block mb-2">Надежная логистика</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mb-6">Автомобильные и железнодорожные поставки по графику</h2>
-                    <p class="text-slate-600 mb-6 leading-relaxed">
-                        Мы управляем всей цепочкой поставок от завода-изготовителя до ворот вашего предприятия. Наличие собственного подвижного состава и партнерских автопарков гарантирует строгое соблюдение сроков.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-industrialGreen flex items-center justify-center flex-shrink-0 mt-1">
-                                <i data-lucide="check" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy-900">Ж/Д отгрузки вагонами и полувагонами</h4>
-                                <p class="text-slate-600 text-sm">Оформление всех железнодорожных накладных, оплата тарифов по РК и СНГ.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-100 text-industrialGreen flex items-center justify-center flex-shrink-0 mt-1">
-                                <i data-lucide="check" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-navy-900">Автотранспорт (тентованные фуры и цистерны)</h4>
-                                <p class="text-slate-600 text-sm">Оперативная доставка сырья прямо на склад покупателя в любой регион.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
-                        <img src="https://placehold.co/800x600/1e293b/ffffff?text=Rail+and+Truck+Logistics" alt="Logistics Kazakhstan" class="w-full h-auto object-cover">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="quality" class="py-24 bg-slate-50 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-industrialGreen font-semibold text-sm uppercase tracking-wider block mb-2">Бескомпромиссное качество</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mb-4">Документы и стандарты</h2>
-                <p class="text-slate-600">Каждая отгрузка сопровождается полным комплектом технической документации в соответствии с требованиями законодательства РК.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-navy-900 text-white rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="file-text" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-2">Паспорта качества</h3>
-                        <p class="text-slate-600 text-sm mb-6">Сертификаты заводских лабораторных испытаний на каждую партию продукции.</p>
-                    </div>
-                    <button onclick="openModal('docs')" class="text-industrialGreen font-semibold text-sm flex items-center gap-2 hover:underline">
-                        Запросить пример паспорта <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-navy-900 text-white rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="shield" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-2">SDS / MSDS листы</h3>
-                        <p class="text-slate-600 text-sm mb-6">Паспорта безопасности химической продукции на русском и казахском языках.</p>
-                    </div>
-                    <button onclick="openModal('docs')" class="text-industrialGreen font-semibold text-sm flex items-center gap-2 hover:underline">
-                        Получить SDS листы <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-navy-900 text-white rounded-xl flex items-center justify-center mb-6">
-                            <i data-lucide="award" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-navy-900 mb-2">Статус плательщика НДС</h3>
-                        <p class="text-slate-600 text-sm mb-6">Полный пакет закрывающих документов, ЭСФ, прозрачное налогообложение в РК.</p>
-                    </div>
-                    <button onclick="openModal('offer')" class="text-industrialGreen font-semibold text-sm flex items-center gap-2 hover:underline">
-                        Запросить реквизиты <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <span class="text-industrialGreen font-semibold text-sm uppercase tracking-wider block mb-2">О компании</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mb-6">Global Chemical Traders — ваш надежный партнер в индустриальном сырье</h2>
-                    <p class="text-slate-600 mb-6 leading-relaxed">
-                        Мы специализируемся на бесперебойных поставках сырья для ключевых предприятий горнодобывающей, металлургической и химической промышленности Казахстана и стран Центральной Азии.
-                    </p>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
-                        Наша цель — избавить вас от логистических рисков и вопросов качества. Вы получаете готовое решение точно в оговоренный срок.
-                    </p>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="border-l-2 border-industrialGreen pl-4">
-                            <div class="text-2xl font-bold text-navy-900 mb-1">10+ лет</div>
-                            <div class="text-xs text-slate-500 font-medium">Опыт работы на рынке промышленной химии</div>
-                        </div>
-                        <div class="border-l-2 border-industrialGreen pl-4">
-                            <div class="text-2xl font-bold text-navy-900 mb-1">50+</div>
-                            <div class="text-xs text-slate-500 font-medium">Крупных заводов-партнеров</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-navy-900 rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
-                    <div class="absolute -right-10 -bottom-10 opacity-10">
-                        <i data-lucide="building-2" class="w-64 h-64 text-white"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-6">Наши принципы работы</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <span class="text-slate-200">Строгое соответствие ГОСТ и ТУ</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <span class="text-slate-200">Фиксация цены на период поставки</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <span class="text-slate-200">Контроль погрузки и веса на отгрузке</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <span class="text-slate-200">Оперативная клиентская поддержка 24/7</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contacts" class="bg-navy-900 text-white pt-20 pb-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <div>
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 rounded-lg bg-industrialGreen flex items-center justify-center">
-                            <i data-lucide="layers" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div>
-                            <span class="text-lg font-bold block leading-tight">GLOBAL CHEMICAL</span>
-                            <span class="text-xs text-industrialGreen font-semibold tracking-widest uppercase">Traders</span>
-                        </div>
-                    </div>
-                    <p class="text-slate-400 text-sm mb-6">Поставка химического и минерального сырья для промышленности Казахстана и Центральной Азии.</p>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4 text-industrialGreen">Каталог</h4>
-                    <ul class="space-y-2.5 text-sm text-slate-300">
-                        <li><a href="#catalog" class="hover:text-industrialGreen transition">Кальцинированная и каустическая сода</a></li>
-                        <li><a href="#catalog" class="hover:text-industrialGreen transition">Метабисульфит натрия</a></li>
-                        <li><a href="#catalog" class="hover:text-industrialGreen transition">Сера гранулированная</a></li>
-                        <li><a href="#catalog" class="hover:text-industrialGreen transition">Баритовый концентрат</a></li>
-                        <li><a href="#catalog" class="hover:text-industrialGreen transition">Бентонит и соль</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4 text-industrialGreen">Офис и контакты</h4>
-                    <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex items-start gap-3">
-                            <i data-lucide="map-pin" class="w-5 h-5 text-industrialGreen flex-shrink-0 mt-0.5"></i>
-                            <span>Республика Казахстан, г. Тараз</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="phone" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <a href="tel:+77002419421" class="hover:text-industrialGreen transition">+7 (700) 241-94-21</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="mail" class="w-5 h-5 text-industrialGreen flex-shrink-0"></i>
-                            <a href="mailto:mixmev96@gmail.com" class="hover:text-industrialGreen transition">mixmev96@gmail.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-bold text-lg mb-4 text-industrialGreen">Быстрый запрос</h4>
-                    <p class="text-slate-400 text-sm mb-4">Получите консультацию специалиста отдела продаж прямо сейчас:</p>
-                    <button onclick="openModal('offer')" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-semibold py-3 rounded-xl transition shadow-md text-sm">
-                        Запросить коммерческое предложение
-                    </button>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-                <p>&copy; 2026 Global Chemical Traders. Все права защищены.</p>
-                <div class="flex gap-6 mt-4 sm:mt-0">
-                    <a href="#" class="hover:text-slate-400">Политика конфиденциальности</a>
-                    <a href="#" class="hover:text-slate-400">Условия поставки (Incoterms)</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div id="appModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-900/80 backdrop-blur-sm p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl animate-fade-in">
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div id="modalContent">
-                <!-- Dynamically populated -->
-            </div>
-        </div>
+<!-- HEADER -->
+<header class="fixed top-0 inset-x-0 z-40 bg-ink/85 backdrop-blur-lg border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-5 h-16 sm:h-20 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 sm:gap-3">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center shadow-lg"><i data-lucide="hexagon" class="w-5 h-5 text-ink"></i></div>
+      <div class="leading-tight">
+        <div class="text-white font-bold tracking-[.08em] sm:tracking-[.18em] text-[11px] sm:text-sm">GLOBAL CHEMICAL</div>
+        <div class="text-gold text-[10px] tracking-[.4em] uppercase">Traders</div>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-7 text-sm text-slate-200">
+      <a href="#why" class="hover:text-gold transition" data-i="n_why"></a>
+      <a href="#catalog" class="hover:text-gold transition" data-i="n_catalog"></a>
+      <a href="#model" class="hover:text-gold transition" data-i="n_model"></a>
+      <a href="#logistics" class="hover:text-gold transition" data-i="n_logistics"></a>
+      <a href="#compliance" class="hover:text-gold transition" data-i="n_docs"></a>
+      <a href="#about" class="hover:text-gold transition" data-i="n_about"></a>
+    </nav>
+    <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flex items-center bg-white/10 rounded-lg p-1 text-xs font-semibold border border-white/10">
+        <button data-lang="ru" class="langbtn px-2 sm:px-2.5 py-1 rounded">RU</button>
+        <button data-lang="kz" class="langbtn px-2 sm:px-2.5 py-1 rounded">KZ</button>
+        <button data-lang="en" class="langbtn px-2 sm:px-2.5 py-1 rounded">EN</button>
+      </div>
+      <a href="#contact" class="hidden sm:inline-flex bg-gold hover:bg-yellow-400 text-ink font-bold text-sm px-5 py-2.5 rounded-lg transition" data-i="n_contact"></a>
+      <button id="burger" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
     </div>
+  </div>
+  <div id="mobileNav" class="hidden lg:hidden bg-ink border-t border-white/10 px-5 py-3 text-slate-200 text-base">
+    <a href="#why" class="block py-2.5" data-i="n_why"></a><a href="#catalog" class="block py-2.5" data-i="n_catalog"></a><a href="#model" class="block py-2.5" data-i="n_model"></a>
+    <a href="#logistics" class="block py-2.5" data-i="n_logistics"></a><a href="#compliance" class="block py-2.5" data-i="n_docs"></a><a href="#about" class="block py-2.5" data-i="n_about"></a><a href="#contact" class="block py-2.5 text-gold font-semibold" data-i="n_contact"></a>
+  </div>
+</header>
 
-    <!-- JavaScript Interaction & Email Dispatch Logic -->
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+<!-- HERO -->
+<section id="top" class="relative text-white pt-28 sm:pt-40 pb-16 sm:pb-28 overflow-hidden bg-gradient-to-br from-[#0A2A52] via-[#0B6477] to-[#0F9D78]">
+  <div class="bgimg absolute inset-0 opacity-0" data-bg="hero"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-[#071A2F]/90 via-[#0A3A55]/70 to-[#0F9D78]/30"></div>
+  <div class="absolute inset-0 grid-bg opacity-40"></div>
+  <div class="absolute -top-24 -right-24 w-[560px] h-[560px] rounded-full bg-gold/25 blur-3xl"></div>
+  <div class="absolute -bottom-24 left-1/3 w-[420px] h-[420px] rounded-full bg-teal/25 blur-3xl"></div>
+  <div class="relative max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7">
+      <div class="inline-flex items-center gap-2 text-gold text-xs tracking-[.2em] uppercase border border-gold/50 bg-gold/10 rounded-full px-4 py-1.5 mb-8">
+        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> <span data-i="h_badge"></span>
+      </div>
+      <h1 class="font-serif text-[1.9rem] leading-tight sm:text-5xl lg:text-6xl font-semibold leading-[1.1] mb-7" data-i="h_title" data-html></h1>
+      <p class="text-lg text-slate-100 max-w-2xl leading-relaxed mb-10" data-i="h_text"></p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contact" class="bg-gold hover:bg-yellow-400 text-ink font-bold px-7 py-4 rounded-lg transition inline-flex items-center justify-center gap-2 btn-glow w-full sm:w-auto"><span data-i="h_cta1"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <a href="#catalog" class="border border-white/40 hover:bg-white hover:text-ink text-white font-semibold px-7 py-4 rounded-lg transition text-center w-full sm:w-auto" data-i="h_cta2"></a>
+      </div>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="bg-white/10 border border-white/25 rounded-2xl p-7 backdrop-blur-md shadow-2xl">
+        <div class="text-xs uppercase tracking-[.25em] text-gold mb-6 font-semibold" data-i="kpi_title"></div>
+        <div class="grid grid-cols-2 gap-6">
+          <div><div class="font-serif text-3xl sm:text-4xl text-white">150 000+</div><div class="text-xs text-slate-200 mt-1" data-i="k1"></div></div>
+          <div><div class="font-serif text-3xl sm:text-4xl text-white">10+</div><div class="text-xs text-slate-200 mt-1" data-i="k2"></div></div>
+          <div><div class="font-serif text-3xl sm:text-4xl text-white">50+</div><div class="text-xs text-slate-200 mt-1" data-i="k3"></div></div>
+          <div><div class="font-serif text-3xl sm:text-4xl text-white">100%</div><div class="text-xs text-slate-200 mt-1" data-i="k4"></div></div>
+        </div>
+        <div class="mt-7 pt-6 border-t border-white/20 flex items-center gap-3 text-sm text-slate-100">
+          <i data-lucide="map-pin" class="w-4 h-4 text-gold"></i> <span data-i="geo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        const TARGET_EMAIL = "mixmev96@gmail.com";
-        const FORMSPREE_ENDPOINT = `https://formspree.io/f/mixmev96@gmail.com`;
+<!-- TRUST STRIP -->
+<section class="bg-gradient-to-r from-gold via-orange-400 to-gold text-ink">
+  <div class="max-w-7xl mx-auto px-5 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-semibold">
+    <div class="flex items-center gap-3"><i data-lucide="file-check-2" class="w-5 h-5"></i> <span data-i="s1"></span></div>
+    <div class="flex items-center gap-3"><i data-lucide="receipt" class="w-5 h-5"></i> <span data-i="s2"></span></div>
+    <div class="flex items-center gap-3"><i data-lucide="train-front" class="w-5 h-5"></i> <span data-i="s3"></span></div>
+    <div class="flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5"></i> <span data-i="s4"></span></div>
+  </div>
+</section>
 
-        // Language toggle simulation
-        function setLang(lang) {
-            ['ru', 'kz', 'en'].forEach(l => {
-                const btn = document.getElementById(`lang-${l}`);
-                if (l === lang) {
-                    btn.className = "px-2.5 py-1 rounded bg-industrialGreen text-white transition";
-                } else {
-                    btn.className = "px-2.5 py-1 rounded text-slate-400 hover:text-white transition";
-                }
-            });
-        }
+<!-- WHY -->
+<section id="why" class="py-16 sm:py-28 bg-gradient-to-b from-sky-50 to-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mb-16 reveal">
+      <div class="text-teal font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="w_tag"></div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-ink leading-tight" data-i="w_title"></h2>
+      <p class="text-slate-600 mt-5 leading-relaxed" data-i="w_text"></p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-teal">
+        <div class="w-14 h-14 rounded-xl bg-teal/10 flex items-center justify-center mb-5"><i data-lucide="repeat" class="w-7 h-7 text-teal"></i></div>
+        <h3 class="font-bold text-ink mb-2" data-i="w1t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w1d"></p>
+      </div>
+      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-gold">
+        <div class="w-14 h-14 rounded-xl bg-gold/15 flex items-center justify-center mb-5"><i data-lucide="factory" class="w-7 h-7 text-orange-500"></i></div>
+        <h3 class="font-bold text-ink mb-2" data-i="w2t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w2d"></p>
+      </div>
+      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-lime">
+        <div class="w-14 h-14 rounded-xl bg-lime/10 flex items-center justify-center mb-5"><i data-lucide="layout-grid" class="w-7 h-7 text-lime"></i></div>
+        <h3 class="font-bold text-ink mb-2" data-i="w3t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w3d"></p>
+      </div>
+      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-violet-500">
+        <div class="w-14 h-14 rounded-xl bg-violet-500/10 flex items-center justify-center mb-5"><i data-lucide="route" class="w-7 h-7 text-violet-500"></i></div>
+        <h3 class="font-bold text-ink mb-2" data-i="w4t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w4d"></p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Send Form Data to Email via Formspree API
-        async function sendFormDataToEmail(data) {
-            try {
-                const response = await fetch("https://formspree.io/f/xknlqovw", { // Default Formspree payload handler
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json"
-                    },
-                    body: JSON.stringify({
-                        _replyto: TARGET_EMAIL,
-                        _subject: "Новая заявка с сайта Global Chemical Traders",
-                        ...data
-                    })
-                });
-                return response.ok;
-            } catch (err) {
-                console.error("Form submit error:", err);
-                return false;
-            }
-        }
+<!-- CATALOG -->
+<section id="catalog" class="py-16 sm:py-28 bg-gradient-to-b from-white via-amber-50/60 to-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
+      <div>
+        <div class="text-orange-500 font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="c_tag"></div>
+        <h2 class="font-serif text-3xl sm:text-4xl text-ink" data-i="c_title"></h2>
+      </div>
+      <p class="text-slate-600 max-w-md text-sm leading-relaxed" data-i="c_text"></p>
+    </div>
+    <div id="productGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+  </div>
+</section>
 
-        // Calculator form submission
-        async function handleCalculatorSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('calc-submit-btn');
-            btn.disabled = true;
-            btn.innerText = "Отправка расчёта...";
+<!-- MODEL -->
+<section id="model" class="relative py-16 sm:py-28 text-white overflow-hidden bg-gradient-to-br from-[#0A2A52] via-[#0B5C73] to-[#0A8A6B]">
+  <div class="bgimg absolute inset-0 opacity-0" data-bg="model"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-[#071A2F]/90 via-[#0A3A55]/80 to-[#0A8A6B]/60"></div>
+  <div class="absolute inset-0 grid-bg opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mb-16 reveal">
+      <div class="text-gold text-xs tracking-[.3em] uppercase mb-4 font-bold" data-i="m_tag"></div>
+      <h2 class="font-serif text-3xl sm:text-4xl leading-tight" data-i="m_title"></h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">01</div><h3 class="font-bold mb-2" data-i="m1t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m1d"></p></div>
+      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">02</div><h3 class="font-bold mb-2" data-i="m2t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m2d"></p></div>
+      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">03</div><h3 class="font-bold mb-2" data-i="m3t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m3d"></p></div>
+      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">04</div><h3 class="font-bold mb-2" data-i="m4t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m4d"></p></div>
+    </div>
+  </div>
+</section>
 
-            const payload = {
-                "Форма": "Расчёт поставки (Калькулятор)",
-                "Продукт": document.getElementById('calc-product').value,
-                "Объем_тонн": document.getElementById('calc-volume').value,
-                "Упаковка": document.getElementById('calc-packaging').value,
-                "Направление_город_станция": document.getElementById('calc-destination').value,
-                "Способ_доставки": document.querySelector('input[name="Доставка"]:checked').value,
-                "Компания_Имя": document.getElementById('calc-name').value,
-                "Контакты": document.getElementById('calc-contact').value
-            };
+<!-- INDUSTRIES -->
+<section id="industries" class="py-16 sm:py-28 bg-gradient-to-b from-white to-emerald-50">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mb-14 reveal">
+      <div class="text-lime font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="i_tag"></div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-ink" data-i="i_title"></h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-amber-500 to-orange-600 shadow-lg"><i data-lucide="mountain" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i1t"></h3><p class="text-sm text-white/90" data-i="i1d"></p></div>
+      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-rose-500 to-red-600 shadow-lg"><i data-lucide="flame" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i2t"></h3><p class="text-sm text-white/90" data-i="i2d"></p></div>
+      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-sky-500 to-blue-600 shadow-lg"><i data-lucide="droplets" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i3t"></h3><p class="text-sm text-white/90" data-i="i3d"></p></div>
+      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg"><i data-lucide="fuel" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i4t"></h3><p class="text-sm text-white/90" data-i="i4d"></p></div>
+    </div>
+  </div>
+</section>
 
-            await sendFormDataToEmail(payload);
+<!-- LOGISTICS -->
+<section id="logistics" class="py-16 sm:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <div class="text-teal font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="l_tag"></div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-ink leading-tight mb-6" data-i="l_title"></h2>
+      <p class="text-slate-600 leading-relaxed mb-8" data-i="l_text"></p>
+      <div class="space-y-5">
+        <div class="flex gap-4"><div class="w-11 h-11 shrink-0 rounded-lg bg-gradient-to-br from-teal to-blue-500 flex items-center justify-center"><i data-lucide="train-front" class="w-5 h-5 text-white"></i></div><div><h4 class="font-bold text-ink" data-i="l1t"></h4><p class="text-sm text-slate-600" data-i="l1d"></p></div></div>
+        <div class="flex gap-4"><div class="w-11 h-11 shrink-0 rounded-lg bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center"><i data-lucide="truck" class="w-5 h-5 text-white"></i></div><div><h4 class="font-bold text-ink" data-i="l2t"></h4><p class="text-sm text-slate-600" data-i="l2d"></p></div></div>
+        <div class="flex gap-4"><div class="w-11 h-11 shrink-0 rounded-lg bg-gradient-to-br from-lime to-emerald-600 flex items-center justify-center"><i data-lucide="scale" class="w-5 h-5 text-white"></i></div><div><h4 class="font-bold text-ink" data-i="l3t"></h4><p class="text-sm text-slate-600" data-i="l3d"></p></div></div>
+      </div>
+    </div>
+    <div class="reveal relative rounded-3xl overflow-hidden shadow-2xl text-white min-h-[340px] sm:min-h-[420px] bg-gradient-to-br from-[#0A2A52] to-[#0B8A8A]">
+      <div class="bgimg absolute inset-0 opacity-0" data-bg="logistics"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#071A2F]/95 via-[#071A2F]/60 to-transparent"></div>
+      <div class="relative h-full min-h-[340px] sm:min-h-[420px] flex flex-col justify-end p-8">
+        <div class="text-xs tracking-[.25em] uppercase text-gold mb-5 font-bold" data-i="lp_title"></div>
+        <div class="space-y-4 text-sm">
+          <div class="flex justify-between border-b border-white/20 pb-3"><span class="text-slate-200" data-i="lp1"></span><span class="font-bold" data-i="lp1v"></span></div>
+          <div class="flex justify-between border-b border-white/20 pb-3"><span class="text-slate-200" data-i="lp2"></span><span class="font-bold" data-i="lp2v"></span></div>
+          <div class="flex justify-between border-b border-white/20 pb-3"><span class="text-slate-200" data-i="lp3"></span><span class="font-bold text-right" data-i="lp3v"></span></div>
+          <div class="flex justify-between"><span class="text-slate-200" data-i="lp4"></span><span class="font-bold text-right" data-i="lp4v"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            const form = document.getElementById('supplyForm');
-            const successBox = document.getElementById('calc-success');
-            form.style.display = 'none';
-            successBox.classList.remove('hidden');
-        }
+<!-- COMPLIANCE -->
+<section id="compliance" class="py-16 sm:py-28 bg-gradient-to-b from-violet-50 to-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="max-w-3xl mb-14 reveal">
+      <div class="text-violet-500 font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="d_tag"></div>
+      <h2 class="font-serif text-3xl sm:text-4xl text-ink" data-i="d_title"></h2>
+      <p class="text-slate-600 mt-5" data-i="d_text"></p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal card bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl flex flex-col">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center mb-5"><i data-lucide="file-text" class="w-7 h-7 text-white"></i></div>
+        <h3 class="font-bold text-ink mb-2" data-i="d1t"></h3><p class="text-sm text-slate-600 mb-6 flex-1" data-i="d1d"></p>
+        <button onclick="openModal('docs')" class="text-sm font-bold text-violet-600 hover:text-violet-800 text-left flex items-center gap-2"><span data-i="d1b"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+      </div>
+      <div class="reveal card bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl flex flex-col">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-teal to-blue-600 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-7 h-7 text-white"></i></div>
+        <h3 class="font-bold text-ink mb-2" data-i="d2t"></h3><p class="text-sm text-slate-600 mb-6 flex-1" data-i="d2d"></p>
+        <button onclick="openModal('docs')" class="text-sm font-bold text-teal hover:text-blue-700 text-left flex items-center gap-2"><span data-i="d2b"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+      </div>
+      <div class="reveal card bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl flex flex-col">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center mb-5"><i data-lucide="landmark" class="w-7 h-7 text-white"></i></div>
+        <h3 class="font-bold text-ink mb-2" data-i="d3t"></h3><p class="text-sm text-slate-600 mb-6 flex-1" data-i="d3d"></p>
+        <button onclick="openModal('offer')" class="text-sm font-bold text-orange-500 hover:text-orange-700 text-left flex items-center gap-2"><span data-i="d3b"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Modal management
-        function openModal(type) {
-            const modal = document.getElementById('appModal');
-            const content = document.getElementById('modalContent');
-            
-            if (type === 'offer') {
-                content.innerHTML = `
-                    <h3 class="text-2xl font-bold text-navy-900 mb-2">Запросить коммерческое предложение</h3>
-                    <p class="text-slate-600 text-sm mb-6">Заполните данные, и наш менеджер подготовит официальное КП с ценами и условиями поставки.</p>
-                    <form onsubmit="handleModalSubmit(event, 'Запрос КП')" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1">Ваше имя или компания *</label>
-                            <input type="text" name="Компания" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1">Телефон / WhatsApp *</label>
-                            <input type="text" name="Контакты" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1">Требуемый продукт и объем *</label>
-                            <textarea name="Продукт_и_объем" rows="2" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="Например: Кальцинированная сода, 68 тонн"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">Отправить запрос</button>
-                    </form>
-                `;
-            } else if (type === 'docs') {
-                content.innerHTML = `
-                    <h3 class="text-2xl font-bold text-navy-900 mb-2">Запрос паспортов и SDS</h3>
-                    <p class="text-slate-600 text-sm mb-6">Укажите ваш Email, и мы вышлем паспорта качества и SDS на интересующую продукцию.</p>
-                    <form onsubmit="handleModalSubmit(event, 'Запрос документов')" class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1">Электронная почта *</label>
-                            <input type="email" name="Email" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="expert@enterprise.kz">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1">Интересующий продукт *</label>
-                            <input type="text" name="Продукт" required class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none" placeholder="Например: Сера гранулированная">
-                        </div>
-                        <button type="submit" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">Получить документы</button>
-                    </form>
-                `;
-            }
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            lucide.createIcons();
-        }
+<!-- ABOUT -->
+<section id="about" class="py-16 sm:py-28 bg-gradient-to-br from-[#0A2A52] to-[#0B6477] text-white">
+  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal">
+      <div class="text-gold text-xs tracking-[.3em] uppercase mb-4 font-bold" data-i="a_tag"></div>
+      <h2 class="font-serif text-3xl sm:text-4xl leading-tight mb-6" data-i="a_title"></h2>
+      <p class="text-slate-100 leading-relaxed mb-5" data-i="a_p1"></p>
+      <p class="text-slate-100 leading-relaxed" data-i="a_p2"></p>
+    </div>
+    <div class="reveal bg-white/10 border border-white/25 rounded-2xl p-8 backdrop-blur">
+      <h3 class="font-serif text-2xl mb-6" data-i="a_pr"></h3>
+      <ul class="space-y-4 text-slate-100">
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a1"></span></li>
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a2"></span></li>
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a3"></span></li>
+        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a4"></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-        function openProductModal(name, formula, desc, packaging, minVol) {
-            const modal = document.getElementById('appModal');
-            const content = document.getElementById('modalContent');
-            
-            content.innerHTML = `
-                <div class="flex items-center justify-between mb-3">
-                    <span class="bg-navy-900 text-white text-xs px-2.5 py-1 rounded font-mono">${formula}</span>
-                    <span class="text-xs text-industrialGreen font-semibold">В наличии на складах</span>
-                </div>
-                <h3 class="text-2xl font-bold text-navy-900 mb-2">${name}</h3>
-                <p class="text-slate-600 text-sm mb-6 leading-relaxed">${desc}</p>
-                <div class="bg-slate-50 rounded-xl p-4 mb-6 space-y-2 text-xs text-slate-600 border border-slate-200">
-                    <div class="flex justify-between"><span>Доступная упаковка:</span><span class="font-semibold text-slate-800">${packaging}</span></div>
-                    <div class="flex justify-between"><span>Минимальный объем:</span><span class="font-semibold text-slate-800">${minVol}</span></div>
-                    <div class="flex justify-between"><span>Способы доставки:</span><span class="font-semibold text-slate-800">Автофуры, Ж/Д цистерны / полувагоны</span></div>
-                </div>
-                <form onsubmit="handleModalSubmit(event, 'Запрос цены: ${name}')" class="space-y-3">
-                    <input type="text" name="Контакты" required placeholder="Ваш телефон или WhatsApp" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:ring-2 focus:ring-industrialGreen focus:outline-none">
-                    <button type="submit" class="w-full bg-industrialGreen hover:bg-emerald-600 text-white font-bold py-3 rounded-xl text-sm transition shadow-md">Запросить цену и наличие</button>
-                </form>
-            `;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            lucide.createIcons();
-        }
+<!-- CONTACT -->
+<section id="contact" class="relative py-16 sm:py-28 text-white overflow-hidden bg-gradient-to-br from-[#071A2F] via-[#0A3A55] to-[#0B6477]">
+  <div class="bgimg absolute inset-0 opacity-0" data-bg="contact"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-[#071A2F]/92 via-[#0A3A55]/85 to-[#0B6477]/75"></div>
+  <div class="absolute inset-0 grid-bg opacity-30"></div>
+  <div class="relative max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-14">
+    <div class="lg:col-span-5 reveal">
+      <div class="text-gold text-xs tracking-[.3em] uppercase mb-4 font-bold" data-i="ct_tag"></div>
+      <h2 class="font-serif text-3xl sm:text-4xl leading-tight mb-6" data-i="ct_title"></h2>
+      <p class="text-slate-100 leading-relaxed mb-10" data-i="ct_text"></p>
+      <ul class="space-y-5 text-slate-100 text-sm">
+        <li class="flex gap-4"><i data-lucide="map-pin" class="w-5 h-5 text-gold shrink-0"></i> <span data-i="addr"></span></li>
+        <li class="flex gap-4"><i data-lucide="phone" class="w-5 h-5 text-gold shrink-0"></i> +7 (727) 000-00-00</li>
+        <li class="flex gap-4"><i data-lucide="mail" class="w-5 h-5 text-gold shrink-0"></i> sales@globalchemical.kz</li>
+      </ul>
+    </div>
+    <div class="lg:col-span-7 reveal">
+      <div class="bg-white text-slate-800 rounded-2xl p-5 sm:p-10 shadow-2xl border-t-4 border-gold">
+        <form id="mainForm" class="space-y-5" data-subject="Заявка с сайта: расчёт поставки">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_type"></label>
+              <select name="Тип обращения" class="fld">
+                <option value="Закупка сырья" data-i="f_t1"></option><option value="Инвестиции / партнёрство" data-i="f_t2"></option><option value="Другое" data-i="f_t3"></option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_prod"></label>
+              <select name="Продукт" id="prodSelect" class="fld"></select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_vol"></label>
+              <input type="number" min="1" name="Объём, тонн" data-ph="f_volph" class="fld">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_dest"></label>
+              <input type="text" name="Назначение" data-ph="f_destph" class="fld">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_pack"></label>
+              <select name="Упаковка" class="fld">
+                <option value="Биг-бэги (1 т / 1.2 т)" data-i="f_p1"></option><option value="Мешки 25/50 кг" data-i="f_p2"></option><option value="Навалом" data-i="f_p3"></option><option value="Жидкое (цистерна)" data-i="f_p4"></option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_del"></label>
+              <select name="Доставка" class="fld">
+                <option value="Автотранспорт" data-i="f_d1"></option><option value="Ж/Д транспорт" data-i="f_d2"></option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_name"></label>
+              <input type="text" name="Имя / компания" required class="fld">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_contact"></label>
+              <input type="text" name="Контакт" required class="fld">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_comment"></label>
+            <textarea name="Комментарий" rows="3" class="fld"></textarea>
+          </div>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit" class="w-full bg-gradient-to-r from-gold to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-ink font-bold py-4 rounded-lg transition flex items-center justify-center gap-2 btn-glow">
+            <span class="btn-label" data-i="f_send"></span> <i data-lucide="send" class="w-4 h-4"></i>
+          </button>
+          <p class="form-error hidden text-sm text-red-600"></p>
+        </form>
+        <div id="mainSuccess" class="hidden text-center py-10">
+          <div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-4"><i data-lucide="check" class="w-7 h-7 text-emerald-600"></i></div>
+          <h3 class="font-serif text-2xl text-ink mb-2" data-i="ok_t"></h3>
+          <p class="text-slate-600 text-sm" data-i="ok_d"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        function closeModal() {
-            const modal = document.getElementById('appModal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-        }
+<!-- FOOTER -->
+<footer class="bg-ink text-slate-400 text-sm">
+  <div class="max-w-7xl mx-auto px-5 py-10 pb-24 sm:pb-10 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <div>&copy; 2026 Global Chemical Traders. <span data-i="f_rights"></span></div>
+    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2"><a href="#" class="hover:text-gold" data-i="f_priv"></a><a href="#" class="hover:text-gold" data-i="f_terms"></a></div>
+  </div>
+</footer>
 
-        async function handleModalSubmit(e, formTitle) {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-            const payload = { "Форма": formTitle };
+<!-- MOBILE STICKY BAR -->
+<div class="sm:hidden fixed bottom-0 inset-x-0 z-30 px-3 pt-3 bg-ink/95 backdrop-blur border-t border-white/10 flex gap-2" style="padding-bottom:max(.75rem,env(safe-area-inset-bottom))">
+  <button onclick="openModal('offer')" class="flex-1 bg-gradient-to-r from-gold to-orange-500 text-ink font-bold py-3 rounded-lg text-sm" data-i="p_btn"></button>
+  <a href="#contact" class="px-4 py-3 rounded-lg border border-white/30 text-white text-sm font-semibold" data-i="n_contact"></a>
+</div>
 
-            formData.forEach((val, key) => { payload[key] = val; });
+<!-- MODAL -->
+<div id="appModal" class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-ink/80 backdrop-blur-sm p-0 sm:p-4">
+  <div class="bg-white rounded-t-2xl sm:rounded-2xl max-w-lg w-full p-6 pb-10 sm:p-8 relative shadow-2xl max-h-[92vh] overflow-y-auto border-t-4 border-gold">
+    <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700" aria-label="Close"><i data-lucide="x" class="w-6 h-6"></i></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
 
-            await sendFormDataToEmail(payload);
+<style>.fld{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:12px 16px;background:#fff}.fld:focus{outline:none;box-shadow:0 0 0 2px #F5B83D;border-color:#F5B83D}</style>
 
-            const content = document.getElementById('modalContent');
-            content.innerHTML = `
-                <div class="text-center py-6">
-                    <div class="w-12 h-12 bg-emerald-100 text-industrialGreen rounded-full flex items-center justify-center mx-auto mb-3">
-                        <i data-lucide="check" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-navy-900 mb-1">Запрос успешно отправлен!</h3>
-                    <p class="text-slate-600 text-sm mb-4">Детали отправлены на рассмотрение. Мы ответим вам в течение 15 минут.</p>
-                    <button onclick="closeModal()" class="bg-navy-900 text-white px-6 py-2 rounded-xl text-sm font-semibold">Закрыть</button>
-                </div>
-            `;
-            lucide.createIcons();
-        }
-    </script>
+<script>
+/* ================== НАСТРОЙКИ ================== */
+// Почта, на которую приходят заявки (через сервис FormSubmit)
+const LEAD_EMAIL = 'mixmev96@gmail.com';
+const ENDPOINT = 'https://formsubmit.co/ajax/' + LEAD_EMAIL;
+
+// Фотографии. Замените ссылки на свои фото (или загрузите файлы рядом с index.html и укажите 'photos/name.jpg').
+// Если фото не загрузится — блок автоматически останется красивым цветным градиентом.
+const MOBILE = window.innerWidth < 768; // на телефоне грузим фото полегче
+const U = (id, w=1600) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${MOBILE ? Math.min(w,800) : w}&q=70`;
+const PHOTOS = {
+  hero:      U('photo-1565793298595-6a879b1d9492', 2000),
+  model:     U('photo-1581091226825-a6a2a5aee158', 2000),
+  logistics: U('photo-1474487548417-781cb71495f3', 1400),
+  contact:   U('photo-1504328345606-18bbc8c9d7d1', 2000),
+  soda:      U('photo-1532187863486-abf9dbad1b69', 900),
+  caustic:   U('photo-1603126857599-f6e157fa2fe6', 900),
+  meta:      U('photo-1576086213369-97a306d36557', 900),
+  sulfur:    U('photo-1605106702734-205df224ecce', 900),
+  barite:    U('photo-1578496479914-7ef3b0193be3', 900),
+  salt:      U('photo-1518531933037-91b2f5f229cc', 900)
+};
+
+/* ================== ПЕРЕВОДЫ [RU, KZ, EN] ================== */
+const K = {
+n_why:['Преимущества','Артықшылықтар','Advantages'], n_catalog:['Продукция','Өнім','Products'], n_model:['Модель работы','Жұмыс моделі','How we work'],
+n_logistics:['Логистика','Логистика','Logistics'], n_docs:['Документы','Құжаттар','Documents'], n_about:['О компании','Компания туралы','About'], n_contact:['Связаться','Байланысу','Contact us'],
+h_badge:['Индустриальный трейдинг · Казахстан и ЦА','Индустриялық трейдинг · Қазақстан және ОА','Industrial trading · Kazakhstan & Central Asia'],
+h_title:['Надёжная цепочка поставок <span class="gold-text">промышленного сырья</span> для ключевых отраслей региона','Өңірдің негізгі салалары үшін <span class="gold-text">өнеркәсіптік шикізатты</span> сенімді жеткізу тізбегі','A reliable supply chain of <span class="gold-text">industrial raw materials</span> for the region\'s key industries'],
+h_text:['Берём на себя поиск продукта, контроль качества, документы и логистику до предприятия. Контрактные поставки партиями от 20 тонн — автотранспортом и железной дорогой.','Өнімді іздеу, сапаны бақылау, құжаттар және кәсіпорынға дейінгі логистиканы өзіміз атқарамыз. 20 тоннадан бастап келісімшарттық жеткізілімдер — автокөлікпен және теміржолмен.','We handle product sourcing, quality control, documents and logistics to your plant. Contract supplies in lots from 20 tonnes — by road and by rail.'],
+h_cta1:['Обсудить сотрудничество','Ынтымақтастықты талқылау','Discuss cooperation'], h_cta2:['Каталог продукции','Өнім каталогы','Product catalog'],
+kpi_title:['Ключевые показатели','Негізгі көрсеткіштер','Key figures'],
+k1:['тонн сырья в год','жылына тонна шикізат','tonnes of raw materials per year'], k2:['лет на рынке','жыл нарықта','years on the market'], k3:['заводов-партнёров','серіктес зауыт','partner plants'], k4:['партий с паспортом качества','партия сапа паспортымен','of lots with a quality certificate'],
+geo:['Казахстан · Узбекистан · Кыргызстан · Центральная Азия','Қазақстан · Өзбекстан · Қырғызстан · Орталық Азия','Kazakhstan · Uzbekistan · Kyrgyzstan · Central Asia'],
+s1:['Паспорта качества и SDS','Сапа паспорттары және SDS','Quality certificates & SDS'], s2:['Плательщик НДС, ЭСФ','ҚҚС төлеуші, ЭШФ','VAT payer, e-invoices'], s3:['Ж/Д и авто отгрузки','Т/ж және авто жөнелтулер','Rail & road shipments'], s4:['Фиксация цены на период поставки','Жеткізу кезеңіне баға бекіту','Price fixed for the supply period'],
+w_tag:['Инвестиционные преимущества','Инвестициялық артықшылықтар','Investment highlights'],
+w_title:['Почему бизнес Global Chemical Traders устойчив','Global Chemical Traders бизнесі неге тұрақты','Why Global Chemical Traders is a resilient business'],
+w_text:['Спрос на химическое и минеральное сырьё формируют горнодобыча, металлургия, нефтегаз и водоподготовка — базовые отрасли экономики региона. Мы работаем на стыке этого спроса и надёжных заводов-производителей.','Химиялық және минералдық шикізатқа сұранысты тау-кен, металлургия, мұнай-газ және су дайындау — өңір экономикасының базалық салалары қалыптастырады. Біз осы сұраныс пен сенімді зауыттар арасында жұмыс істейміз.','Demand for chemical and mineral raw materials is driven by mining, metallurgy, oil & gas and water treatment — core industries of the regional economy. We operate between this demand and reliable manufacturing plants.'],
+w1t:['Повторяющийся спрос','Қайталанатын сұраныс','Recurring demand'], w1d:['Сырьё расходуется в непрерывных технологических процессах — это основа долгосрочных контрактов.','Шикізат үздіксіз технологиялық процестерде жұмсалады — бұл ұзақ мерзімді келісімшарттардың негізі.','Raw materials are consumed in continuous production processes — the basis for long-term contracts.'],
+w2t:['Диверсификация поставщиков','Жеткізушілерді әртараптандыру','Supplier diversification'], w2d:['Работа с несколькими заводами снижает зависимость от одного источника и сезонных сбоев.','Бірнеше зауытпен жұмыс бір көзге және маусымдық іркілістерге тәуелділікті азайтады.','Working with several plants reduces dependence on a single source and seasonal disruptions.'],
+w3t:['Широкий ассортимент','Кең ассортимент','Wide range'], w3d:['Сода, сера, реагенты, баритовый концентрат, бентонит, соль — несколько отраслей клиентов в одном портфеле.','Сода, күкірт, реагенттер, барит концентраты, бентонит, тұз — бір портфельде бірнеше сала клиенттері.','Soda, sulfur, reagents, barite concentrate, bentonite, salt — clients from several industries in one portfolio.'],
+w4t:['Управляемая логистика','Басқарылатын логистика','Managed logistics'], w4d:['Контроль всей цепочки от завода до ворот предприятия: тарифы, накладные, вес и сроки.','Зауыттан кәсіпорын қақпасына дейінгі бүкіл тізбекті бақылау: тарифтер, жүкқұжаттар, салмақ және мерзім.','Control of the whole chain from plant to your gate: tariffs, waybills, weight and deadlines.'],
+c_tag:['Продукция','Өнім','Products'], c_title:['Каталог промышленного сырья','Өнеркәсіптік шикізат каталогы','Industrial raw materials catalog'],
+c_text:['Прямые поставки от заводов-производителей. Каждая партия сопровождается паспортом качества и сертификатами.','Өндіруші зауыттардан тікелей жеткізу. Әр партия сапа паспортымен және сертификаттармен жабдықталады.','Direct supply from manufacturing plants. Every lot comes with a quality certificate and documents.'],
+p_pack:['Упаковка','Қаптама','Packaging'], p_min:['Мин. объём','Мин. көлем','Min. volume'], p_deliv:['Доставка','Жеткізу','Delivery'], p_deliv_v:['Авто, Ж/Д','Авто, т/ж','Road, rail'], p_btn:['Запросить цену','Баға сұрау','Request a price'],
+m_tag:['Модель работы','Жұмыс моделі','How we work'], m_title:['Прозрачная схема от заявки до разгрузки','Өтінімнен түсіруге дейінгі ашық схема','A transparent flow from request to unloading'],
+m1t:['Заявка и подбор','Өтінім және іріктеу','Request & sourcing'], m1d:['Уточняем марку, объём, упаковку и сроки. Подбираем завод под вашу технологию.','Маркасын, көлемін, қаптамасын және мерзімін нақтылаймыз. Технологияңызға сай зауыт таңдаймыз.','We confirm grade, volume, packaging and timing, and select a plant for your process.'],
+m2t:['Коммерческое предложение','Коммерциялық ұсыныс','Commercial offer'], m2d:['Фиксируем цену и условия поставки на период контракта.','Келісімшарт кезеңіне баға мен жеткізу шарттарын бекітеміз.','We fix the price and delivery terms for the contract period.'],
+m3t:['Отгрузка и контроль','Жөнелту және бақылау','Shipment & control'], m3d:['Контролируем погрузку, вес и оформление документов на заводе.','Зауытта тиеуді, салмақты және құжат рәсімдеуді бақылаймыз.','We supervise loading, weight and paperwork at the plant.'],
+m4t:['Доставка и закрытие','Жеткізу және жабу','Delivery & closing'], m4d:['Доставляем до предприятия, передаём закрывающие документы и ЭСФ.','Кәсіпорынға жеткіземіз, жабу құжаттары мен ЭШФ береміз.','We deliver to your site and hand over closing documents and e-invoices.'],
+i_tag:['Отрасли','Салалар','Industries'], i_title:['Сектора, которые мы обслуживаем','Біз қызмет көрсететін секторлар','Sectors we serve'],
+i1t:['Горнодобыча','Тау-кен өнеркәсібі','Mining'], i1d:['Реагенты для флотации, баритовый концентрат, соли.','Флотация реагенттері, барит концентраты, тұздар.','Flotation reagents, barite concentrate, salts.'],
+i2t:['Металлургия','Металлургия','Metallurgy'], i2d:['Кальцинированная и каустическая сода для технологических процессов.','Технологиялық процестерге арналған кальцийленген және каустикалық сода.','Soda ash and caustic soda for production processes.'],
+i3t:['Водоподготовка','Су дайындау','Water treatment'], i3d:['Реагенты для промышленных и муниципальных очистных сооружений.','Өнеркәсіптік және муниципалдық тазарту имараттарына арналған реагенттер.','Reagents for industrial and municipal treatment plants.'],
+i4t:['Нефтегаз','Мұнай-газ','Oil & gas'], i4d:['Баритовый концентрат и бентонит для буровых растворов.','Бұрғылау ерітінділеріне арналған барит концентраты және бентонит.','Barite concentrate and bentonite for drilling fluids.'],
+l_tag:['Логистика','Логистика','Logistics'], l_title:['Железнодорожные и автомобильные поставки по графику','Кесте бойынша теміржол және автомобиль жеткізілімдері','Rail and road deliveries on schedule'],
+l_text:['Управляем всей цепочкой — от завода-изготовителя до склада покупателя, с соблюдением оговорённых сроков.','Бүкіл тізбекті — өндіруші зауыттан сатып алушы қоймасына дейін келісілген мерзімде басқарамыз.','We manage the entire chain — from the manufacturer to the buyer\'s warehouse, within agreed deadlines.'],
+l1t:['Ж/Д вагоны и полувагоны','Т/ж вагондар мен жартылай вагондар','Rail cars and gondolas'], l1d:['Оформление накладных, оплата тарифов по РК и странам СНГ.','Жүкқұжаттарды рәсімдеу, ҚР және ТМД тарифтерін төлеу.','Waybill processing, tariff payment in Kazakhstan and CIS.'],
+l2t:['Автотранспорт и цистерны','Автокөлік және цистерналар','Trucks and tankers'], l2d:['Тентованные фуры и автоцистерны напрямую на склад покупателя.','Тенттелген фуралар мен автоцистерналар сатып алушы қоймасына тікелей.','Tilt trucks and tank trucks straight to the buyer\'s warehouse.'],
+l3t:['Контроль веса и погрузки','Салмақ пен тиеуді бақылау','Weight and loading control'], l3d:['Фиксация веса и состояния груза при отгрузке.','Жөнелту кезінде салмақ пен жүк жағдайын тіркеу.','Weight and cargo condition recorded at shipment.'],
+lp_title:['Параметры поставки','Жеткізу параметрлері','Supply parameters'],
+lp1:['Минимальная партия','Ең аз партия','Minimum lot'], lp1v:['от 20 тонн','20 тоннадан','from 20 tonnes'],
+lp2:['Ж/Д вагон (сера)','Т/ж вагон (күкірт)','Rail car (sulfur)'], lp2v:['от 68 тонн','68 тоннадан','from 68 tonnes'],
+lp3:['Упаковка','Қаптама','Packaging'], lp3v:['биг-бэги, мешки, навалом, цистерны','биг-бэг, қаптар, үйме, цистерна','big bags, sacks, bulk, tankers'],
+lp4:['География','География','Geography'], lp4v:['Казахстан и Центральная Азия','Қазақстан және Орталық Азия','Kazakhstan & Central Asia'],
+d_tag:['Качество и комплаенс','Сапа және комплаенс','Quality & compliance'], d_title:['Документы и стандарты','Құжаттар мен стандарттар','Documents & standards'],
+d_text:['Каждая отгрузка сопровождается полным комплектом документации в соответствии с законодательством РК.','Әр жөнелту ҚР заңнамасына сай толық құжаттар топтамасымен жабдықталады.','Every shipment comes with a full set of documents in line with Kazakhstan legislation.'],
+d1t:['Паспорта качества','Сапа паспорттары','Quality certificates'], d1d:['Результаты заводских лабораторных испытаний на каждую партию.','Әр партияға зауыттық зертханалық сынақ нәтижелері.','Factory laboratory test results for every lot.'], d1b:['Запросить пример','Үлгі сұрау','Request a sample'],
+d2t:['SDS / MSDS','SDS / MSDS','SDS / MSDS'], d2d:['Паспорта безопасности химической продукции на русском и казахском языках.','Химиялық өнімнің қауіпсіздік паспорттары орыс және қазақ тілдерінде.','Safety data sheets in Russian and Kazakh.'], d2b:['Получить SDS','SDS алу','Get SDS'],
+d3t:['Статус плательщика НДС','ҚҚС төлеуші мәртебесі','VAT payer status'], d3d:['Закрывающие документы, ЭСФ и прозрачное налогообложение в РК.','Жабу құжаттары, ЭШФ және ҚР-да ашық салық салу.','Closing documents, e-invoices and transparent taxation in Kazakhstan.'], d3b:['Запросить реквизиты','Деректемелерді сұрау','Request company details'],
+a_tag:['О компании','Компания туралы','About us'], a_title:['Надёжный партнёр в индустриальном сырье','Өнеркәсіптік шикізаттағы сенімді серіктес','A reliable partner in industrial raw materials'],
+a_p1:['Мы специализируемся на бесперебойных поставках сырья для предприятий горнодобывающей, металлургической и химической промышленности Казахстана и стран Центральной Азии.','Біз Қазақстан мен Орталық Азия елдерінің тау-кен, металлургия және химия өнеркәсібі кәсіпорындарына шикізатты үздіксіз жеткізуге маманданамыз.','We specialize in uninterrupted supply of raw materials to mining, metallurgical and chemical enterprises in Kazakhstan and Central Asia.'],
+a_p2:['Наша задача — снять с клиента логистические риски и вопросы качества: вы получаете готовое решение в оговорённый срок.','Біздің міндетіміз — клиенттен логистикалық тәуекелдер мен сапа мәселелерін алу: сіз келісілген мерзімде дайын шешім аласыз.','Our job is to remove logistics and quality risks for the client: you get a ready solution on the agreed date.'],
+a_pr:['Принципы работы','Жұмыс принциптері','Our principles'],
+a1:['Строгое соответствие ГОСТ и ТУ','МЕМСТ пен ТШ-ға қатаң сәйкестік','Strict compliance with GOST and TU'], a2:['Фиксация цены на период поставки','Жеткізу кезеңіне баға бекіту','Price fixed for the supply period'], a3:['Контроль погрузки и веса на отгрузке','Жөнелту кезінде тиеу мен салмақты бақылау','Loading and weight control at shipment'], a4:['Оперативная поддержка клиентов','Клиенттерге жедел қолдау','Prompt customer support'],
+ct_tag:['Контакты','Байланыс','Contact'], ct_title:['Обсудим поставку или партнёрство','Жеткізілімді немесе серіктестікті талқылайық','Let\'s discuss supply or partnership'],
+ct_text:['Опишите задачу — мы подготовим расчёт и коммерческое предложение. Для инвесторов и партнёров готовы предоставить дополнительную информацию о компании.','Міндетті сипаттаңыз — біз есеп пен коммерциялық ұсыныс дайындаймыз. Инвесторлар мен серіктестерге компания туралы қосымша ақпарат беруге дайынбыз.','Describe your task and we will prepare a quote and commercial offer. For investors and partners we can provide additional company information.'],
+addr:['Республика Казахстан, г. Алматы, пр. Достык 188','Қазақстан Республикасы, Алматы қ., Достық даңғ. 188','Republic of Kazakhstan, Almaty, Dostyk Ave. 188'],
+f_type:['Тип обращения','Өтініш түрі','Request type'], f_t1:['Закупка сырья','Шикізат сатып алу','Raw material purchase'], f_t2:['Инвестиции / партнёрство','Инвестиция / серіктестік','Investment / partnership'], f_t3:['Другое','Басқа','Other'],
+f_prod:['Продукт','Өнім','Product'], f_notsel:['Не выбран','Таңдалмаған','Not selected'],
+f_vol:['Объём партии, тонн','Партия көлемі, тонна','Lot volume, tonnes'], f_volph:['Например: 68','Мысалы: 68','e.g. 68'],
+f_dest:['Город / станция назначения','Қала / межелі станция','Destination city / station'], f_destph:['Караганда / ст. Жана-Аул','Қарағанды / Жаңа-Аул ст.','Karaganda / Zhana-Aul station'],
+f_pack:['Упаковка','Қаптама','Packaging'], f_p1:['Биг-бэги (1 т / 1.2 т)','Биг-бэг (1 т / 1.2 т)','Big bags (1 t / 1.2 t)'], f_p2:['Мешки 25/50 кг','Қаптар 25/50 кг','Sacks 25/50 kg'], f_p3:['Навалом','Үйме','Bulk'], f_p4:['Жидкое (цистерна)','Сұйық (цистерна)','Liquid (tanker)'],
+f_del:['Доставка','Жеткізу','Delivery'], f_d1:['Автотранспорт','Автокөлік','Road transport'], f_d2:['Ж/Д транспорт','Т/ж көлігі','Rail transport'],
+f_name:['Имя или компания *','Аты-жөні немесе компания *','Name or company *'], f_contact:['Телефон / WhatsApp / Email *','Телефон / WhatsApp / Email *','Phone / WhatsApp / Email *'], f_comment:['Комментарий','Пікір','Comment'],
+f_send:['Отправить заявку','Өтінім жіберу','Send request'],
+ok_t:['Заявка отправлена','Өтінім жіберілді','Request sent'], ok_d:['Мы свяжемся с вами в ближайшее время.','Жақын арада сізбен байланысамыз.','We will contact you shortly.'],
+err:['Не удалось отправить заявку. Попробуйте ещё раз или напишите на ','Өтінімді жіберу мүмкін болмады. Қайталап көріңіз немесе мына поштаға жазыңыз: ','Could not send the request. Please try again or write to '],
+sending:['Отправка...','Жіберілуде...','Sending...'],
+f_rights:['Все права защищены.','Барлық құқықтар қорғалған.','All rights reserved.'], f_priv:['Политика конфиденциальности','Құпиялылық саясаты','Privacy policy'], f_terms:['Условия поставки','Жеткізу шарттары','Terms of supply'],
+mo_offer_t:['Запросить коммерческое предложение','Коммерциялық ұсыныс сұрау','Request a commercial offer'], mo_offer_d:['Менеджер подготовит КП с ценами и условиями поставки.','Менеджер баға мен жеткізу шарттары бар КҰ дайындайды.','A manager will prepare an offer with prices and delivery terms.'],
+mo_docs_t:['Запрос паспортов и SDS','Паспорттар мен SDS сұрау','Request certificates & SDS'], mo_docs_d:['Укажите email — вышлем документы по интересующей продукции.','Email көрсетіңіз — қызықтырған өнім бойынша құжаттарды жібереміз.','Enter your email and we will send documents for the product you need.'],
+ph_name:['Имя или компания *','Аты-жөні немесе компания *','Name or company *'], ph_phone:['Телефон / WhatsApp *','Телефон / WhatsApp *','Phone / WhatsApp *'], ph_phone2:['Телефон или WhatsApp *','Телефон немесе WhatsApp *','Phone or WhatsApp *'],
+ph_prodvol:['Продукт и объём, например: кальцинированная сода, 68 тонн *','Өнім және көлем, мысалы: кальцийленген сода, 68 тонна *','Product and volume, e.g. soda ash, 68 tonnes *'],
+ph_email:['Электронная почта *','Электрондық пошта *','Email *'], ph_prodint:['Интересующий продукт *','Қызықтырған өнім *','Product of interest *'],
+b_offer:['Отправить запрос','Сұрау жіберу','Send request'], b_docs:['Получить документы','Құжаттарды алу','Get documents'], b_price:['Запросить цену и наличие','Баға мен қолда барын сұрау','Request price & availability'],
+ph_vol2:['Нужный объём, тонн','Қажетті көлем, тонна','Required volume, tonnes'], close:['Закрыть','Жабу','Close']
+};
+
+const PRODUCTS = [
+ { ru:'Кальцинированная сода', f:'Na₂CO₃', photo:'soda', g:'from-sky-400 to-blue-600', ic:'flask-conical', tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+   n:['Кальцинированная сода','Кальцийленген сода','Soda ash'],
+   d:['Марка А и Б. Стекольная, химическая промышленность и металлургия.','А және Б маркалары. Шыны, химия өнеркәсібі және металлургия.','Grades A and B. Glass, chemical industry and metallurgy.'],
+   p:['Биг-бэги 1 т / мешки 50 кг','Биг-бэг 1 т / қап 50 кг','Big bags 1 t / sacks 50 kg'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
+ { ru:'Каустическая сода', f:'NaOH', photo:'caustic', g:'from-fuchsia-400 to-purple-600', ic:'beaker', tag:['ГОСТ 55064','МЕМСТ 55064','GOST 55064'],
+   n:['Каустическая сода','Каустикалық сода','Caustic soda'],
+   d:['Чешуированная и жидкая. Водоочистка, нефтехимия, цветная металлургия.','Қабыршақты және сұйық. Су тазарту, мұнай химиясы, түсті металлургия.','Flakes and liquid. Water treatment, petrochemicals, non-ferrous metallurgy.'],
+   p:['Мешки 25 кг / цистерны','Қап 25 кг / цистерна','Sacks 25 kg / tankers'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
+ { ru:'Метабисульфит натрия', f:'Na₂S₂O₅', photo:'meta', g:'from-emerald-400 to-teal-600', ic:'test-tube-diagonal', tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+   n:['Метабисульфит натрия','Натрий метабисульфиті','Sodium metabisulfite'],
+   d:['Реагент для флотации руд цветных металлов, водоочистки и пищевой промышленности.','Түсті металл кендерін флотациялау, су тазарту және тамақ өнеркәсібіне арналған реагент.','Reagent for flotation of non-ferrous ores, water treatment and the food industry.'],
+   p:['Биг-бэги 1000 кг / мешки 25 кг','Биг-бэг 1000 кг / қап 25 кг','Big bags 1000 kg / sacks 25 kg'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
+ { ru:'Сера гранулированная', f:'S', photo:'sulfur', g:'from-yellow-300 to-amber-500', ic:'sparkles', tag:['ГОСТ 127.1-93','МЕМСТ 127.1-93','GOST 127.1-93'],
+   n:['Сера гранулированная','Түйіршіктелген күкірт','Granulated sulfur'],
+   d:['Техническая сера для производства серной кислоты и удобрений.','Күкірт қышқылы мен тыңайтқыштар өндірісіне арналған техникалық күкірт.','Technical sulfur for sulfuric acid and fertilizer production.'],
+   p:['Навалом / биг-бэги','Үйме / биг-бэг','Bulk / big bags'], m:['от 68 тонн (Ж/Д вагон)','68 тоннадан (т/ж вагон)','from 68 tonnes (rail car)'] },
+ { ru:'Баритовый концентрат', f:'BaSO₄', photo:'barite', g:'from-slate-500 to-slate-800', ic:'gem', tag:['Нефтегаз','Мұнай-газ','Oil & gas'],
+   n:['Баритовый концентрат','Барит концентраты','Barite concentrate'],
+   d:['Утяжелитель буровых растворов для нефтегазодобычи.','Мұнай-газ өндіру үшін бұрғылау ерітінділерінің ауырлатқышы.','Weighting agent for drilling fluids in oil and gas production.'],
+   p:['Биг-бэги 1–1.5 т','Биг-бэг 1–1.5 т','Big bags 1–1.5 t'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
+ { ru:'Бентонит и техническая соль', f:'NaCl / Bentonite', photo:'salt', g:'from-rose-400 to-orange-500', ic:'mountain-snow', tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+   n:['Бентонит и техническая соль','Бентонит және техникалық тұз','Bentonite & technical salt'],
+   d:['Буровые растворы, литьё, металлургия, дорожные реагенты и водоочистка.','Бұрғылау ерітінділері, құю, металлургия, жол реагенттері және су тазарту.','Drilling fluids, casting, metallurgy, road reagents and water treatment.'],
+   p:['МКР, мешки, навалом','МКР, қап, үйме','Big bags, sacks, bulk'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] }
+];
+
+/* ================== ЯЗЫК ================== */
+const LANGS = ['ru','kz','en'];
+let lang = 'ru';
+try { const s = localStorage.getItem('gct_lang'); if (LANGS.includes(s)) lang = s; } catch(e){}
+const L = () => LANGS.indexOf(lang);
+const t = key => (K[key] || [key,key,key])[L()];
+
+function applyLang() {
+  document.documentElement.lang = lang === 'kz' ? 'kk' : lang;
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const v = t(el.dataset.i);
+    if (el.hasAttribute('data-html')) el.innerHTML = v; else el.textContent = v;
+  });
+  document.querySelectorAll('[data-ph]').forEach(el => el.placeholder = t(el.dataset.ph));
+  document.querySelectorAll('.langbtn').forEach(b => {
+    const on = b.dataset.lang === lang;
+    b.className = 'langbtn px-2 sm:px-2.5 py-1 rounded transition ' + (on ? 'bg-gold text-ink' : 'text-slate-200 hover:text-white');
+  });
+  renderProducts(); fillProductSelect();
+}
+function setLang(l) {
+  lang = l; try { localStorage.setItem('gct_lang', l); } catch(e){}
+  applyLang(); closeModal();
+}
+document.querySelectorAll('.langbtn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+
+/* ================== ФОТО ================== */
+function loadBg(el, url) {
+  const im = new Image();
+  im.onload = () => { el.style.backgroundImage = `url("${url}")`; el.style.opacity = el.dataset.op || '1'; };
+  im.src = url;
+}
+document.querySelectorAll('[data-bg]').forEach(el => { el.dataset.op = '.55'; loadBg(el, PHOTOS[el.dataset.bg]); });
+
+/* ================== ПРОДУКЦИЯ ================== */
+function renderProducts() {
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = '';
+  PRODUCTS.forEach((p, i) => {
+    grid.insertAdjacentHTML('beforeend', `
+    <div class="card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl flex flex-col">
+      <div class="relative h-48 bg-gradient-to-br ${p.g} flex items-center justify-center overflow-hidden">
+        <i data-lucide="${p.ic}" class="w-16 h-16 text-white/70"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="${p.photo}"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        <span class="absolute top-4 left-4 text-[11px] tracking-wider uppercase bg-white/95 text-ink font-bold px-3 py-1 rounded-full">${p.tag[L()]}</span>
+        <span class="absolute bottom-3 right-4 text-xs font-mono text-white font-semibold">${p.f}</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <h3 class="font-serif text-2xl text-ink mb-2">${p.n[L()]}</h3>
+        <p class="text-sm text-slate-600 leading-relaxed mb-5 flex-1">${p.d[L()]}</p>
+        <div class="text-xs space-y-2 mb-5">
+          <div class="flex justify-between border-b border-slate-100 pb-2 gap-3"><span class="text-slate-500">${t('p_pack')}</span><span class="font-semibold text-slate-800 text-right">${p.p[L()]}</span></div>
+          <div class="flex justify-between border-b border-slate-100 pb-2 gap-3"><span class="text-slate-500">${t('p_min')}</span><span class="font-semibold text-slate-800 text-right">${p.m[L()]}</span></div>
+        </div>
+        <button onclick="openProductModal(${i})" class="w-full bg-gradient-to-r from-ink to-[#0B5C73] hover:from-gold hover:to-orange-500 hover:text-ink text-white text-sm font-bold py-3 rounded-lg transition">${t('p_btn')}</button>
+      </div>
+    </div>`);
+  });
+  grid.querySelectorAll('[data-pbg]').forEach(el => loadBg(el, PHOTOS[el.dataset.pbg]));
+  lucide.createIcons();
+}
+function fillProductSelect() {
+  const sel = document.getElementById('prodSelect');
+  const cur = sel.value;
+  sel.innerHTML = `<option value="Не указан">${t('f_notsel')}</option>` + PRODUCTS.map(p => `<option value="${p.ru}">${p.n[L()]}</option>`).join('');
+  if (cur) sel.value = cur;
+}
+
+/* ================== ОТПРАВКА НА ПОЧТУ ================== */
+async function sendLead(fields, subject) {
+  const body = Object.assign({}, fields, { 'Язык сайта': lang.toUpperCase(), _subject: subject, _template: 'table', _captcha: 'false' });
+  const res = await fetch(ENDPOINT, { method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' }, body: JSON.stringify(body) });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || data.success === 'false' || data.success === false) throw new Error(data.message || 'send error');
+  return data;
+}
+async function handleForm(form, onSuccess) {
+  const fields = {}; new FormData(form).forEach((v, k) => fields[k] = v);
+  if (fields._honey) return; delete fields._honey;
+  const btn = form.querySelector('button[type="submit"]');
+  const err = form.querySelector('.form-error');
+  const label = btn.querySelector('.btn-label') || btn;
+  const original = label.textContent;
+  btn.disabled = true; label.textContent = t('sending');
+  if (err) err.classList.add('hidden');
+  try { await sendLead(fields, form.dataset.subject || 'Заявка с сайта Global Chemical Traders'); onSuccess(); }
+  catch (e) { if (err) { err.textContent = t('err') + LEAD_EMAIL; err.classList.remove('hidden'); } }
+  finally { btn.disabled = false; label.textContent = original; }
+}
+
+/* ================== МОДАЛКИ ================== */
+const modal = document.getElementById('appModal');
+const content = document.getElementById('modalContent');
+const hp = '<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">';
+const submitBtn = txt => `<button type="submit" class="w-full bg-gradient-to-r from-gold to-orange-500 text-ink font-bold py-3.5 rounded-lg transition btn-glow"><span class="btn-label">${txt}</span></button><p class="form-error hidden text-sm text-red-600"></p>`;
+function showModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); lucide.createIcons(); }
+function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+function modalSuccess() {
+  content.innerHTML = `<div class="text-center py-8"><div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-4"><i data-lucide="check" class="w-7 h-7 text-emerald-600"></i></div>
+    <h3 class="font-serif text-2xl text-ink mb-2">${t('ok_t')}</h3><p class="text-slate-600 text-sm mb-6">${t('ok_d')}</p>
+    <button onclick="closeModal()" class="bg-ink text-white px-6 py-2.5 rounded-lg text-sm font-semibold">${t('close')}</button></div>`;
+  lucide.createIcons();
+}
+function bindModalForm(subject) {
+  const f = content.querySelector('form'); f.dataset.subject = subject;
+  f.addEventListener('submit', e => { e.preventDefault(); handleForm(f, modalSuccess); });
+}
+function openModal(type) {
+  if (type === 'offer') {
+    content.innerHTML = `<h3 class="font-serif text-2xl text-ink mb-2">${t('mo_offer_t')}</h3><p class="text-slate-600 text-sm mb-6">${t('mo_offer_d')}</p>
+      <form class="space-y-4"><input name="Имя / компания" required placeholder="${t('ph_name')}" class="fld"><input name="Контакт" required placeholder="${t('ph_phone')}" class="fld">
+      <textarea name="Продукт и объём" rows="2" required placeholder="${t('ph_prodvol')}" class="fld"></textarea>${hp}${submitBtn(t('b_offer'))}</form>`;
+    showModal(); bindModalForm('Заявка с сайта: запрос КП');
+  } else {
+    content.innerHTML = `<h3 class="font-serif text-2xl text-ink mb-2">${t('mo_docs_t')}</h3><p class="text-slate-600 text-sm mb-6">${t('mo_docs_d')}</p>
+      <form class="space-y-4"><input type="email" name="Email" required placeholder="${t('ph_email')}" class="fld"><input name="Продукт" required placeholder="${t('ph_prodint')}" class="fld">${hp}${submitBtn(t('b_docs'))}</form>`;
+    showModal(); bindModalForm('Заявка с сайта: запрос документов');
+  }
+}
+function openProductModal(i) {
+  const p = PRODUCTS[i];
+  content.innerHTML = `
+    <div class="flex justify-between items-center mb-3"><span class="text-xs font-mono bg-ink text-white px-2.5 py-1 rounded">${p.f}</span><span class="text-xs text-orange-500 font-bold">${p.tag[L()]}</span></div>
+    <h3 class="font-serif text-2xl text-ink mb-2">${p.n[L()]}</h3><p class="text-slate-600 text-sm mb-5 leading-relaxed">${p.d[L()]}</p>
+    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-5 text-xs space-y-2">
+      <div class="flex justify-between gap-3"><span class="text-slate-500">${t('p_pack')}</span><span class="font-semibold text-slate-800 text-right">${p.p[L()]}</span></div>
+      <div class="flex justify-between gap-3"><span class="text-slate-500">${t('p_min')}</span><span class="font-semibold text-slate-800 text-right">${p.m[L()]}</span></div>
+      <div class="flex justify-between gap-3"><span class="text-slate-500">${t('p_deliv')}</span><span class="font-semibold text-slate-800">${t('p_deliv_v')}</span></div>
+    </div>
+    <form class="space-y-3"><input type="hidden" name="Продукт" value="${p.ru}">
+      <input name="Имя / компания" required placeholder="${t('ph_name')}" class="fld"><input name="Контакт" required placeholder="${t('ph_phone2')}" class="fld">
+      <input name="Объём, тонн" placeholder="${t('ph_vol2')}" class="fld">${hp}${submitBtn(t('b_price'))}</form>`;
+  showModal(); bindModalForm('Заявка с сайта: ' + p.ru);
+}
+
+/* ================== ОСНОВНАЯ ФОРМА И ПРОЧЕЕ ================== */
+const mainForm = document.getElementById('mainForm');
+mainForm.addEventListener('submit', e => {
+  e.preventDefault();
+  handleForm(mainForm, () => { mainForm.classList.add('hidden'); document.getElementById('mainSuccess').classList.remove('hidden'); lucide.createIcons(); });
+});
+document.getElementById('burger').addEventListener('click', () => document.getElementById('mobileNav').classList.toggle('hidden'));
+document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileNav').classList.add('hidden')));
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+applyLang();
+lucide.createIcons();
+</script>
 </body>
 </html>
