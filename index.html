@@ -53,6 +53,13 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
   .cat-card{flex:0 0 82%;scroll-snap-align:start}
   @media(min-width:640px){.cat-card{flex:0 0 calc(50% - 12px)}}
   @media(min-width:1024px){.cat-card{flex:0 0 calc(25% - 18px)}}
+  /* плавающая кнопка: появляется с проявлением, лёгким «выпрыгиванием» и синим свечением */
+  #chatFab{opacity:0;transform:scale(.4);pointer-events:none;box-shadow:0 0 0 7px rgba(36,65,224,.14),0 12px 32px rgba(36,65,224,.55);transition:transform .2s,background .2s}
+  #chatFab.show{animation:fabIn .5s cubic-bezier(.34,1.56,.64,1) forwards;pointer-events:auto}
+  #chatFab.ready{animation:none;opacity:1;transform:scale(1);pointer-events:auto}
+  #chatFab.ready:hover{transform:scale(1.08)}
+  @keyframes fabIn{0%{opacity:0;transform:scale(.4);box-shadow:0 0 0 0 rgba(36,65,224,0),0 0 0 rgba(36,65,224,0)}60%{opacity:1}100%{opacity:1;transform:scale(1)}}
+  @media(prefers-reduced-motion:reduce){#chatFab{opacity:1;transform:none;pointer-events:auto}}
   .cdot,.dot{width:8px;height:8px;border-radius:9999px;background:#cbd5e1;transition:.3s;display:inline-block}
   .cdot.on{width:28px;background:#0891B2}
   .dot{background:rgba(255,255,255,.5);cursor:pointer}
@@ -146,10 +153,10 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
 <!-- STATS -->
 <section class="bg-gradient-to-b from-mist to-white border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">150 000+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k1">тонн сырья в год</div></div>
-    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">10+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k2">лет на рынке</div></div>
-    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">50+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k3">заводов-партнёров</div></div>
-    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">100%</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k4">партий с паспортом качества</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="150000" data-suffix="+" data-final="150 000+">150 000+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k1">тонн сырья в год</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="10" data-suffix="+" data-final="10+">10+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k2">лет на рынке</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="50" data-suffix="+" data-final="50+">50+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k3">заводов-партнёров</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="100" data-suffix="%" data-final="100%">100%</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k4">партий с паспортом качества</div></div>
   </div>
 </section>
 
@@ -538,7 +545,7 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
 </footer>
 
 <!-- ПЛАВАЮЩАЯ КНОПКА ЧАТА -->
-<button onclick="openModal('offer')" class="fixed z-30 right-4 bottom-24 sm:right-6 sm:bottom-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#2441E0] hover:bg-[#1D35B8] text-white flex items-center justify-center shadow-2xl transition" aria-label="Contact"><i data-lucide="message-circle" class="w-7 h-7"></i></button>
+<button id="chatFab" onclick="openModal('offer')" class="fixed z-30 right-4 bottom-24 sm:right-6 sm:bottom-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#2441E0] hover:bg-[#1D35B8] text-white flex items-center justify-center" aria-label="Contact"><i data-lucide="message-circle" class="w-7 h-7"></i></button>
 
 <!-- MOBILE STICKY BAR -->
 <div class="sm:hidden fixed bottom-0 inset-x-0 z-30 px-3 pt-3 bg-ink/95 backdrop-blur border-t border-white/10 flex gap-2" style="padding-bottom:max(.75rem,env(safe-area-inset-bottom))">
@@ -902,6 +909,34 @@ document.getElementById('burger').addEventListener('click', e => { e.stopPropaga
 document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => { document.getElementById('mobileNav').classList.add('hidden'); onScroll(); }));
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ================== СЧЁТЧИКИ: считают от 0 до значения, когда блок появляется на экране ================== */
+const fmtNum = n => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+function runCount(el) {
+  const to = +el.dataset.to, suf = el.dataset.suffix || '', dur = 2500, t0 = performance.now();
+  (function step(now) {
+    const p = Math.min(1, (now - t0) / dur);
+    el.textContent = fmtNum(to * (1 - Math.pow(1 - p, 1.5))) + suf;   // ровный разгон, мягкое замедление в конце
+    if (p < 1) requestAnimationFrame(step); else el.textContent = el.dataset.final;
+  })(t0);
+}
+(function initCounters() {
+  const els = Array.from(document.querySelectorAll('.count'));
+  els.forEach(el => { el.dataset.final = el.textContent; });
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  els.forEach(el => { el.textContent = '0' + (el.dataset.suffix || ''); });
+  const co = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; co.unobserve(e.target); runCount(e.target);
+  }), { threshold: .5 });
+  els.forEach(el => co.observe(el));
+})();
+
+/* ================== КНОПКА СПРАВА: плавное появление после загрузки ================== */
+(function initFab() {
+  const fab = document.getElementById('chatFab');
+  fab.addEventListener('animationend', () => { fab.classList.add('ready'); fab.classList.remove('show'); });
+  setTimeout(() => fab.classList.add('show'), 600);
+})();
 
 applyLang();
 onScroll();
