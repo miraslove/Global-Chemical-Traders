@@ -1,216 +1,414 @@
 <!DOCTYPE html>
-<html lang="ru" class="scroll-smooth">
-<head>
+<html lang="ru" class="scroll-smooth"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Chemical Traders</title>
-<meta name="description" content="Global Chemical Traders — поставки промышленного сырья в Казахстан и Центральную Азию.">
+<title>Global Chemical Traders — химическое сырьё оптом: сода, сера, реагенты в Казахстане</title>
+<meta name="description" content="Поставки кальцинированной и каустической соды, серы, метабисульфита натрия, баритового концентрата, бентонита и соли по Казахстану и Центральной Азии. Партии от 20 тонн, Ж/Д и авто, паспорта качества, НДС.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://globalchemicaltraders.com/">
+<meta name="theme-color" content="#0B1220">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Global Chemical Traders">
+<meta property="og:title" content="Global Chemical Traders — химическое сырьё оптом: сода, сера, реагенты в Казахстане">
+<meta property="og:description" content="Поставки кальцинированной и каустической соды, серы, метабисульфита натрия, баритового концентрата, бентонита и соли по Казахстану и Центральной Азии. Партии от 20 тонн, Ж/Д и авто, паспорта качества, НДС.">
+<meta property="og:url" content="https://globalchemicaltraders.com/">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="kk_KZ">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://globalchemicaltraders.com/#org","name":"Global Chemical Traders","url":"https://globalchemicaltraders.com/","description":"Поставки промышленного химического и минерального сырья в Казахстан и Центральную Азию","areaServed":["KZ","UZ","KG","TJ","TM"],"knowsAbout":["Кальцинированная сода","Каустическая сода","Метабисульфит натрия","Сера гранулированная","Баритовый концентрат","Бентонит","Техническая соль","Известняк промышленный"]},{"@type":"WebSite","@id":"https://globalchemicaltraders.com/#website","url":"https://globalchemicaltraders.com/","name":"Global Chemical Traders","inLanguage":["ru","kk","en"],"publisher":{"@id":"https://globalchemicaltraders.com/#org"}}]}</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-tailwind.config = { theme: { extend: {
-  colors: { ink:'#071A2F', gold:'#F5B83D', teal:'#06B6D4', lime:'#22C55E' },
-  fontFamily: { sans:['Inter','sans-serif'], serif:['"Playfair Display"','serif'] }
+if (window.tailwind) tailwind.config = { theme: { extend: {
+  colors: { brand:'#0891B2', brandDark:'#0E7490', ink:'#0B1220', mist:'#EAF8FC' },
+  fontFamily: { sans:['Montserrat','sans-serif'] }
 }}}
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
-  html{scroll-padding-top:72px}
-  body{font-family:'Inter',sans-serif}
-  .grid-bg{background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:56px 56px}
-  .gold-text{background:linear-gradient(90deg,#FFD97A,#F5B83D,#FF9F43);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .card{transition:transform .25s,box-shadow .25s,border-color .25s}
-  .card:hover{transform:translateY(-6px)}
+  html{scroll-padding-top:84px}
+  body{font-family:'Montserrat',sans-serif}
+  .bgimg{background-size:cover;background-position:center;transition:opacity .8s}
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
   .reveal.in{opacity:1;transform:none}
-  .bgimg{background-size:cover;background-position:center;transition:opacity .8s}
-  input,select,textarea{font-size:16px}
-  .btn-glow{box-shadow:0 8px 30px -6px rgba(245,184,61,.6)}
+  .slide{opacity:0;visibility:hidden;transition:opacity 1s,visibility 1s}
+  .slide.on{opacity:1;visibility:visible}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:#0891B2;color:#fff;font-weight:700;border-radius:.85rem;padding:1rem 1.75rem;box-shadow:0 10px 24px -8px rgba(8,145,178,.65);transition:background .2s,transform .2s}
+  .btn:hover{background:#0E7490;transform:translateY(-2px)}
+  .fld{width:100%;border:1px solid #cbd5e1;border-radius:.75rem;padding:12px 16px;background:#fff;font-size:16px}
+  .fld:focus{outline:none;box-shadow:0 0 0 2px #0891B2;border-color:#0891B2}
+  /* шапка: прозрачная поверх фото, белая после прокрутки */
+  #hdr{transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+  #hdr.solid{background:rgba(255,255,255,.97);border-color:#e2e8f0;backdrop-filter:blur(8px)}
+  #hdr .navlink{color:#fff;transition:color .2s}
+  #hdr.solid .navlink{color:#1e293b}
+  #hdr .navlink:hover,#hdr .navlink.active{color:#0891B2}
+  #hdr .logo-a{color:#fff} #hdr.solid .logo-a{color:#0B1220}
+  #hdr #langBtn{border:1px solid rgba(255,255,255,.6);color:#fff} #hdr.solid #langBtn{border-color:#cbd5e1;color:#0B1220}
+  #hdr #burger{color:#fff} #hdr.solid #burger{color:#0B1220}
+  /* карусель категорий */
+  #catTrack{scrollbar-width:none;scroll-snap-type:x mandatory}
+  #catTrack::-webkit-scrollbar{display:none}
+  .cat-card{flex:0 0 82%;scroll-snap-align:start}
+  @media(min-width:640px){.cat-card{flex:0 0 calc(50% - 12px)}}
+  @media(min-width:1024px){.cat-card{flex:0 0 calc(25% - 18px)}}
+  .cdot,.dot{width:8px;height:8px;border-radius:9999px;background:#cbd5e1;transition:.3s;display:inline-block}
+  .cdot.on{width:28px;background:#0891B2}
+  .dot{background:rgba(255,255,255,.5);cursor:pointer}
+  .dot.on{width:48px;background:#fff}
 </style>
 </head>
-<body class="bg-white text-slate-700 antialiased overflow-x-hidden selection:bg-gold selection:text-ink">
+<body class="bg-white text-slate-600 antialiased overflow-x-hidden selection:bg-brand selection:text-white">
 
 <!-- HEADER -->
-<header class="fixed top-0 inset-x-0 z-40 bg-ink/85 backdrop-blur-lg border-b border-white/10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-5 h-16 sm:h-20 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2 sm:gap-3">
-      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center shadow-lg"><i data-lucide="hexagon" class="w-5 h-5 text-ink"></i></div>
-      <div class="leading-tight">
-        <div class="text-white font-bold tracking-[.08em] sm:tracking-[.18em] text-[11px] sm:text-sm">GLOBAL CHEMICAL</div>
-        <div class="text-gold text-[10px] tracking-[.4em] uppercase">Traders</div>
+<header id="hdr" class="fixed top-0 inset-x-0 z-40">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-3">
+    <a href="#top" class="logo-a flex items-center gap-2.5 shrink-0">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand flex items-center justify-center shadow-lg"><i data-lucide="hexagon" class="w-5 h-5 text-white"></i></div>
+      <div class="leading-none">
+        <div class="font-extrabold tracking-wide text-[12px] sm:text-sm">Global Chemical</div>
+        <div class="text-brand text-[10px] sm:text-[11px] tracking-[.35em] uppercase font-bold mt-1">Traders</div>
       </div>
     </a>
-    <nav class="hidden lg:flex items-center gap-7 text-sm text-slate-200">
-      <a href="#why" class="hover:text-gold transition" data-i="n_why"></a>
-      <a href="#catalog" class="hover:text-gold transition" data-i="n_catalog"></a>
-      <a href="#model" class="hover:text-gold transition" data-i="n_model"></a>
-      <a href="#logistics" class="hover:text-gold transition" data-i="n_logistics"></a>
-      <a href="#compliance" class="hover:text-gold transition" data-i="n_docs"></a>
-      <a href="#about" class="hover:text-gold transition" data-i="n_about"></a>
+    <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-[12.5px] font-semibold uppercase tracking-wide">
+      <a href="#top" class="navlink active" data-i="n_home">Главная</a>
+      <a href="#about" class="navlink" data-i="n_about">О компании</a>
+      <a href="#catalog" class="navlink" data-i="n_catalog">Продукция</a>
+      <a href="#logistics" class="navlink" data-i="n_logistics">Логистика</a>
+      <a href="#compliance" class="navlink" data-i="n_docs">Документы</a>
+      <a href="#contact" class="navlink" data-i="n_contact">Контакты</a>
     </nav>
     <div class="flex items-center gap-2 sm:gap-3">
-      <div class="flex items-center bg-white/10 rounded-lg p-1 text-xs font-semibold border border-white/10">
-        <button data-lang="ru" class="langbtn px-2 sm:px-2.5 py-1 rounded">RU</button>
-        <button data-lang="kz" class="langbtn px-2 sm:px-2.5 py-1 rounded">KZ</button>
-        <button data-lang="en" class="langbtn px-2 sm:px-2.5 py-1 rounded">EN</button>
+      <div class="relative" id="langBox">
+        <button id="langBtn" class="flex items-center gap-1.5 rounded-full px-3 sm:px-3.5 py-1.5 text-xs font-bold transition" aria-label="Language">
+          <i data-lucide="globe" class="w-4 h-4"></i><span id="langLabel">RU</span><i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+        </button>
+        <div id="langMenu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-2xl border border-slate-100 py-1 text-ink text-sm font-semibold">
+          <button class="langopt block w-full text-left px-4 py-2 hover:bg-mist" data-lang="ru">Русский</button>
+          <button class="langopt block w-full text-left px-4 py-2 hover:bg-mist" data-lang="kz">Қазақша</button>
+          <button class="langopt block w-full text-left px-4 py-2 hover:bg-mist" data-lang="en">English</button>
+        </div>
       </div>
-      <a href="#contact" class="hidden sm:inline-flex bg-gold hover:bg-yellow-400 text-ink font-bold text-sm px-5 py-2.5 rounded-lg transition" data-i="n_contact"></a>
-      <button id="burger" class="lg:hidden text-white p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
+      <button id="burger" class="lg:hidden p-2" aria-label="Menu"><i data-lucide="menu" class="w-6 h-6"></i></button>
     </div>
   </div>
-  <div id="mobileNav" class="hidden lg:hidden bg-ink border-t border-white/10 px-5 py-3 text-slate-200 text-base">
-    <a href="#why" class="block py-2.5" data-i="n_why"></a><a href="#catalog" class="block py-2.5" data-i="n_catalog"></a><a href="#model" class="block py-2.5" data-i="n_model"></a>
-    <a href="#logistics" class="block py-2.5" data-i="n_logistics"></a><a href="#compliance" class="block py-2.5" data-i="n_docs"></a><a href="#about" class="block py-2.5" data-i="n_about"></a><a href="#contact" class="block py-2.5 text-gold font-semibold" data-i="n_contact"></a>
+  <div id="mobileNav" class="hidden lg:hidden bg-white border-t border-slate-200 px-5 py-3 text-ink text-sm font-semibold uppercase tracking-wide">
+    <a href="#top" class="navlink block py-3 active" data-i="n_home">Главная</a><a href="#about" class="navlink block py-3" data-i="n_about">О компании</a><a href="#catalog" class="navlink block py-3" data-i="n_catalog">Продукция</a>
+    <a href="#logistics" class="navlink block py-3" data-i="n_logistics">Логистика</a><a href="#compliance" class="navlink block py-3" data-i="n_docs">Документы</a><a href="#contact" class="navlink block py-3" data-i="n_contact">Контакты</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section id="top" class="relative text-white pt-28 sm:pt-40 pb-16 sm:pb-28 overflow-hidden bg-gradient-to-br from-[#0A2A52] via-[#0B6477] to-[#0F9D78]">
-  <div class="bgimg absolute inset-0 opacity-0" data-bg="hero"></div>
-  <div class="absolute inset-0 bg-gradient-to-r from-[#071A2F]/90 via-[#0A3A55]/70 to-[#0F9D78]/30"></div>
-  <div class="absolute inset-0 grid-bg opacity-40"></div>
-  <div class="absolute -top-24 -right-24 w-[560px] h-[560px] rounded-full bg-gold/25 blur-3xl"></div>
-  <div class="absolute -bottom-24 left-1/3 w-[420px] h-[420px] rounded-full bg-teal/25 blur-3xl"></div>
-  <div class="relative max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-7">
-      <div class="inline-flex items-center gap-2 text-gold text-xs tracking-[.2em] uppercase border border-gold/50 bg-gold/10 rounded-full px-4 py-1.5 mb-8">
-        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> <span data-i="h_badge"></span>
+<!-- HERO SLIDER -->
+<section id="top" class="relative h-[100svh] min-h-[620px] max-h-[880px] overflow-hidden bg-ink text-white">
+  <!-- slide 1 -->
+  <div class="slide on absolute inset-0 bg-gradient-to-br from-[#0B2A44] via-[#0B4F6C] to-[#0891B2]">
+    <div class="bgimg absolute inset-0 opacity-0" data-bg="s1"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/25"></div>
+    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center pt-16"><div class="max-w-3xl">
+      <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s1l">Поставки по Казахстану и ЦА</div>
+      <h1 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-5" data-i="s1t">Промышленное сырьё для ключевых отраслей региона</h1>
+      <p class="text-sm sm:text-lg uppercase tracking-wide font-medium text-slate-100 mb-9 max-w-2xl" data-i="s1d">Сода, сера, реагенты и минеральное сырьё напрямую от заводов. Партии от 20 тонн.</p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
+        <a href="#catalog" class="btn"><span data-i="s1b">Узнать больше</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+        <form id="heroSearchForm" class="relative flex-1">
+          <input id="heroSearch" type="search" data-ph="search_ph" class="w-full h-full min-h-[3.5rem] rounded-xl bg-white/20 border border-white/40 backdrop-blur placeholder-slate-200 text-white pl-5 pr-12 text-[15px] focus:outline-none focus:bg-white/30 focus:border-white" placeholder="Поиск продуктов...">
+          <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-white" aria-label="Search"><i data-lucide="search" class="w-5 h-5"></i></button>
+        </form>
       </div>
-      <h1 class="font-serif text-[1.9rem] leading-tight sm:text-5xl lg:text-6xl font-semibold leading-[1.1] mb-7" data-i="h_title" data-html></h1>
-      <p class="text-lg text-slate-100 max-w-2xl leading-relaxed mb-10" data-i="h_text"></p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#contact" class="bg-gold hover:bg-yellow-400 text-ink font-bold px-7 py-4 rounded-lg transition inline-flex items-center justify-center gap-2 btn-glow w-full sm:w-auto"><span data-i="h_cta1"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-        <a href="#catalog" class="border border-white/40 hover:bg-white hover:text-ink text-white font-semibold px-7 py-4 rounded-lg transition text-center w-full sm:w-auto" data-i="h_cta2"></a>
-      </div>
+    </div></div>
+  </div>
+  <!-- slide 2 -->
+  <div class="slide absolute inset-0 bg-gradient-to-br from-[#0B1220] via-[#164E63] to-[#0E7490]">
+    <div class="bgimg absolute inset-0 opacity-0" data-bg="s2"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/25"></div>
+    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center pt-16"><div class="max-w-3xl">
+      <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s2l">Логистика</div>
+      <h2 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-5" data-i="s2t">Железнодорожные и автомобильные поставки по графику</h2>
+      <p class="text-sm sm:text-lg uppercase tracking-wide font-medium text-slate-100 mb-9 max-w-2xl" data-i="s2d">От завода до вашего склада: накладные, тарифы, контроль веса.</p>
+      <a href="#logistics" class="btn"><span data-i="s2b">О логистике</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+    </div></div>
+  </div>
+  <!-- slide 3 -->
+  <div class="slide absolute inset-0 bg-gradient-to-br from-[#0B1220] via-[#0F3D5E] to-[#1D4ED8]">
+    <div class="bgimg absolute inset-0 opacity-0" data-bg="s3"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/25"></div>
+    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center pt-16"><div class="max-w-3xl">
+      <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s3l">Качество и документы</div>
+      <h2 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-5" data-i="s3t">Паспорт качества и полный пакет документов на каждую партию</h2>
+      <p class="text-sm sm:text-lg uppercase tracking-wide font-medium text-slate-100 mb-9 max-w-2xl" data-i="s3d">Паспорта качества, SDS, ЭСФ. Работаем как плательщик НДС.</p>
+      <a href="#compliance" class="btn"><span data-i="s3b">Документы</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+    </div></div>
+  </div>
+  <div class="absolute bottom-7 inset-x-0 flex justify-center items-center gap-2.5 z-10" id="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+</section>
+
+<!-- STATS -->
+<section class="bg-gradient-to-b from-mist to-white border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">150 000+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k1">тонн сырья в год</div></div>
+    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">10+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k2">лет на рынке</div></div>
+    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">50+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k3">заводов-партнёров</div></div>
+    <div><div class="text-4xl sm:text-5xl font-extrabold text-ink">100%</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k4">партий с паспортом качества</div></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section id="about" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div class="reveal">
+      <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="a_tag">Чем занимается наша компания</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink leading-tight mb-6" data-i="a_title">Поставщик промышленного сырья в Казахстане и Центральной Азии</h2>
+      <p class="text-slate-500 leading-relaxed mb-4" data-i="a_p1">Мы специализируемся на бесперебойных поставках сырья для предприятий горнодобывающей, металлургической и химической промышленности Казахстана и стран Центральной Азии.</p>
+      <p class="text-slate-500 leading-relaxed" data-i="a_p2">Наша задача — снять с клиента логистические риски и вопросы качества: вы получаете готовое решение в оговорённый срок.</p>
     </div>
-    <div class="lg:col-span-5">
-      <div class="bg-white/10 border border-white/25 rounded-2xl p-7 backdrop-blur-md shadow-2xl">
-        <div class="text-xs uppercase tracking-[.25em] text-gold mb-6 font-semibold" data-i="kpi_title"></div>
-        <div class="grid grid-cols-2 gap-6">
-          <div><div class="font-serif text-3xl sm:text-4xl text-white">150 000+</div><div class="text-xs text-slate-200 mt-1" data-i="k1"></div></div>
-          <div><div class="font-serif text-3xl sm:text-4xl text-white">10+</div><div class="text-xs text-slate-200 mt-1" data-i="k2"></div></div>
-          <div><div class="font-serif text-3xl sm:text-4xl text-white">50+</div><div class="text-xs text-slate-200 mt-1" data-i="k3"></div></div>
-          <div><div class="font-serif text-3xl sm:text-4xl text-white">100%</div><div class="text-xs text-slate-200 mt-1" data-i="k4"></div></div>
-        </div>
-        <div class="mt-7 pt-6 border-t border-white/20 flex items-center gap-3 text-sm text-slate-100">
-          <i data-lucide="map-pin" class="w-4 h-4 text-gold"></i> <span data-i="geo"></span>
-        </div>
-      </div>
+    <div class="reveal flex flex-col gap-5">
+      <div class="relative rounded-3xl overflow-hidden h-52 sm:h-72 bg-gradient-to-br from-brand to-[#0B4F6C] shadow-xl"><div class="bgimg absolute inset-0 opacity-0" data-bg="i1" data-op="1"></div></div>
+      <div class="relative rounded-3xl overflow-hidden h-52 sm:h-72 bg-gradient-to-br from-[#164E63] to-brand shadow-xl"><div class="bgimg absolute inset-0 opacity-0" data-bg="i2" data-op="1"></div></div>
     </div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<section class="bg-gradient-to-r from-gold via-orange-400 to-gold text-ink">
-  <div class="max-w-7xl mx-auto px-5 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm font-semibold">
-    <div class="flex items-center gap-3"><i data-lucide="file-check-2" class="w-5 h-5"></i> <span data-i="s1"></span></div>
-    <div class="flex items-center gap-3"><i data-lucide="receipt" class="w-5 h-5"></i> <span data-i="s2"></span></div>
-    <div class="flex items-center gap-3"><i data-lucide="train-front" class="w-5 h-5"></i> <span data-i="s3"></span></div>
-    <div class="flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5"></i> <span data-i="s4"></span></div>
+<!-- CATEGORIES CAROUSEL -->
+<section id="catalog" class="py-16 sm:py-24 bg-slate-50 border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <div class="text-brand text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="c_tag">Основные направления</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink mb-4" data-i="c_title">Категории продуктов</h2>
+      <p class="text-slate-500" data-i="c_text">Высококачественное сырьё для ключевых отраслей промышленности</p>
+    </div>
+    <div id="catTrack" class="flex gap-6 overflow-x-auto scroll-smooth pb-3">
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-sky-400 to-blue-700 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="soda" data-op="1"></div>
+      <i data-lucide="flask-conical" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Сода и щёлочи · Na₂CO₃</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Кальцинированная сода</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Марка А и Б. Стекольная, химическая промышленность и металлургия.</p>
+        <button onclick="openProductModal(0)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-cyan-400 to-teal-700 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="caustic" data-op="1"></div>
+      <i data-lucide="beaker" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Сода и щёлочи · NaOH</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Каустическая сода</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Чешуированная и жидкая. Водоочистка, нефтехимия, цветная металлургия.</p>
+        <button onclick="openProductModal(1)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-teal-400 to-emerald-700 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="meta" data-op="1"></div>
+      <i data-lucide="test-tube-diagonal" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Реагенты · Na₂S₂O₅</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Метабисульфит натрия</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Реагент для флотации руд цветных металлов, водоочистки и пищевой промышленности.</p>
+        <button onclick="openProductModal(2)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-amber-400 to-yellow-700 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="sulfur" data-op="1"></div>
+      <i data-lucide="sparkles" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Сера · S</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Сера гранулированная</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Техническая сера для производства серной кислоты и удобрений.</p>
+        <button onclick="openProductModal(3)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-slate-500 to-slate-900 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="barite" data-op="1"></div>
+      <i data-lucide="gem" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · BaSO₄</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Баритовый концентрат</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Утяжелитель буровых растворов для нефтегазодобычи.</p>
+        <button onclick="openProductModal(4)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-orange-400 to-amber-800 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="bentonite" data-op="1"></div>
+      <i data-lucide="mountain-snow" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · Bentonite</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Бентонит</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Бентонитовая глина для буровых растворов и литейного производства.</p>
+        <button onclick="openProductModal(5)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-sky-300 to-slate-600 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="salt" data-op="1"></div>
+      <i data-lucide="snowflake" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · NaCl</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Техническая соль (галит)</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Металлургия, дорожные реагенты и водоочистка.</p>
+        <button onclick="openProductModal(6)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div>
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-stone-400 to-stone-700 text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="lime" data-op="1"></div>
+      <i data-lucide="layers" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · CaCO₃</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">Известняк промышленный</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">Сырьё для металлургии и строительной индустрии.</p>
+        <button onclick="openProductModal(7)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+      </div>
+    </div></div>
+    <div id="catNav" class="flex items-center justify-center gap-5 mt-8">
+      <button id="catPrev" class="w-11 h-11 rounded-full border border-slate-300 bg-white flex items-center justify-center text-ink hover:border-brand hover:text-brand transition" aria-label="Prev" style="opacity: 0.4;"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+      <div id="catDots" class="flex items-center gap-2"><span class="cdot on"></span><span class="cdot"></span></div>
+      <button id="catNext" class="w-11 h-11 rounded-full border border-slate-300 bg-white flex items-center justify-center text-ink hover:border-brand hover:text-brand transition" aria-label="Next" style="opacity: 1;"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+    </div>
   </div>
 </section>
 
-<!-- WHY -->
-<section id="why" class="py-16 sm:py-28 bg-gradient-to-b from-sky-50 to-white">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="max-w-3xl mb-16 reveal">
-      <div class="text-teal font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="w_tag"></div>
-      <h2 class="font-serif text-3xl sm:text-4xl text-ink leading-tight" data-i="w_title"></h2>
-      <p class="text-slate-600 mt-5 leading-relaxed" data-i="w_text"></p>
+<!-- POPULAR -->
+<section id="popular" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <div class="text-brand text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="pop_tag">Спрос</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink" data-i="pop_title">Популярные позиции</h2>
     </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-teal">
-        <div class="w-14 h-14 rounded-xl bg-teal/10 flex items-center justify-center mb-5"><i data-lucide="repeat" class="w-7 h-7 text-teal"></i></div>
-        <h3 class="font-bold text-ink mb-2" data-i="w1t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w1d"></p>
+    <div id="popularGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <button onclick="openProductModal(0)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center overflow-hidden">
+        <i data-lucide="flask-conical" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="soda" data-op="1"></div>
       </div>
-      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-gold">
-        <div class="w-14 h-14 rounded-xl bg-gold/15 flex items-center justify-center mb-5"><i data-lucide="factory" class="w-7 h-7 text-orange-500"></i></div>
-        <h3 class="font-bold text-ink mb-2" data-i="w2t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w2d"></p>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
+        <div class="font-extrabold text-ink leading-snug">Кальцинированная сода, марка А</div>
       </div>
-      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-lime">
-        <div class="w-14 h-14 rounded-xl bg-lime/10 flex items-center justify-center mb-5"><i data-lucide="layout-grid" class="w-7 h-7 text-lime"></i></div>
-        <h3 class="font-bold text-ink mb-2" data-i="w3t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w3d"></p>
+    </button>
+    <button onclick="openProductModal(0)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center overflow-hidden">
+        <i data-lucide="flask-conical" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="soda" data-op="1"></div>
       </div>
-      <div class="card reveal bg-white rounded-2xl p-7 shadow-md hover:shadow-2xl border-t-4 border-violet-500">
-        <div class="w-14 h-14 rounded-xl bg-violet-500/10 flex items-center justify-center mb-5"><i data-lucide="route" class="w-7 h-7 text-violet-500"></i></div>
-        <h3 class="font-bold text-ink mb-2" data-i="w4t"></h3><p class="text-sm text-slate-600 leading-relaxed" data-i="w4d"></p>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
+        <div class="font-extrabold text-ink leading-snug">Кальцинированная сода, марка Б</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- CATALOG -->
-<section id="catalog" class="py-16 sm:py-28 bg-gradient-to-b from-white via-amber-50/60 to-white">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14 reveal">
-      <div>
-        <div class="text-orange-500 font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="c_tag"></div>
-        <h2 class="font-serif text-3xl sm:text-4xl text-ink" data-i="c_title"></h2>
+    </button>
+    <button onclick="openProductModal(1)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-cyan-400 to-teal-700 flex items-center justify-center overflow-hidden">
+        <i data-lucide="beaker" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="caustic" data-op="1"></div>
       </div>
-      <p class="text-slate-600 max-w-md text-sm leading-relaxed" data-i="c_text"></p>
-    </div>
-    <div id="productGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7"></div>
-  </div>
-</section>
-
-<!-- MODEL -->
-<section id="model" class="relative py-16 sm:py-28 text-white overflow-hidden bg-gradient-to-br from-[#0A2A52] via-[#0B5C73] to-[#0A8A6B]">
-  <div class="bgimg absolute inset-0 opacity-0" data-bg="model"></div>
-  <div class="absolute inset-0 bg-gradient-to-br from-[#071A2F]/90 via-[#0A3A55]/80 to-[#0A8A6B]/60"></div>
-  <div class="absolute inset-0 grid-bg opacity-30"></div>
-  <div class="relative max-w-7xl mx-auto px-5">
-    <div class="max-w-3xl mb-16 reveal">
-      <div class="text-gold text-xs tracking-[.3em] uppercase mb-4 font-bold" data-i="m_tag"></div>
-      <h2 class="font-serif text-3xl sm:text-4xl leading-tight" data-i="m_title"></h2>
-    </div>
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">01</div><h3 class="font-bold mb-2" data-i="m1t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m1d"></p></div>
-      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">02</div><h3 class="font-bold mb-2" data-i="m2t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m2d"></p></div>
-      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">03</div><h3 class="font-bold mb-2" data-i="m3t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m3d"></p></div>
-      <div class="reveal border border-white/20 rounded-2xl p-7 bg-white/10 backdrop-blur"><div class="font-serif text-5xl gold-text mb-4">04</div><h3 class="font-bold mb-2" data-i="m4t"></h3><p class="text-sm text-slate-100 leading-relaxed" data-i="m4d"></p></div>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
+        <div class="font-extrabold text-ink leading-snug">Каустическая сода, чешуя</div>
+      </div>
+    </button>
+    <button onclick="openProductModal(1)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-cyan-400 to-teal-700 flex items-center justify-center overflow-hidden">
+        <i data-lucide="beaker" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="caustic" data-op="1"></div>
+      </div>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
+        <div class="font-extrabold text-ink leading-snug">Каустическая сода, жидкая</div>
+      </div>
+    </button>
+    <button onclick="openProductModal(2)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-teal-400 to-emerald-700 flex items-center justify-center overflow-hidden">
+        <i data-lucide="test-tube-diagonal" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="meta" data-op="1"></div>
+      </div>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Реагенты</div>
+        <div class="font-extrabold text-ink leading-snug">Метабисульфит натрия</div>
+      </div>
+    </button>
+    <button onclick="openProductModal(3)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-amber-400 to-yellow-700 flex items-center justify-center overflow-hidden">
+        <i data-lucide="sparkles" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="sulfur" data-op="1"></div>
+      </div>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сера</div>
+        <div class="font-extrabold text-ink leading-snug">Сера гранулированная</div>
+      </div>
+    </button>
+    <button onclick="openProductModal(4)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-slate-500 to-slate-900 flex items-center justify-center overflow-hidden">
+        <i data-lucide="gem" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="barite" data-op="1"></div>
+      </div>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Минеральное сырьё</div>
+        <div class="font-extrabold text-ink leading-snug">Баритовый концентрат</div>
+      </div>
+    </button>
+    <button onclick="openProductModal(6)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br from-sky-300 to-slate-600 flex items-center justify-center overflow-hidden">
+        <i data-lucide="snowflake" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="salt" data-op="1"></div>
+      </div>
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Минеральное сырьё</div>
+        <div class="font-extrabold text-ink leading-snug">Техническая соль (галит)</div>
+      </div>
+    </button></div>
+    <div class="text-center mt-12">
+      <button onclick="openModal('offer')" class="btn"><span data-i="pop_all">Запросить полный прайс-лист</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
     </div>
   </div>
 </section>
 
 <!-- INDUSTRIES -->
-<section id="industries" class="py-16 sm:py-28 bg-gradient-to-b from-white to-emerald-50">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="max-w-3xl mb-14 reveal">
-      <div class="text-lime font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="i_tag"></div>
-      <h2 class="font-serif text-3xl sm:text-4xl text-ink" data-i="i_title"></h2>
+<section id="industries" class="relative py-16 sm:py-24 text-white overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0B3C55] to-[#0E7490]">
+  <div class="bgimg absolute inset-0 opacity-0" data-bg="ind"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-ink/92 via-ink/82 to-[#0E7490]/60"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <div class="text-cyan-300 text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="in_tag">Отрасли</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold" data-i="in_title">Сектора, которые мы обслуживаем</h2>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-amber-500 to-orange-600 shadow-lg"><i data-lucide="mountain" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i1t"></h3><p class="text-sm text-white/90" data-i="i1d"></p></div>
-      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-rose-500 to-red-600 shadow-lg"><i data-lucide="flame" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i2t"></h3><p class="text-sm text-white/90" data-i="i2d"></p></div>
-      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-sky-500 to-blue-600 shadow-lg"><i data-lucide="droplets" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i3t"></h3><p class="text-sm text-white/90" data-i="i3d"></p></div>
-      <div class="reveal card rounded-2xl p-7 text-white bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg"><i data-lucide="fuel" class="w-8 h-8 mb-4"></i><h3 class="font-bold mb-2" data-i="i4t"></h3><p class="text-sm text-white/90" data-i="i4d"></p></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="mountain" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i1t">Горнодобыча</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i1d">Реагенты для флотации, баритовый концентрат, соли.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="flame" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i2t">Металлургия</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i2d">Кальцинированная и каустическая сода для технологических процессов.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="droplets" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i3t">Водоподготовка</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i3d">Реагенты для промышленных и муниципальных очистных сооружений.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="fuel" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i4t">Нефтегаз</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i4d">Баритовый концентрат и бентонит для буровых растворов.</p></div>
     </div>
   </div>
 </section>
 
 <!-- LOGISTICS -->
-<section id="logistics" class="py-16 sm:py-28 bg-white">
-  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
+<section id="logistics" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="reveal">
-      <div class="text-teal font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="l_tag"></div>
-      <h2 class="font-serif text-3xl sm:text-4xl text-ink leading-tight mb-6" data-i="l_title"></h2>
-      <p class="text-slate-600 leading-relaxed mb-8" data-i="l_text"></p>
+      <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="l_tag">Логистика</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink leading-tight mb-6" data-i="l_title">Управляем всей цепочкой поставки</h2>
+      <p class="text-slate-500 leading-relaxed mb-8" data-i="l_text">От завода-изготовителя до склада покупателя, с соблюдением оговорённых сроков.</p>
       <div class="space-y-5">
-        <div class="flex gap-4"><div class="w-11 h-11 shrink-0 rounded-lg bg-gradient-to-br from-teal to-blue-500 flex items-center justify-center"><i data-lucide="train-front" class="w-5 h-5 text-white"></i></div><div><h4 class="font-bold text-ink" data-i="l1t"></h4><p class="text-sm text-slate-600" data-i="l1d"></p></div></div>
-        <div class="flex gap-4"><div class="w-11 h-11 shrink-0 rounded-lg bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center"><i data-lucide="truck" class="w-5 h-5 text-white"></i></div><div><h4 class="font-bold text-ink" data-i="l2t"></h4><p class="text-sm text-slate-600" data-i="l2d"></p></div></div>
-        <div class="flex gap-4"><div class="w-11 h-11 shrink-0 rounded-lg bg-gradient-to-br from-lime to-emerald-600 flex items-center justify-center"><i data-lucide="scale" class="w-5 h-5 text-white"></i></div><div><h4 class="font-bold text-ink" data-i="l3t"></h4><p class="text-sm text-slate-600" data-i="l3d"></p></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 shrink-0 rounded-xl bg-mist flex items-center justify-center"><i data-lucide="train-front" class="w-6 h-6 text-brand"></i></div><div><h4 class="font-bold text-ink" data-i="l1t">Ж/Д вагоны и полувагоны</h4><p class="text-sm text-slate-500" data-i="l1d">Оформление накладных, оплата тарифов по РК и странам СНГ.</p></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 shrink-0 rounded-xl bg-mist flex items-center justify-center"><i data-lucide="truck" class="w-6 h-6 text-brand"></i></div><div><h4 class="font-bold text-ink" data-i="l2t">Автотранспорт и цистерны</h4><p class="text-sm text-slate-500" data-i="l2d">Тентованные фуры и автоцистерны напрямую на склад покупателя.</p></div></div>
+        <div class="flex gap-4"><div class="w-12 h-12 shrink-0 rounded-xl bg-mist flex items-center justify-center"><i data-lucide="scale" class="w-6 h-6 text-brand"></i></div><div><h4 class="font-bold text-ink" data-i="l3t">Контроль веса и погрузки</h4><p class="text-sm text-slate-500" data-i="l3d">Фиксация веса и состояния груза при отгрузке.</p></div></div>
       </div>
     </div>
-    <div class="reveal relative rounded-3xl overflow-hidden shadow-2xl text-white min-h-[340px] sm:min-h-[420px] bg-gradient-to-br from-[#0A2A52] to-[#0B8A8A]">
-      <div class="bgimg absolute inset-0 opacity-0" data-bg="logistics"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-[#071A2F]/95 via-[#071A2F]/60 to-transparent"></div>
-      <div class="relative h-full min-h-[340px] sm:min-h-[420px] flex flex-col justify-end p-8">
-        <div class="text-xs tracking-[.25em] uppercase text-gold mb-5 font-bold" data-i="lp_title"></div>
+    <div class="reveal relative rounded-3xl overflow-hidden shadow-2xl text-white min-h-[340px] sm:min-h-[430px] bg-gradient-to-br from-ink to-brandDark">
+      <div class="bgimg absolute inset-0 opacity-0" data-bg="logi"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/65 to-ink/10"></div>
+      <div class="relative h-full min-h-[340px] sm:min-h-[430px] flex flex-col justify-end p-7 sm:p-9">
+        <div class="text-xs tracking-[.2em] uppercase text-cyan-300 mb-5 font-bold" data-i="lp_title">Параметры поставки</div>
         <div class="space-y-4 text-sm">
-          <div class="flex justify-between border-b border-white/20 pb-3"><span class="text-slate-200" data-i="lp1"></span><span class="font-bold" data-i="lp1v"></span></div>
-          <div class="flex justify-between border-b border-white/20 pb-3"><span class="text-slate-200" data-i="lp2"></span><span class="font-bold" data-i="lp2v"></span></div>
-          <div class="flex justify-between border-b border-white/20 pb-3"><span class="text-slate-200" data-i="lp3"></span><span class="font-bold text-right" data-i="lp3v"></span></div>
-          <div class="flex justify-between"><span class="text-slate-200" data-i="lp4"></span><span class="font-bold text-right" data-i="lp4v"></span></div>
+          <div class="flex justify-between gap-4 border-b border-white/20 pb-3"><span class="text-slate-300" data-i="lp1">Минимальная партия</span><span class="font-bold text-right" data-i="lp1v">от 20 тонн</span></div>
+          <div class="flex justify-between gap-4 border-b border-white/20 pb-3"><span class="text-slate-300" data-i="lp2">Ж/Д вагон (сера)</span><span class="font-bold text-right" data-i="lp2v">от 68 тонн</span></div>
+          <div class="flex justify-between gap-4 border-b border-white/20 pb-3"><span class="text-slate-300" data-i="lp3">Упаковка</span><span class="font-bold text-right" data-i="lp3v">биг-бэги, мешки, навалом, цистерны</span></div>
+          <div class="flex justify-between gap-4"><span class="text-slate-300" data-i="lp4">География</span><span class="font-bold text-right" data-i="lp4v">Казахстан и Центральная Азия</span></div>
         </div>
       </div>
     </div>
@@ -218,127 +416,79 @@ tailwind.config = { theme: { extend: {
 </section>
 
 <!-- COMPLIANCE -->
-<section id="compliance" class="py-16 sm:py-28 bg-gradient-to-b from-violet-50 to-white">
-  <div class="max-w-7xl mx-auto px-5">
-    <div class="max-w-3xl mb-14 reveal">
-      <div class="text-violet-500 font-bold text-xs tracking-[.3em] uppercase mb-4" data-i="d_tag"></div>
-      <h2 class="font-serif text-3xl sm:text-4xl text-ink" data-i="d_title"></h2>
-      <p class="text-slate-600 mt-5" data-i="d_text"></p>
+<section id="compliance" class="py-16 sm:py-24 bg-gradient-to-b from-mist to-white border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="d_tag">Качество и документы</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink mb-4" data-i="d_title">Документы и стандарты</h2>
+      <p class="text-slate-500" data-i="d_text">Каждая отгрузка сопровождается полным комплектом документации в соответствии с законодательством РК.</p>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="reveal card bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl flex flex-col">
-        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center mb-5"><i data-lucide="file-text" class="w-7 h-7 text-white"></i></div>
-        <h3 class="font-bold text-ink mb-2" data-i="d1t"></h3><p class="text-sm text-slate-600 mb-6 flex-1" data-i="d1d"></p>
-        <button onclick="openModal('docs')" class="text-sm font-bold text-violet-600 hover:text-violet-800 text-left flex items-center gap-2"><span data-i="d1b"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+      <div class="reveal bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-1 transition flex flex-col border border-slate-100">
+        <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6"><i data-lucide="file-text" class="w-7 h-7 text-white"></i></div>
+        <h3 class="font-bold text-ink text-lg mb-2" data-i="d1t">Паспорта качества</h3><p class="text-sm text-slate-500 mb-6 flex-1" data-i="d1d">Результаты заводских лабораторных испытаний на каждую партию.</p>
+        <button onclick="openModal('docs')" class="text-sm font-bold text-brand hover:text-brandDark text-left flex items-center gap-2"><span data-i="d1b">Запросить пример</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
-      <div class="reveal card bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl flex flex-col">
-        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-teal to-blue-600 flex items-center justify-center mb-5"><i data-lucide="shield-check" class="w-7 h-7 text-white"></i></div>
-        <h3 class="font-bold text-ink mb-2" data-i="d2t"></h3><p class="text-sm text-slate-600 mb-6 flex-1" data-i="d2d"></p>
-        <button onclick="openModal('docs')" class="text-sm font-bold text-teal hover:text-blue-700 text-left flex items-center gap-2"><span data-i="d2b"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+      <div class="reveal bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-1 transition flex flex-col border border-slate-100">
+        <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6"><i data-lucide="shield-check" class="w-7 h-7 text-white"></i></div>
+        <h3 class="font-bold text-ink text-lg mb-2" data-i="d2t">SDS / MSDS</h3><p class="text-sm text-slate-500 mb-6 flex-1" data-i="d2d">Паспорта безопасности химической продукции на русском и казахском языках.</p>
+        <button onclick="openModal('docs')" class="text-sm font-bold text-brand hover:text-brandDark text-left flex items-center gap-2"><span data-i="d2b">Получить SDS</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
-      <div class="reveal card bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl flex flex-col">
-        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold to-orange-500 flex items-center justify-center mb-5"><i data-lucide="landmark" class="w-7 h-7 text-white"></i></div>
-        <h3 class="font-bold text-ink mb-2" data-i="d3t"></h3><p class="text-sm text-slate-600 mb-6 flex-1" data-i="d3d"></p>
-        <button onclick="openModal('offer')" class="text-sm font-bold text-orange-500 hover:text-orange-700 text-left flex items-center gap-2"><span data-i="d3b"></span> <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+      <div class="reveal bg-white rounded-3xl p-8 shadow-md hover:shadow-2xl hover:-translate-y-1 transition flex flex-col border border-slate-100">
+        <div class="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center mb-6"><i data-lucide="landmark" class="w-7 h-7 text-white"></i></div>
+        <h3 class="font-bold text-ink text-lg mb-2" data-i="d3t">Статус плательщика НДС</h3><p class="text-sm text-slate-500 mb-6 flex-1" data-i="d3d">Закрывающие документы, ЭСФ и прозрачное налогообложение в РК.</p>
+        <button onclick="openModal('offer')" class="text-sm font-bold text-brand hover:text-brandDark text-left flex items-center gap-2"><span data-i="d3b">Запросить реквизиты</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="py-16 sm:py-28 bg-gradient-to-br from-[#0A2A52] to-[#0B6477] text-white">
-  <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal">
-      <div class="text-gold text-xs tracking-[.3em] uppercase mb-4 font-bold" data-i="a_tag"></div>
-      <h2 class="font-serif text-3xl sm:text-4xl leading-tight mb-6" data-i="a_title"></h2>
-      <p class="text-slate-100 leading-relaxed mb-5" data-i="a_p1"></p>
-      <p class="text-slate-100 leading-relaxed" data-i="a_p2"></p>
-    </div>
-    <div class="reveal bg-white/10 border border-white/25 rounded-2xl p-8 backdrop-blur">
-      <h3 class="font-serif text-2xl mb-6" data-i="a_pr"></h3>
-      <ul class="space-y-4 text-slate-100">
-        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a1"></span></li>
-        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a2"></span></li>
-        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a3"></span></li>
-        <li class="flex gap-3"><i data-lucide="check-circle-2" class="w-5 h-5 text-gold shrink-0 mt-0.5"></i> <span data-i="a4"></span></li>
-      </ul>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="relative py-16 sm:py-28 text-white overflow-hidden bg-gradient-to-br from-[#071A2F] via-[#0A3A55] to-[#0B6477]">
+<section id="contact" class="relative py-16 sm:py-24 text-white overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0B2A44] to-[#0E7490]">
   <div class="bgimg absolute inset-0 opacity-0" data-bg="contact"></div>
-  <div class="absolute inset-0 bg-gradient-to-br from-[#071A2F]/92 via-[#0A3A55]/85 to-[#0B6477]/75"></div>
-  <div class="absolute inset-0 grid-bg opacity-30"></div>
-  <div class="relative max-w-7xl mx-auto px-5 grid lg:grid-cols-12 gap-14">
+  <div class="absolute inset-0 bg-gradient-to-br from-ink/93 via-ink/86 to-[#0E7490]/60"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-14">
     <div class="lg:col-span-5 reveal">
-      <div class="text-gold text-xs tracking-[.3em] uppercase mb-4 font-bold" data-i="ct_tag"></div>
-      <h2 class="font-serif text-3xl sm:text-4xl leading-tight mb-6" data-i="ct_title"></h2>
-      <p class="text-slate-100 leading-relaxed mb-10" data-i="ct_text"></p>
+      <div class="text-cyan-300 text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="ct_tag">Контакты</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-6" data-i="ct_title">Обсудим поставку или партнёрство</h2>
+      <p class="text-slate-200 leading-relaxed mb-10" data-i="ct_text">Опишите задачу — мы подготовим расчёт и коммерческое предложение. Для инвесторов и партнёров готовы предоставить дополнительную информацию о компании.</p>
       <ul class="space-y-5 text-slate-100 text-sm">
-        <li class="flex gap-4"><i data-lucide="map-pin" class="w-5 h-5 text-gold shrink-0"></i> <span data-i="addr"></span></li>
-        <li class="flex gap-4"><i data-lucide="phone" class="w-5 h-5 text-gold shrink-0"></i> +7 (701) 858-88-11</li>
-        <li class="flex gap-4"><i data-lucide="mail" class="w-5 h-5 text-gold shrink-0"></i> td@globalchemicaltraders.com</li>
+        <li class="flex gap-4"><i data-lucide="map-pin" class="w-5 h-5 text-cyan-300 shrink-0"></i><span data-i="addr">Республика Казахстан, г. Алматы, пр. Достык 188</span></li>
+        <li class="flex gap-4"><i data-lucide="phone" class="w-5 h-5 text-cyan-300 shrink-0"></i>+7 (727) 000-00-00</li>
+        <li class="flex gap-4"><i data-lucide="mail" class="w-5 h-5 text-cyan-300 shrink-0"></i>sales@globalchemical.kz</li>
       </ul>
     </div>
     <div class="lg:col-span-7 reveal">
-      <div class="bg-white text-slate-800 rounded-2xl p-5 sm:p-10 shadow-2xl border-t-4 border-gold">
+      <div class="bg-white text-slate-800 rounded-3xl p-5 sm:p-10 shadow-2xl">
         <form id="mainForm" class="space-y-5" data-subject="Заявка с сайта: расчёт поставки">
           <div class="grid sm:grid-cols-2 gap-5">
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_type"></label>
-              <select name="Тип обращения" class="fld">
-                <option value="Закупка сырья" data-i="f_t1"></option><option value="Инвестиции / партнёрство" data-i="f_t2"></option><option value="Другое" data-i="f_t3"></option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_prod"></label>
-              <select name="Продукт" id="prodSelect" class="fld"></select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_vol"></label>
-              <input type="number" min="1" name="Объём, тонн" data-ph="f_volph" class="fld">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_dest"></label>
-              <input type="text" name="Назначение" data-ph="f_destph" class="fld">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_pack"></label>
-              <select name="Упаковка" class="fld">
-                <option value="Биг-бэги (1 т / 1.2 т)" data-i="f_p1"></option><option value="Мешки 25/50 кг" data-i="f_p2"></option><option value="Навалом" data-i="f_p3"></option><option value="Жидкое (цистерна)" data-i="f_p4"></option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_del"></label>
-              <select name="Доставка" class="fld">
-                <option value="Автотранспорт" data-i="f_d1"></option><option value="Ж/Д транспорт" data-i="f_d2"></option>
-              </select>
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_name"></label>
-              <input type="text" name="Имя / компания" required class="fld">
-            </div>
-            <div>
-              <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_contact"></label>
-              <input type="text" name="Контакт" required class="fld">
-            </div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_type">Тип обращения</label>
+              <select name="Тип обращения" class="fld"><option value="Закупка сырья" data-i="f_t1">Закупка сырья</option><option value="Инвестиции / партнёрство" data-i="f_t2">Инвестиции / партнёрство</option><option value="Другое" data-i="f_t3">Другое</option></select></div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_prod">Продукт</label>
+              <select name="Продукт" id="prodSelect" class="fld"><option value="Не указан">Не выбран</option><option value="Кальцинированная сода">Кальцинированная сода</option><option value="Каустическая сода">Каустическая сода</option><option value="Метабисульфит натрия">Метабисульфит натрия</option><option value="Сера гранулированная">Сера гранулированная</option><option value="Баритовый концентрат">Баритовый концентрат</option><option value="Бентонит">Бентонит</option><option value="Техническая соль">Техническая соль (галит)</option><option value="Известняк промышленный">Известняк промышленный</option></select></div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_vol">Объём партии, тонн</label>
+              <input type="number" min="1" name="Объём, тонн" data-ph="f_volph" class="fld" placeholder="Например: 68"></div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_dest">Город / станция назначения</label>
+              <input type="text" name="Назначение" data-ph="f_destph" class="fld" placeholder="Караганда / ст. Жана-Аул"></div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_pack">Упаковка</label>
+              <select name="Упаковка" class="fld"><option value="Биг-бэги (1 т / 1.2 т)" data-i="f_p1">Биг-бэги (1 т / 1.2 т)</option><option value="Мешки 25/50 кг" data-i="f_p2">Мешки 25/50 кг</option><option value="Навалом" data-i="f_p3">Навалом</option><option value="Жидкое (цистерна)" data-i="f_p4">Жидкое (цистерна)</option></select></div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_del">Доставка</label>
+              <select name="Доставка" class="fld"><option value="Автотранспорт" data-i="f_d1">Автотранспорт</option><option value="Ж/Д транспорт" data-i="f_d2">Ж/Д транспорт</option></select></div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_name">Имя или компания *</label>
+              <input type="text" name="Имя / компания" required="" class="fld"></div>
+            <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_contact">Телефон / WhatsApp / Email *</label>
+              <input type="text" name="Контакт" required="" class="fld"></div>
           </div>
-          <div>
-            <label class="block text-xs font-semibold text-slate-600 mb-1.5" data-i="f_comment"></label>
-            <textarea name="Комментарий" rows="3" class="fld"></textarea>
-          </div>
+          <div><label class="block text-xs font-bold text-slate-600 mb-1.5" data-i="f_comment">Комментарий</label>
+            <textarea name="Комментарий" rows="3" class="fld"></textarea></div>
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-          <button type="submit" class="w-full bg-gradient-to-r from-gold to-orange-500 hover:from-yellow-400 hover:to-orange-400 text-ink font-bold py-4 rounded-lg transition flex items-center justify-center gap-2 btn-glow">
-            <span class="btn-label" data-i="f_send"></span> <i data-lucide="send" class="w-4 h-4"></i>
-          </button>
+          <button type="submit" class="btn w-full !py-4"><span class="btn-label" data-i="f_send">Отправить заявку</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
           <p class="form-error hidden text-sm text-red-600"></p>
         </form>
         <div id="mainSuccess" class="hidden text-center py-10">
           <div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-4"><i data-lucide="check" class="w-7 h-7 text-emerald-600"></i></div>
-          <h3 class="font-serif text-2xl text-ink mb-2" data-i="ok_t"></h3>
-          <p class="text-slate-600 text-sm" data-i="ok_d"></p>
+          <h3 class="text-2xl font-extrabold text-ink mb-2" data-i="ok_t">Заявка отправлена</h3>
+          <p class="text-slate-500 text-sm" data-i="ok_d">Мы свяжемся с вами в ближайшее время.</p>
         </div>
       </div>
     </div>
@@ -346,28 +496,63 @@ tailwind.config = { theme: { extend: {
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-ink text-slate-400 text-sm">
-  <div class="max-w-7xl mx-auto px-5 py-10 pb-24 sm:pb-10 flex flex-col sm:flex-row justify-between items-center gap-4">
-    <div>&copy; 2026 Global Chemical Traders. <span data-i="f_rights"></span></div>
-    <div class="flex flex-wrap justify-center gap-x-6 gap-y-2"><a href="#" class="hover:text-gold" data-i="f_priv"></a><a href="#" class="hover:text-gold" data-i="f_terms"></a></div>
+<footer class="bg-[#0B1120] text-slate-400 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-2.5 mb-5 text-white">
+        <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center"><i data-lucide="hexagon" class="w-5 h-5 text-white"></i></div>
+        <div class="leading-none"><div class="font-extrabold tracking-wide text-sm">Global Chemical</div><div class="text-brand text-[11px] tracking-[.35em] uppercase font-bold mt-1">Traders</div></div>
+      </div>
+      <p class="leading-relaxed" data-i="ft_slogan">Ваш надёжный партнёр в мире промышленного сырья для Казахстана и Центральной Азии.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold uppercase tracking-wide text-[13px] mb-5" data-i="ft_nav">Навигация</h4>
+      <ul class="space-y-3">
+        <li><a href="#about" class="hover:text-brand transition">• <span data-i="n_about">О компании</span></a></li>
+        <li><a href="#catalog" class="hover:text-brand transition">• <span data-i="n_catalog">Продукция</span></a></li>
+        <li><a href="#logistics" class="hover:text-brand transition">• <span data-i="n_logistics">Логистика</span></a></li>
+        <li><a href="#compliance" class="hover:text-brand transition">• <span data-i="n_docs">Документы</span></a></li>
+        <li><a href="#contact" class="hover:text-brand transition">• <span data-i="n_contact">Контакты</span></a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold uppercase tracking-wide text-[13px] mb-5" data-i="ft_contacts">Контакты</h4>
+      <ul class="space-y-4">
+        <li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i><span data-i="addr">Республика Казахстан, г. Алматы, пр. Достык 188</span></li>
+        <li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i>+7 (727) 000-00-00</li>
+        <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i>sales@globalchemical.kz</li>
+      </ul>
+    </div>
+    <div class="rounded-2xl border border-slate-700/70 bg-white/[.03] p-6 h-fit">
+      <h4 class="text-white font-extrabold text-base mb-2" data-i="ft_cta">Свяжитесь с нами</h4>
+      <p class="text-xs leading-relaxed mb-5" data-i="ft_cta_t">Оставьте заявку, и мы свяжемся с вами в ближайшее время.</p>
+      <button onclick="openModal('offer')" class="btn w-full !py-3"><span data-i="ft_btn">Отправить</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 pb-28 sm:pb-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-slate-500 text-xs">
+      <div>© 2026 Global Chemical Traders. <span data-i="f_rights">Все права защищены.</span></div>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2"><a href="#" class="hover:text-brand" data-i="f_priv">Политика конфиденциальности</a><a href="#" class="hover:text-brand" data-i="f_terms">Условия поставки</a></div>
+    </div>
   </div>
 </footer>
 
+<!-- ПЛАВАЮЩАЯ КНОПКА ЧАТА -->
+<button onclick="openModal('offer')" class="fixed z-30 right-4 bottom-24 sm:right-6 sm:bottom-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#2441E0] hover:bg-[#1D35B8] text-white flex items-center justify-center shadow-2xl transition" aria-label="Contact"><i data-lucide="message-circle" class="w-7 h-7"></i></button>
+
 <!-- MOBILE STICKY BAR -->
 <div class="sm:hidden fixed bottom-0 inset-x-0 z-30 px-3 pt-3 bg-ink/95 backdrop-blur border-t border-white/10 flex gap-2" style="padding-bottom:max(.75rem,env(safe-area-inset-bottom))">
-  <button onclick="openModal('offer')" class="flex-1 bg-gradient-to-r from-gold to-orange-500 text-ink font-bold py-3 rounded-lg text-sm" data-i="p_btn"></button>
-  <a href="#contact" class="px-4 py-3 rounded-lg border border-white/30 text-white text-sm font-semibold" data-i="n_contact"></a>
+  <button onclick="openModal('offer')" class="flex-1 bg-brand text-white font-bold py-3 rounded-xl text-sm" data-i="btn_price">Запросить цену</button>
+  <a href="#contact" class="px-4 py-3 rounded-xl border border-white/30 text-white text-sm font-semibold" data-i="n_contact">Контакты</a>
 </div>
 
 <!-- MODAL -->
 <div id="appModal" class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-ink/80 backdrop-blur-sm p-0 sm:p-4">
-  <div class="bg-white rounded-t-2xl sm:rounded-2xl max-w-lg w-full p-6 pb-10 sm:p-8 relative shadow-2xl max-h-[92vh] overflow-y-auto border-t-4 border-gold">
+  <div class="bg-white rounded-t-3xl sm:rounded-3xl max-w-lg w-full p-6 pb-10 sm:p-8 relative shadow-2xl max-h-[92vh] overflow-y-auto">
     <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700" aria-label="Close"><i data-lucide="x" class="w-6 h-6"></i></button>
     <div id="modalContent"></div>
   </div>
 </div>
-
-<style>.fld{width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:12px 16px;background:#fff}.fld:focus{outline:none;box-shadow:0 0 0 2px #F5B83D;border-color:#F5B83D}</style>
 
 <script>
 /* ================== НАСТРОЙКИ ================== */
@@ -375,57 +560,51 @@ tailwind.config = { theme: { extend: {
 const LEAD_EMAIL = 'mixmev96@gmail.com';
 const ENDPOINT = 'https://formsubmit.co/ajax/' + LEAD_EMAIL;
 
-// Фотографии. Замените ссылки на свои фото (или загрузите файлы рядом с index.html и укажите 'photos/name.jpg').
-// Если фото не загрузится — блок автоматически останется красивым цветным градиентом.
-const MOBILE = window.innerWidth < 768; // на телефоне грузим фото полегче
+// Фотографии. Замените ссылки на свои (или положите файлы рядом с index.html: 'photos/name.jpg').
+// Если фото не загрузится — блок остаётся цветным градиентом.
+const MOBILE = window.innerWidth < 768;
 const U = (id, w=1600) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${MOBILE ? Math.min(w,800) : w}&q=70`;
 const PHOTOS = {
-  hero:      U('photo-1565793298595-6a879b1d9492', 2000),
-  model:     U('photo-1581091226825-a6a2a5aee158', 2000),
-  logistics: U('photo-1474487548417-781cb71495f3', 1400),
-  contact:   U('photo-1504328345606-18bbc8c9d7d1', 2000),
-  soda:      U('photo-1532187863486-abf9dbad1b69', 900),
-  caustic:   U('photo-1603126857599-f6e157fa2fe6', 900),
-  meta:      U('photo-1576086213369-97a306d36557', 900),
-  sulfur:    U('photo-1605106702734-205df224ecce', 900),
-  barite:    U('photo-1578496479914-7ef3b0193be3', 900),
-  salt:      U('photo-1518531933037-91b2f5f229cc', 900)
+  s1: U('photo-1565793298595-6a879b1d9492', 2000), s2: U('photo-1474487548417-781cb71495f3', 2000), s3: U('photo-1581091226825-a6a2a5aee158', 2000),
+  i1: U('photo-1532187863486-abf9dbad1b69', 900),  i2: U('photo-1576086213369-97a306d36557', 900),
+  ind: U('photo-1504328345606-18bbc8c9d7d1', 2000), logi: U('photo-1474487548417-781cb71495f3', 1400), contact: U('photo-1504328345606-18bbc8c9d7d1', 2000),
+  soda: U('photo-1532187863486-abf9dbad1b69', 800), caustic: U('photo-1603126857599-f6e157fa2fe6', 800), meta: U('photo-1576086213369-97a306d36557', 800),
+  sulfur: U('photo-1605106702734-205df224ecce', 800), barite: U('photo-1578496479914-7ef3b0193be3', 800), bentonite: U('photo-1518531933037-91b2f5f229cc', 800),
+  salt: U('photo-1518531933037-91b2f5f229cc', 800), lime: U('photo-1578496479914-7ef3b0193be3', 800)
 };
 
 /* ================== ПЕРЕВОДЫ [RU, KZ, EN] ================== */
 const K = {
-n_why:['Преимущества','Артықшылықтар','Advantages'], n_catalog:['Продукция','Өнім','Products'], n_model:['Модель работы','Жұмыс моделі','How we work'],
-n_logistics:['Логистика','Логистика','Logistics'], n_docs:['Документы','Құжаттар','Documents'], n_about:['О компании','Компания туралы','About'], n_contact:['Связаться','Байланысу','Contact us'],
-h_badge:['Индустриальный трейдинг · Казахстан и ЦА','Индустриялық трейдинг · Қазақстан және ОА','Industrial trading · Kazakhstan & Central Asia'],
-h_title:['Надёжная цепочка поставок <span class="gold-text">промышленного сырья</span> для ключевых отраслей региона','Өңірдің негізгі салалары үшін <span class="gold-text">өнеркәсіптік шикізатты</span> сенімді жеткізу тізбегі','A reliable supply chain of <span class="gold-text">industrial raw materials</span> for the region\'s key industries'],
-h_text:['Берём на себя поиск продукта, контроль качества, документы и логистику до предприятия. Контрактные поставки партиями от 20 тонн — автотранспортом и железной дорогой.','Өнімді іздеу, сапаны бақылау, құжаттар және кәсіпорынға дейінгі логистиканы өзіміз атқарамыз. 20 тоннадан бастап келісімшарттық жеткізілімдер — автокөлікпен және теміржолмен.','We handle product sourcing, quality control, documents and logistics to your plant. Contract supplies in lots from 20 tonnes — by road and by rail.'],
-h_cta1:['Обсудить сотрудничество','Ынтымақтастықты талқылау','Discuss cooperation'], h_cta2:['Каталог продукции','Өнім каталогы','Product catalog'],
-kpi_title:['Ключевые показатели','Негізгі көрсеткіштер','Key figures'],
-k1:['тонн сырья в год','жылына тонна шикізат','tonnes of raw materials per year'], k2:['лет на рынке','жыл нарықта','years on the market'], k3:['заводов-партнёров','серіктес зауыт','partner plants'], k4:['партий с паспортом качества','партия сапа паспортымен','of lots with a quality certificate'],
-geo:['Казахстан · Узбекистан · Кыргызстан · Центральная Азия','Қазақстан · Өзбекстан · Қырғызстан · Орталық Азия','Kazakhstan · Uzbekistan · Kyrgyzstan · Central Asia'],
-s1:['Паспорта качества и SDS','Сапа паспорттары және SDS','Quality certificates & SDS'], s2:['Плательщик НДС, ЭСФ','ҚҚС төлеуші, ЭШФ','VAT payer, e-invoices'], s3:['Ж/Д и авто отгрузки','Т/ж және авто жөнелтулер','Rail & road shipments'], s4:['Фиксация цены на период поставки','Жеткізу кезеңіне баға бекіту','Price fixed for the supply period'],
-w_tag:['Инвестиционные преимущества','Инвестициялық артықшылықтар','Investment highlights'],
-w_title:['Почему бизнес Global Chemical Traders устойчив','Global Chemical Traders бизнесі неге тұрақты','Why Global Chemical Traders is a resilient business'],
-w_text:['Спрос на химическое и минеральное сырьё формируют горнодобыча, металлургия, нефтегаз и водоподготовка — базовые отрасли экономики региона. Мы работаем на стыке этого спроса и надёжных заводов-производителей.','Химиялық және минералдық шикізатқа сұранысты тау-кен, металлургия, мұнай-газ және су дайындау — өңір экономикасының базалық салалары қалыптастырады. Біз осы сұраныс пен сенімді зауыттар арасында жұмыс істейміз.','Demand for chemical and mineral raw materials is driven by mining, metallurgy, oil & gas and water treatment — core industries of the regional economy. We operate between this demand and reliable manufacturing plants.'],
-w1t:['Повторяющийся спрос','Қайталанатын сұраныс','Recurring demand'], w1d:['Сырьё расходуется в непрерывных технологических процессах — это основа долгосрочных контрактов.','Шикізат үздіксіз технологиялық процестерде жұмсалады — бұл ұзақ мерзімді келісімшарттардың негізі.','Raw materials are consumed in continuous production processes — the basis for long-term contracts.'],
-w2t:['Диверсификация поставщиков','Жеткізушілерді әртараптандыру','Supplier diversification'], w2d:['Работа с несколькими заводами снижает зависимость от одного источника и сезонных сбоев.','Бірнеше зауытпен жұмыс бір көзге және маусымдық іркілістерге тәуелділікті азайтады.','Working with several plants reduces dependence on a single source and seasonal disruptions.'],
-w3t:['Широкий ассортимент','Кең ассортимент','Wide range'], w3d:['Сода, сера, реагенты, баритовый концентрат, бентонит, соль — несколько отраслей клиентов в одном портфеле.','Сода, күкірт, реагенттер, барит концентраты, бентонит, тұз — бір портфельде бірнеше сала клиенттері.','Soda, sulfur, reagents, barite concentrate, bentonite, salt — clients from several industries in one portfolio.'],
-w4t:['Управляемая логистика','Басқарылатын логистика','Managed logistics'], w4d:['Контроль всей цепочки от завода до ворот предприятия: тарифы, накладные, вес и сроки.','Зауыттан кәсіпорын қақпасына дейінгі бүкіл тізбекті бақылау: тарифтер, жүкқұжаттар, салмақ және мерзім.','Control of the whole chain from plant to your gate: tariffs, waybills, weight and deadlines.'],
-c_tag:['Продукция','Өнім','Products'], c_title:['Каталог промышленного сырья','Өнеркәсіптік шикізат каталогы','Industrial raw materials catalog'],
-c_text:['Прямые поставки от заводов-производителей. Каждая партия сопровождается паспортом качества и сертификатами.','Өндіруші зауыттардан тікелей жеткізу. Әр партия сапа паспортымен және сертификаттармен жабдықталады.','Direct supply from manufacturing plants. Every lot comes with a quality certificate and documents.'],
-p_pack:['Упаковка','Қаптама','Packaging'], p_min:['Мин. объём','Мин. көлем','Min. volume'], p_deliv:['Доставка','Жеткізу','Delivery'], p_deliv_v:['Авто, Ж/Д','Авто, т/ж','Road, rail'], p_btn:['Запросить цену','Баға сұрау','Request a price'],
-m_tag:['Модель работы','Жұмыс моделі','How we work'], m_title:['Прозрачная схема от заявки до разгрузки','Өтінімнен түсіруге дейінгі ашық схема','A transparent flow from request to unloading'],
-m1t:['Заявка и подбор','Өтінім және іріктеу','Request & sourcing'], m1d:['Уточняем марку, объём, упаковку и сроки. Подбираем завод под вашу технологию.','Маркасын, көлемін, қаптамасын және мерзімін нақтылаймыз. Технологияңызға сай зауыт таңдаймыз.','We confirm grade, volume, packaging and timing, and select a plant for your process.'],
-m2t:['Коммерческое предложение','Коммерциялық ұсыныс','Commercial offer'], m2d:['Фиксируем цену и условия поставки на период контракта.','Келісімшарт кезеңіне баға мен жеткізу шарттарын бекітеміз.','We fix the price and delivery terms for the contract period.'],
-m3t:['Отгрузка и контроль','Жөнелту және бақылау','Shipment & control'], m3d:['Контролируем погрузку, вес и оформление документов на заводе.','Зауытта тиеуді, салмақты және құжат рәсімдеуді бақылаймыз.','We supervise loading, weight and paperwork at the plant.'],
-m4t:['Доставка и закрытие','Жеткізу және жабу','Delivery & closing'], m4d:['Доставляем до предприятия, передаём закрывающие документы и ЭСФ.','Кәсіпорынға жеткіземіз, жабу құжаттары мен ЭШФ береміз.','We deliver to your site and hand over closing documents and e-invoices.'],
-i_tag:['Отрасли','Салалар','Industries'], i_title:['Сектора, которые мы обслуживаем','Біз қызмет көрсететін секторлар','Sectors we serve'],
+n_home:['Главная','Басты бет','Home'], n_about:['О компании','Компания туралы','About'], n_catalog:['Продукция','Өнім','Products'], n_logistics:['Логистика','Логистика','Logistics'], n_docs:['Документы','Құжаттар','Documents'], n_contact:['Контакты','Байланыс','Contacts'],
+btn_price:['Запросить цену','Баға сұрау','Request a price'], search_ph:['Поиск продуктов...','Өнімді іздеу...','Search products...'],
+s1l:['Поставки по Казахстану и ЦА','Қазақстан және ОА бойынша жеткізу','Supply across Kazakhstan & Central Asia'],
+s1t:['Промышленное сырьё для ключевых отраслей региона','Өңірдің негізгі салаларына арналған өнеркәсіптік шикізат','Industrial raw materials for the region\'s key industries'],
+s1d:['Сода, сера, реагенты и минеральное сырьё напрямую от заводов. Партии от 20 тонн.','Сода, күкірт, реагенттер және минералдық шикізат зауыттардан тікелей. Партиялар 20 тоннадан.','Soda, sulfur, reagents and minerals straight from plants. Lots from 20 tonnes.'],
+s1b:['Узнать больше','Толығырақ','Learn more'],
+s2l:['Логистика','Логистика','Logistics'],
+s2t:['Железнодорожные и автомобильные поставки по графику','Кесте бойынша теміржол және автомобиль жеткізілімдері','Rail and road deliveries on schedule'],
+s2d:['От завода до вашего склада: накладные, тарифы, контроль веса.','Зауыттан сіздің қоймаңызға дейін: жүкқұжаттар, тарифтер, салмақты бақылау.','From plant to your warehouse: waybills, tariffs, weight control.'],
+s2b:['О логистике','Логистика туралы','About logistics'],
+s3l:['Качество и документы','Сапа және құжаттар','Quality & documents'],
+s3t:['Паспорт качества и полный пакет документов на каждую партию','Әр партияға сапа паспорты және толық құжаттар топтамасы','Quality certificate and a full set of documents for every lot'],
+s3d:['Паспорта качества, SDS, ЭСФ. Работаем как плательщик НДС.','Сапа паспорттары, SDS, ЭШФ. ҚҚС төлеуші ретінде жұмыс істейміз.','Quality certificates, SDS, e-invoices. We operate as a VAT payer.'],
+s3b:['Документы','Құжаттар','Documents'],
+k1:['тонн сырья в год','жылына тонна шикізат','tonnes of raw materials per year'], k2:['лет на рынке','жыл нарықта','years on the market'], k3:['заводов-партнёров','серіктес зауыт','partner plants'], k4:['партий с паспортом качества','партия сапа паспортымен','lots with a quality certificate'],
+a_tag:['Чем занимается наша компания','Біздің компания немен айналысады','What our company does'], a_title:['Поставщик промышленного сырья в Казахстане и Центральной Азии','Қазақстан мен Орталық Азиядағы өнеркәсіптік шикізат жеткізушісі','Supplier of industrial raw materials in Kazakhstan and Central Asia'],
+a_p1:['Мы специализируемся на бесперебойных поставках сырья для предприятий горнодобывающей, металлургической и химической промышленности Казахстана и стран Центральной Азии.','Біз Қазақстан мен Орталық Азия елдерінің тау-кен, металлургия және химия өнеркәсібі кәсіпорындарына шикізатты үздіксіз жеткізуге маманданамыз.','We specialize in uninterrupted supply of raw materials to mining, metallurgical and chemical enterprises in Kazakhstan and Central Asia.'],
+a_p2:['Наша задача — снять с клиента логистические риски и вопросы качества: вы получаете готовое решение в оговорённый срок.','Біздің міндетіміз — клиенттен логистикалық тәуекелдер мен сапа мәселелерін алу: сіз келісілген мерзімде дайын шешім аласыз.','Our job is to remove logistics and quality risks for the client: you get a ready solution on the agreed date.'],
+c_tag:['Основные направления','Негізгі бағыттар','Main directions'], c_title:['Категории продуктов','Өнім санаттары','Product categories'],
+c_text:['Высококачественное сырьё для ключевых отраслей промышленности','Өнеркәсіптің негізгі салаларына арналған жоғары сапалы шикізат','High-quality raw materials for key industries'],
+no_res:['По вашему запросу ничего не найдено','Сұранысыңыз бойынша ештеңе табылмады','Nothing found for your search'],
+p_pack:['Упаковка','Қаптама','Packaging'], p_min:['Мин. объём','Мин. көлем','Min. volume'], p_deliv:['Доставка','Жеткізу','Delivery'], p_deliv_v:['Авто, Ж/Д','Авто, т/ж','Road, rail'], p_btn:['Запросить цену','Баға сұрау','Request a price'], p_more:['Смотреть продукт','Өнімді қарау','View product'],
+pop_tag:['Спрос','Сұраныс','In demand'], pop_title:['Популярные позиции','Танымал позициялар','Popular products'], pop_all:['Запросить полный прайс-лист','Толық прайс-парақ сұрау','Request the full price list'],
+in_tag:['Отрасли','Салалар','Industries'], in_title:['Сектора, которые мы обслуживаем','Біз қызмет көрсететін секторлар','Sectors we serve'],
 i1t:['Горнодобыча','Тау-кен өнеркәсібі','Mining'], i1d:['Реагенты для флотации, баритовый концентрат, соли.','Флотация реагенттері, барит концентраты, тұздар.','Flotation reagents, barite concentrate, salts.'],
 i2t:['Металлургия','Металлургия','Metallurgy'], i2d:['Кальцинированная и каустическая сода для технологических процессов.','Технологиялық процестерге арналған кальцийленген және каустикалық сода.','Soda ash and caustic soda for production processes.'],
 i3t:['Водоподготовка','Су дайындау','Water treatment'], i3d:['Реагенты для промышленных и муниципальных очистных сооружений.','Өнеркәсіптік және муниципалдық тазарту имараттарына арналған реагенттер.','Reagents for industrial and municipal treatment plants.'],
 i4t:['Нефтегаз','Мұнай-газ','Oil & gas'], i4d:['Баритовый концентрат и бентонит для буровых растворов.','Бұрғылау ерітінділеріне арналған барит концентраты және бентонит.','Barite concentrate and bentonite for drilling fluids.'],
-l_tag:['Логистика','Логистика','Logistics'], l_title:['Железнодорожные и автомобильные поставки по графику','Кесте бойынша теміржол және автомобиль жеткізілімдері','Rail and road deliveries on schedule'],
-l_text:['Управляем всей цепочкой — от завода-изготовителя до склада покупателя, с соблюдением оговорённых сроков.','Бүкіл тізбекті — өндіруші зауыттан сатып алушы қоймасына дейін келісілген мерзімде басқарамыз.','We manage the entire chain — from the manufacturer to the buyer\'s warehouse, within agreed deadlines.'],
+l_tag:['Логистика','Логистика','Logistics'], l_title:['Управляем всей цепочкой поставки','Бүкіл жеткізу тізбегін басқарамыз','We manage the entire supply chain'],
+l_text:['От завода-изготовителя до склада покупателя, с соблюдением оговорённых сроков.','Өндіруші зауыттан сатып алушы қоймасына дейін, келісілген мерзімде.','From the manufacturer to the buyer\'s warehouse, within agreed deadlines.'],
 l1t:['Ж/Д вагоны и полувагоны','Т/ж вагондар мен жартылай вагондар','Rail cars and gondolas'], l1d:['Оформление накладных, оплата тарифов по РК и странам СНГ.','Жүкқұжаттарды рәсімдеу, ҚР және ТМД тарифтерін төлеу.','Waybill processing, tariff payment in Kazakhstan and CIS.'],
 l2t:['Автотранспорт и цистерны','Автокөлік және цистерналар','Trucks and tankers'], l2d:['Тентованные фуры и автоцистерны напрямую на склад покупателя.','Тенттелген фуралар мен автоцистерналар сатып алушы қоймасына тікелей.','Tilt trucks and tank trucks straight to the buyer\'s warehouse.'],
 l3t:['Контроль веса и погрузки','Салмақ пен тиеуді бақылау','Weight and loading control'], l3d:['Фиксация веса и состояния груза при отгрузке.','Жөнелту кезінде салмақ пен жүк жағдайын тіркеу.','Weight and cargo condition recorded at shipment.'],
@@ -434,19 +613,14 @@ lp1:['Минимальная партия','Ең аз партия','Minimum lot
 lp2:['Ж/Д вагон (сера)','Т/ж вагон (күкірт)','Rail car (sulfur)'], lp2v:['от 68 тонн','68 тоннадан','from 68 tonnes'],
 lp3:['Упаковка','Қаптама','Packaging'], lp3v:['биг-бэги, мешки, навалом, цистерны','биг-бэг, қаптар, үйме, цистерна','big bags, sacks, bulk, tankers'],
 lp4:['География','География','Geography'], lp4v:['Казахстан и Центральная Азия','Қазақстан және Орталық Азия','Kazakhstan & Central Asia'],
-d_tag:['Качество и комплаенс','Сапа және комплаенс','Quality & compliance'], d_title:['Документы и стандарты','Құжаттар мен стандарттар','Documents & standards'],
+d_tag:['Качество и документы','Сапа және құжаттар','Quality & documents'], d_title:['Документы и стандарты','Құжаттар мен стандарттар','Documents & standards'],
 d_text:['Каждая отгрузка сопровождается полным комплектом документации в соответствии с законодательством РК.','Әр жөнелту ҚР заңнамасына сай толық құжаттар топтамасымен жабдықталады.','Every shipment comes with a full set of documents in line with Kazakhstan legislation.'],
 d1t:['Паспорта качества','Сапа паспорттары','Quality certificates'], d1d:['Результаты заводских лабораторных испытаний на каждую партию.','Әр партияға зауыттық зертханалық сынақ нәтижелері.','Factory laboratory test results for every lot.'], d1b:['Запросить пример','Үлгі сұрау','Request a sample'],
 d2t:['SDS / MSDS','SDS / MSDS','SDS / MSDS'], d2d:['Паспорта безопасности химической продукции на русском и казахском языках.','Химиялық өнімнің қауіпсіздік паспорттары орыс және қазақ тілдерінде.','Safety data sheets in Russian and Kazakh.'], d2b:['Получить SDS','SDS алу','Get SDS'],
 d3t:['Статус плательщика НДС','ҚҚС төлеуші мәртебесі','VAT payer status'], d3d:['Закрывающие документы, ЭСФ и прозрачное налогообложение в РК.','Жабу құжаттары, ЭШФ және ҚР-да ашық салық салу.','Closing documents, e-invoices and transparent taxation in Kazakhstan.'], d3b:['Запросить реквизиты','Деректемелерді сұрау','Request company details'],
-a_tag:['О компании','Компания туралы','About us'], a_title:['Надёжный партнёр в индустриальном сырье','Өнеркәсіптік шикізаттағы сенімді серіктес','A reliable partner in industrial raw materials'],
-a_p1:['Мы специализируемся на бесперебойных поставках сырья для предприятий горнодобывающей, металлургической и химической промышленности Казахстана и стран Центральной Азии.','Біз Қазақстан мен Орталық Азия елдерінің тау-кен, металлургия және химия өнеркәсібі кәсіпорындарына шикізатты үздіксіз жеткізуге маманданамыз.','We specialize in uninterrupted supply of raw materials to mining, metallurgical and chemical enterprises in Kazakhstan and Central Asia.'],
-a_p2:['Наша задача — снять с клиента логистические риски и вопросы качества: вы получаете готовое решение в оговорённый срок.','Біздің міндетіміз — клиенттен логистикалық тәуекелдер мен сапа мәселелерін алу: сіз келісілген мерзімде дайын шешім аласыз.','Our job is to remove logistics and quality risks for the client: you get a ready solution on the agreed date.'],
-a_pr:['Принципы работы','Жұмыс принциптері','Our principles'],
-a1:['Строгое соответствие ГОСТ и ТУ','МЕМСТ пен ТШ-ға қатаң сәйкестік','Strict compliance with GOST and TU'], a2:['Фиксация цены на период поставки','Жеткізу кезеңіне баға бекіту','Price fixed for the supply period'], a3:['Контроль погрузки и веса на отгрузке','Жөнелту кезінде тиеу мен салмақты бақылау','Loading and weight control at shipment'], a4:['Оперативная поддержка клиентов','Клиенттерге жедел қолдау','Prompt customer support'],
 ct_tag:['Контакты','Байланыс','Contact'], ct_title:['Обсудим поставку или партнёрство','Жеткізілімді немесе серіктестікті талқылайық','Let\'s discuss supply or partnership'],
 ct_text:['Опишите задачу — мы подготовим расчёт и коммерческое предложение. Для инвесторов и партнёров готовы предоставить дополнительную информацию о компании.','Міндетті сипаттаңыз — біз есеп пен коммерциялық ұсыныс дайындаймыз. Инвесторлар мен серіктестерге компания туралы қосымша ақпарат беруге дайынбыз.','Describe your task and we will prepare a quote and commercial offer. For investors and partners we can provide additional company information.'],
-addr:['Республика Казахстан, г. Тараз, ул. Кашгари 83','Қазақстан Республикасы, Тараз қ., Қашғари к. 83','Republic of Kazakhstan, Taraz, Kashkari st. 83'],
+addr:['Республика Казахстан, г. Алматы, пр. Достык 188','Қазақстан Республикасы, Алматы қ., Достық даңғ. 188','Republic of Kazakhstan, Almaty, Dostyk Ave. 188'],
 f_type:['Тип обращения','Өтініш түрі','Request type'], f_t1:['Закупка сырья','Шикізат сатып алу','Raw material purchase'], f_t2:['Инвестиции / партнёрство','Инвестиция / серіктестік','Investment / partnership'], f_t3:['Другое','Басқа','Other'],
 f_prod:['Продукт','Өнім','Product'], f_notsel:['Не выбран','Таңдалмаған','Not selected'],
 f_vol:['Объём партии, тонн','Партия көлемі, тонна','Lot volume, tonnes'], f_volph:['Например: 68','Мысалы: 68','e.g. 68'],
@@ -458,6 +632,9 @@ f_send:['Отправить заявку','Өтінім жіберу','Send requ
 ok_t:['Заявка отправлена','Өтінім жіберілді','Request sent'], ok_d:['Мы свяжемся с вами в ближайшее время.','Жақын арада сізбен байланысамыз.','We will contact you shortly.'],
 err:['Не удалось отправить заявку. Попробуйте ещё раз или напишите на ','Өтінімді жіберу мүмкін болмады. Қайталап көріңіз немесе мына поштаға жазыңыз: ','Could not send the request. Please try again or write to '],
 sending:['Отправка...','Жіберілуде...','Sending...'],
+ft_slogan:['Ваш надёжный партнёр в мире промышленного сырья для Казахстана и Центральной Азии.','Қазақстан мен Орталық Азия үшін өнеркәсіптік шикізат әлеміндегі сенімді серіктесіңіз.','Your reliable partner in industrial raw materials for Kazakhstan and Central Asia.'],
+ft_nav:['Навигация','Навигация','Navigation'], ft_contacts:['Контакты','Байланыс','Contacts'], ft_cta:['Свяжитесь с нами','Бізбен байланысыңыз','Get in touch'],
+ft_cta_t:['Оставьте заявку, и мы свяжемся с вами в ближайшее время.','Өтінім қалдырыңыз, біз жақын арада сізбен байланысамыз.','Leave a request and we will contact you shortly.'], ft_btn:['Отправить','Жіберу','Send'],
 f_rights:['Все права защищены.','Барлық құқықтар қорғалған.','All rights reserved.'], f_priv:['Политика конфиденциальности','Құпиялылық саясаты','Privacy policy'], f_terms:['Условия поставки','Жеткізу шарттары','Terms of supply'],
 mo_offer_t:['Запросить коммерческое предложение','Коммерциялық ұсыныс сұрау','Request a commercial offer'], mo_offer_d:['Менеджер подготовит КП с ценами и условиями поставки.','Менеджер баға мен жеткізу шарттары бар КҰ дайындайды.','A manager will prepare an offer with prices and delivery terms.'],
 mo_docs_t:['Запрос паспортов и SDS','Паспорттар мен SDS сұрау','Request certificates & SDS'], mo_docs_d:['Укажите email — вышлем документы по интересующей продукции.','Email көрсетіңіз — қызықтырған өнім бойынша құжаттарды жібереміз.','Enter your email and we will send documents for the product you need.'],
@@ -468,31 +645,53 @@ b_offer:['Отправить запрос','Сұрау жіберу','Send reque
 ph_vol2:['Нужный объём, тонн','Қажетті көлем, тонна','Required volume, tonnes'], close:['Закрыть','Жабу','Close']
 };
 
+const CAT = {
+  soda:['Сода и щёлочи','Сода және сілті','Soda & alkalis'], reag:['Реагенты','Реагенттер','Reagents'],
+  sulf:['Сера','Күкірт','Sulfur'], min:['Минеральное сырьё','Минералдық шикізат','Mineral raw materials']
+};
 const PRODUCTS = [
- { ru:'Кальцинированная сода', f:'Na₂CO₃', photo:'soda', g:'from-sky-400 to-blue-600', ic:'flask-conical', tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+ { ru:'Кальцинированная сода', f:'Na₂CO₃', photo:'soda', g:'from-sky-400 to-blue-700', ic:'flask-conical', cat:CAT.soda, tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
    n:['Кальцинированная сода','Кальцийленген сода','Soda ash'],
    d:['Марка А и Б. Стекольная, химическая промышленность и металлургия.','А және Б маркалары. Шыны, химия өнеркәсібі және металлургия.','Grades A and B. Glass, chemical industry and metallurgy.'],
    p:['Биг-бэги 1 т / мешки 50 кг','Биг-бэг 1 т / қап 50 кг','Big bags 1 t / sacks 50 kg'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
- { ru:'Каустическая сода', f:'NaOH', photo:'caustic', g:'from-fuchsia-400 to-purple-600', ic:'beaker', tag:['ГОСТ 55064','МЕМСТ 55064','GOST 55064'],
+ { ru:'Каустическая сода', f:'NaOH', photo:'caustic', g:'from-cyan-400 to-teal-700', ic:'beaker', cat:CAT.soda, tag:['ГОСТ 55064','МЕМСТ 55064','GOST 55064'],
    n:['Каустическая сода','Каустикалық сода','Caustic soda'],
    d:['Чешуированная и жидкая. Водоочистка, нефтехимия, цветная металлургия.','Қабыршақты және сұйық. Су тазарту, мұнай химиясы, түсті металлургия.','Flakes and liquid. Water treatment, petrochemicals, non-ferrous metallurgy.'],
    p:['Мешки 25 кг / цистерны','Қап 25 кг / цистерна','Sacks 25 kg / tankers'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
- { ru:'Метабисульфит натрия', f:'Na₂S₂O₅', photo:'meta', g:'from-emerald-400 to-teal-600', ic:'test-tube-diagonal', tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+ { ru:'Метабисульфит натрия', f:'Na₂S₂O₅', photo:'meta', g:'from-teal-400 to-emerald-700', ic:'test-tube-diagonal', cat:CAT.reag, tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
    n:['Метабисульфит натрия','Натрий метабисульфиті','Sodium metabisulfite'],
    d:['Реагент для флотации руд цветных металлов, водоочистки и пищевой промышленности.','Түсті металл кендерін флотациялау, су тазарту және тамақ өнеркәсібіне арналған реагент.','Reagent for flotation of non-ferrous ores, water treatment and the food industry.'],
    p:['Биг-бэги 1000 кг / мешки 25 кг','Биг-бэг 1000 кг / қап 25 кг','Big bags 1000 kg / sacks 25 kg'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
- { ru:'Сера гранулированная', f:'S', photo:'sulfur', g:'from-yellow-300 to-amber-500', ic:'sparkles', tag:['ГОСТ 127.1-93','МЕМСТ 127.1-93','GOST 127.1-93'],
+ { ru:'Сера гранулированная', f:'S', photo:'sulfur', g:'from-amber-400 to-yellow-700', ic:'sparkles', cat:CAT.sulf, tag:['ГОСТ 127.1-93','МЕМСТ 127.1-93','GOST 127.1-93'],
    n:['Сера гранулированная','Түйіршіктелген күкірт','Granulated sulfur'],
    d:['Техническая сера для производства серной кислоты и удобрений.','Күкірт қышқылы мен тыңайтқыштар өндірісіне арналған техникалық күкірт.','Technical sulfur for sulfuric acid and fertilizer production.'],
    p:['Навалом / биг-бэги','Үйме / биг-бэг','Bulk / big bags'], m:['от 68 тонн (Ж/Д вагон)','68 тоннадан (т/ж вагон)','from 68 tonnes (rail car)'] },
- { ru:'Баритовый концентрат', f:'BaSO₄', photo:'barite', g:'from-slate-500 to-slate-800', ic:'gem', tag:['Нефтегаз','Мұнай-газ','Oil & gas'],
+ { ru:'Баритовый концентрат', f:'BaSO₄', photo:'barite', g:'from-slate-500 to-slate-900', ic:'gem', cat:CAT.min, tag:['Нефтегаз','Мұнай-газ','Oil & gas'],
    n:['Баритовый концентрат','Барит концентраты','Barite concentrate'],
    d:['Утяжелитель буровых растворов для нефтегазодобычи.','Мұнай-газ өндіру үшін бұрғылау ерітінділерінің ауырлатқышы.','Weighting agent for drilling fluids in oil and gas production.'],
    p:['Биг-бэги 1–1.5 т','Биг-бэг 1–1.5 т','Big bags 1–1.5 t'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
- { ru:'Бентонит и техническая соль', f:'NaCl / Bentonite', photo:'salt', g:'from-rose-400 to-orange-500', ic:'mountain-snow', tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
-   n:['Бентонит и техническая соль','Бентонит және техникалық тұз','Bentonite & technical salt'],
-   d:['Буровые растворы, литьё, металлургия, дорожные реагенты и водоочистка.','Бұрғылау ерітінділері, құю, металлургия, жол реагенттері және су тазарту.','Drilling fluids, casting, metallurgy, road reagents and water treatment.'],
-   p:['МКР, мешки, навалом','МКР, қап, үйме','Big bags, sacks, bulk'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] }
+ { ru:'Бентонит', f:'Bentonite', photo:'bentonite', g:'from-orange-400 to-amber-800', ic:'mountain-snow', cat:CAT.min, tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+   n:['Бентонит','Бентонит','Bentonite'],
+   d:['Бентонитовая глина для буровых растворов и литейного производства.','Бұрғылау ерітінділері мен құю өндірісіне арналған бентонит сазы.','Bentonite clay for drilling fluids and foundry production.'],
+   p:['МКР, мешки, навалом','МКР, қап, үйме','Big bags, sacks, bulk'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
+ { ru:'Техническая соль', f:'NaCl', photo:'salt', g:'from-sky-300 to-slate-600', ic:'snowflake', cat:CAT.min, tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+   n:['Техническая соль (галит)','Техникалық тұз (галит)','Technical salt (halite)'],
+   d:['Металлургия, дорожные реагенты и водоочистка.','Металлургия, жол реагенттері және су тазарту.','Metallurgy, road reagents and water treatment.'],
+   p:['МКР, мешки, навалом','МКР, қап, үйме','Big bags, sacks, bulk'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] },
+ { ru:'Известняк промышленный', f:'CaCO₃', photo:'lime', g:'from-stone-400 to-stone-700', ic:'layers', cat:CAT.min, tag:['ГОСТ / ТУ','МЕМСТ / ТШ','GOST / TU'],
+   n:['Известняк промышленный','Өнеркәсіптік әктас','Industrial limestone'],
+   d:['Сырьё для металлургии и строительной индустрии.','Металлургия мен құрылыс индустриясына арналған шикізат.','Raw material for metallurgy and construction.'],
+   p:['Навалом / МКР','Үйме / МКР','Bulk / big bags'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] }
+];
+const POPULAR = [
+ { p:0, n:['Кальцинированная сода, марка А','Кальцийленген сода, А маркасы','Soda ash, grade A'] },
+ { p:0, n:['Кальцинированная сода, марка Б','Кальцийленген сода, Б маркасы','Soda ash, grade B'] },
+ { p:1, n:['Каустическая сода, чешуя','Каустикалық сода, қабыршақ','Caustic soda, flakes'] },
+ { p:1, n:['Каустическая сода, жидкая','Каустикалық сода, сұйық','Caustic soda, liquid'] },
+ { p:2, n:['Метабисульфит натрия','Натрий метабисульфиті','Sodium metabisulfite'] },
+ { p:3, n:['Сера гранулированная','Түйіршіктелген күкірт','Granulated sulfur'] },
+ { p:4, n:['Баритовый концентрат','Барит концентраты','Barite concentrate'] },
+ { p:6, n:['Техническая соль (галит)','Техникалық тұз (галит)','Technical salt (halite)'] }
 ];
 
 /* ================== ЯЗЫК ================== */
@@ -501,25 +700,20 @@ let lang = 'ru';
 try { const s = localStorage.getItem('gct_lang'); if (LANGS.includes(s)) lang = s; } catch(e){}
 const L = () => LANGS.indexOf(lang);
 const t = key => (K[key] || [key,key,key])[L()];
+const icons = () => { if (window.lucide) lucide.createIcons(); };
 
 function applyLang() {
   document.documentElement.lang = lang === 'kz' ? 'kk' : lang;
-  document.querySelectorAll('[data-i]').forEach(el => {
-    const v = t(el.dataset.i);
-    if (el.hasAttribute('data-html')) el.innerHTML = v; else el.textContent = v;
-  });
+  document.querySelectorAll('[data-i]').forEach(el => { el.textContent = t(el.dataset.i); });
   document.querySelectorAll('[data-ph]').forEach(el => el.placeholder = t(el.dataset.ph));
-  document.querySelectorAll('.langbtn').forEach(b => {
-    const on = b.dataset.lang === lang;
-    b.className = 'langbtn px-2 sm:px-2.5 py-1 rounded transition ' + (on ? 'bg-gold text-ink' : 'text-slate-200 hover:text-white');
-  });
-  renderProducts(); fillProductSelect();
+  document.getElementById('langLabel').textContent = lang.toUpperCase();
+  renderProducts(); renderPopular(); fillProductSelect();
 }
-function setLang(l) {
-  lang = l; try { localStorage.setItem('gct_lang', l); } catch(e){}
-  applyLang(); closeModal();
-}
-document.querySelectorAll('.langbtn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+function setLang(l) { lang = l; try { localStorage.setItem('gct_lang', l); } catch(e){} applyLang(); closeModal(); }
+const langMenu = document.getElementById('langMenu');
+document.getElementById('langBtn').addEventListener('click', e => { e.stopPropagation(); langMenu.classList.toggle('hidden'); });
+document.querySelectorAll('.langopt').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.lang); langMenu.classList.add('hidden'); }));
+document.addEventListener('click', () => langMenu.classList.add('hidden'));
 
 /* ================== ФОТО ================== */
 function loadBg(el, url) {
@@ -527,42 +721,107 @@ function loadBg(el, url) {
   im.onload = () => { el.style.backgroundImage = `url("${url}")`; el.style.opacity = el.dataset.op || '1'; };
   im.src = url;
 }
-document.querySelectorAll('[data-bg]').forEach(el => { el.dataset.op = '.55'; loadBg(el, PHOTOS[el.dataset.bg]); });
+document.querySelectorAll('[data-bg]').forEach(el => loadBg(el, PHOTOS[el.dataset.bg]));
 
-/* ================== ПРОДУКЦИЯ ================== */
+/* ================== ПОИСК И КАРУСЕЛЬ КАТЕГОРИЙ ================== */
+let query = '';
+function filteredIdx() {
+  const q = query.trim().toLowerCase();
+  const all = PRODUCTS.map((p, i) => i);
+  if (!q) return all;
+  return all.filter(i => { const p = PRODUCTS[i]; return [p.ru, p.f, ...p.n, ...p.d, ...p.cat].join(' ').toLowerCase().includes(q); });
+}
+const perView = () => window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ? 2 : 1;
 function renderProducts() {
-  const grid = document.getElementById('productGrid');
-  grid.innerHTML = '';
-  PRODUCTS.forEach((p, i) => {
-    grid.insertAdjacentHTML('beforeend', `
-    <div class="card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl flex flex-col">
-      <div class="relative h-48 bg-gradient-to-br ${p.g} flex items-center justify-center overflow-hidden">
-        <i data-lucide="${p.ic}" class="w-16 h-16 text-white/70"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="${p.photo}"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-        <span class="absolute top-4 left-4 text-[11px] tracking-wider uppercase bg-white/95 text-ink font-bold px-3 py-1 rounded-full">${p.tag[L()]}</span>
-        <span class="absolute bottom-3 right-4 text-xs font-mono text-white font-semibold">${p.f}</span>
+  const tr = document.getElementById('catTrack');
+  const idx = filteredIdx();
+  tr.innerHTML = idx.length ? idx.map(i => { const p = PRODUCTS[i]; return `
+    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br ${p.g} text-white shadow-lg group">
+      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="${p.photo}" data-op="1"></div>
+      <i data-lucide="${p.ic}" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">${p.cat[L()]} · ${p.f}</span>
+        <h3 class="text-xl font-extrabold leading-snug mb-2">${p.n[L()]}</h3>
+        <p class="text-sm text-slate-200 leading-relaxed mb-4">${p.d[L()]}</p>
+        <button onclick="openProductModal(${i})" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">${t('p_more')} <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
-      <div class="p-6 flex flex-col flex-1">
-        <h3 class="font-serif text-2xl text-ink mb-2">${p.n[L()]}</h3>
-        <p class="text-sm text-slate-600 leading-relaxed mb-5 flex-1">${p.d[L()]}</p>
-        <div class="text-xs space-y-2 mb-5">
-          <div class="flex justify-between border-b border-slate-100 pb-2 gap-3"><span class="text-slate-500">${t('p_pack')}</span><span class="font-semibold text-slate-800 text-right">${p.p[L()]}</span></div>
-          <div class="flex justify-between border-b border-slate-100 pb-2 gap-3"><span class="text-slate-500">${t('p_min')}</span><span class="font-semibold text-slate-800 text-right">${p.m[L()]}</span></div>
-        </div>
-        <button onclick="openProductModal(${i})" class="w-full bg-gradient-to-r from-ink to-[#0B5C73] hover:from-gold hover:to-orange-500 hover:text-ink text-white text-sm font-bold py-3 rounded-lg transition">${t('p_btn')}</button>
+    </div>`; }).join('') : `<p class="w-full text-center text-slate-500 py-16">${t('no_res')}</p>`;
+  tr.querySelectorAll('[data-pbg]').forEach(el => loadBg(el, PHOTOS[el.dataset.pbg]));
+  setupCarousel(idx.length); icons();
+}
+function setupCarousel(n) {
+  const tr = document.getElementById('catTrack');
+  const pages = n ? Math.ceil(n / perView()) : 0;
+  document.getElementById('catNav').classList.toggle('hidden', pages <= 1);
+  document.getElementById('catDots').innerHTML = Array.from({ length: pages }, (_, i) => `<span class="cdot${i === 0 ? ' on' : ''}"></span>`).join('');
+  tr.scrollLeft = 0; updateDots();
+}
+function updateDots() {
+  const tr = document.getElementById('catTrack');
+  const dots = document.querySelectorAll('#catDots .cdot'); if (!dots.length) return;
+  const max = tr.scrollWidth - tr.clientWidth;
+  const page = max <= 0 ? 0 : Math.round(tr.scrollLeft / max * (dots.length - 1));
+  dots.forEach((d, i) => d.classList.toggle('on', i === page));
+  document.getElementById('catPrev').style.opacity = page === 0 ? '.4' : '1';
+  document.getElementById('catNext').style.opacity = page === dots.length - 1 ? '.4' : '1';
+}
+document.getElementById('catTrack').addEventListener('scroll', updateDots, { passive: true });
+document.getElementById('catPrev').addEventListener('click', () => { const tr = document.getElementById('catTrack'); tr.scrollBy({ left: -(tr.clientWidth + 24), behavior: 'smooth' }); });
+document.getElementById('catNext').addEventListener('click', () => { const tr = document.getElementById('catTrack'); tr.scrollBy({ left: tr.clientWidth + 24, behavior: 'smooth' }); });
+window.addEventListener('resize', () => setupCarousel(filteredIdx().length));
+const heroSearch = document.getElementById('heroSearch');
+document.getElementById('heroSearchForm').addEventListener('submit', e => {
+  e.preventDefault(); query = heroSearch.value; renderProducts();
+  document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+});
+heroSearch.addEventListener('input', () => { if (!heroSearch.value.trim() && query) { query = ''; renderProducts(); } });
+
+/* ================== ПОПУЛЯРНЫЕ ПОЗИЦИИ ================== */
+function renderPopular() {
+  document.getElementById('popularGrid').innerHTML = POPULAR.map(x => { const p = PRODUCTS[x.p]; return `
+    <button onclick="openProductModal(${x.p})" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
+      <div class="relative h-40 bg-gradient-to-br ${p.g} flex items-center justify-center overflow-hidden">
+        <i data-lucide="${p.ic}" class="w-14 h-14 text-white/60"></i>
+        <div class="bgimg absolute inset-0 opacity-0" data-pbg="${p.photo}" data-op="1"></div>
       </div>
-    </div>`);
-  });
-  grid.querySelectorAll('[data-pbg]').forEach(el => loadBg(el, PHOTOS[el.dataset.pbg]));
-  lucide.createIcons();
+      <div class="p-5">
+        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">${p.cat[L()]}</div>
+        <div class="font-extrabold text-ink leading-snug">${x.n[L()]}</div>
+      </div>
+    </button>`; }).join('');
+  document.querySelectorAll('#popularGrid [data-pbg]').forEach(el => loadBg(el, PHOTOS[el.dataset.pbg]));
+  icons();
 }
 function fillProductSelect() {
-  const sel = document.getElementById('prodSelect');
-  const cur = sel.value;
+  const sel = document.getElementById('prodSelect'); const cur = sel.value;
   sel.innerHTML = `<option value="Не указан">${t('f_notsel')}</option>` + PRODUCTS.map(p => `<option value="${p.ru}">${p.n[L()]}</option>`).join('');
   if (cur) sel.value = cur;
 }
+
+/* ================== СЛАЙДЕР ================== */
+const slides = document.querySelectorAll('.slide'), dots = document.querySelectorAll('#dots .dot');
+let cur = 0, timer;
+function show(i) {
+  cur = (i + slides.length) % slides.length;
+  slides.forEach((s, k) => s.classList.toggle('on', k === cur));
+  dots.forEach((d, k) => d.classList.toggle('on', k === cur));
+}
+function auto() { clearInterval(timer); timer = setInterval(() => show(cur + 1), 7000); }
+dots.forEach((d, k) => d.addEventListener('click', () => { show(k); auto(); }));
+auto();
+
+/* ================== ШАПКА: прозрачная → белая, подсветка раздела ================== */
+const hdr = document.getElementById('hdr');
+const spyIds = ['top', 'about', 'catalog', 'logistics', 'compliance', 'contact'];
+function onScroll() {
+  const open = !document.getElementById('mobileNav').classList.contains('hidden');
+  hdr.classList.toggle('solid', window.scrollY > 40 || open);
+  let active = 'top';
+  spyIds.forEach(id => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top <= 140) active = id; });
+  document.querySelectorAll('.navlink').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + active));
+}
+window.addEventListener('scroll', onScroll, { passive: true });
 
 /* ================== ОТПРАВКА НА ПОЧТУ ================== */
 async function sendLead(fields, subject) {
@@ -590,16 +849,16 @@ async function handleForm(form, onSuccess) {
 const modal = document.getElementById('appModal');
 const content = document.getElementById('modalContent');
 const hp = '<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">';
-const submitBtn = txt => `<button type="submit" class="w-full bg-gradient-to-r from-gold to-orange-500 text-ink font-bold py-3.5 rounded-lg transition btn-glow"><span class="btn-label">${txt}</span></button><p class="form-error hidden text-sm text-red-600"></p>`;
-function showModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); lucide.createIcons(); }
+const submitBtn = txt => `<button type="submit" class="btn w-full !py-3.5"><span class="btn-label">${txt}</span></button><p class="form-error hidden text-sm text-red-600"></p>`;
+function showModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); icons(); }
 function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
 modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 function modalSuccess() {
   content.innerHTML = `<div class="text-center py-8"><div class="w-14 h-14 mx-auto rounded-full bg-emerald-100 flex items-center justify-center mb-4"><i data-lucide="check" class="w-7 h-7 text-emerald-600"></i></div>
-    <h3 class="font-serif text-2xl text-ink mb-2">${t('ok_t')}</h3><p class="text-slate-600 text-sm mb-6">${t('ok_d')}</p>
-    <button onclick="closeModal()" class="bg-ink text-white px-6 py-2.5 rounded-lg text-sm font-semibold">${t('close')}</button></div>`;
-  lucide.createIcons();
+    <h3 class="text-2xl font-extrabold text-ink mb-2">${t('ok_t')}</h3><p class="text-slate-500 text-sm mb-6">${t('ok_d')}</p>
+    <button onclick="closeModal()" class="bg-ink text-white px-6 py-2.5 rounded-xl text-sm font-semibold">${t('close')}</button></div>`;
+  icons();
 }
 function bindModalForm(subject) {
   const f = content.querySelector('form'); f.dataset.subject = subject;
@@ -607,12 +866,12 @@ function bindModalForm(subject) {
 }
 function openModal(type) {
   if (type === 'offer') {
-    content.innerHTML = `<h3 class="font-serif text-2xl text-ink mb-2">${t('mo_offer_t')}</h3><p class="text-slate-600 text-sm mb-6">${t('mo_offer_d')}</p>
+    content.innerHTML = `<h3 class="text-2xl font-extrabold text-ink mb-2 pr-8">${t('mo_offer_t')}</h3><p class="text-slate-500 text-sm mb-6">${t('mo_offer_d')}</p>
       <form class="space-y-4"><input name="Имя / компания" required placeholder="${t('ph_name')}" class="fld"><input name="Контакт" required placeholder="${t('ph_phone')}" class="fld">
       <textarea name="Продукт и объём" rows="2" required placeholder="${t('ph_prodvol')}" class="fld"></textarea>${hp}${submitBtn(t('b_offer'))}</form>`;
     showModal(); bindModalForm('Заявка с сайта: запрос КП');
   } else {
-    content.innerHTML = `<h3 class="font-serif text-2xl text-ink mb-2">${t('mo_docs_t')}</h3><p class="text-slate-600 text-sm mb-6">${t('mo_docs_d')}</p>
+    content.innerHTML = `<h3 class="text-2xl font-extrabold text-ink mb-2 pr-8">${t('mo_docs_t')}</h3><p class="text-slate-500 text-sm mb-6">${t('mo_docs_d')}</p>
       <form class="space-y-4"><input type="email" name="Email" required placeholder="${t('ph_email')}" class="fld"><input name="Продукт" required placeholder="${t('ph_prodint')}" class="fld">${hp}${submitBtn(t('b_docs'))}</form>`;
     showModal(); bindModalForm('Заявка с сайта: запрос документов');
   }
@@ -620,9 +879,9 @@ function openModal(type) {
 function openProductModal(i) {
   const p = PRODUCTS[i];
   content.innerHTML = `
-    <div class="flex justify-between items-center mb-3"><span class="text-xs font-mono bg-ink text-white px-2.5 py-1 rounded">${p.f}</span><span class="text-xs text-orange-500 font-bold">${p.tag[L()]}</span></div>
-    <h3 class="font-serif text-2xl text-ink mb-2">${p.n[L()]}</h3><p class="text-slate-600 text-sm mb-5 leading-relaxed">${p.d[L()]}</p>
-    <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-5 text-xs space-y-2">
+    <div class="flex justify-between items-center mb-3 pr-8"><span class="text-xs font-mono bg-ink text-white px-2.5 py-1 rounded">${p.f}</span><span class="text-xs text-brand font-bold">${p.tag[L()]}</span></div>
+    <h3 class="text-2xl font-extrabold text-ink mb-2">${p.n[L()]}</h3><p class="text-slate-500 text-sm mb-5 leading-relaxed">${p.d[L()]}</p>
+    <div class="bg-mist border border-cyan-100 rounded-xl p-4 mb-5 text-xs space-y-2">
       <div class="flex justify-between gap-3"><span class="text-slate-500">${t('p_pack')}</span><span class="font-semibold text-slate-800 text-right">${p.p[L()]}</span></div>
       <div class="flex justify-between gap-3"><span class="text-slate-500">${t('p_min')}</span><span class="font-semibold text-slate-800 text-right">${p.m[L()]}</span></div>
       <div class="flex justify-between gap-3"><span class="text-slate-500">${t('p_deliv')}</span><span class="font-semibold text-slate-800">${t('p_deliv_v')}</span></div>
@@ -637,16 +896,17 @@ function openProductModal(i) {
 const mainForm = document.getElementById('mainForm');
 mainForm.addEventListener('submit', e => {
   e.preventDefault();
-  handleForm(mainForm, () => { mainForm.classList.add('hidden'); document.getElementById('mainSuccess').classList.remove('hidden'); lucide.createIcons(); });
+  handleForm(mainForm, () => { mainForm.classList.add('hidden'); document.getElementById('mainSuccess').classList.remove('hidden'); icons(); });
 });
-document.getElementById('burger').addEventListener('click', () => document.getElementById('mobileNav').classList.toggle('hidden'));
-document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileNav').classList.add('hidden')));
-
+document.getElementById('burger').addEventListener('click', e => { e.stopPropagation(); document.getElementById('mobileNav').classList.toggle('hidden'); onScroll(); });
+document.querySelectorAll('#mobileNav a').forEach(a => a.addEventListener('click', () => { document.getElementById('mobileNav').classList.add('hidden'); onScroll(); }));
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .1 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 applyLang();
-lucide.createIcons();
+onScroll();
+icons();
 </script>
-</body>
-</html>
+
+
+</body></html>
