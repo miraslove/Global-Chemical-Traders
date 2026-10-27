@@ -2,21 +2,21 @@
 <html lang="ru" class="scroll-smooth"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Global Chemical Traders — химическое сырьё оптом: сода, сера, реагенты в Казахстане</title>
-<meta name="description" content="Поставки кальцинированной и каустической соды, серы, метабисульфита натрия, баритового концентрата, бентонита и соли по Казахстану и Центральной Азии. Партии от 20 тонн, Ж/Д и авто, паспорта качества, НДС.">
+<title>Global Chemical Traders — химическое сырьё для развития промышленности Казахстана и Центральной Азии</title>
+<meta name="description" content="Global Chemical Traders — казахстанская компания: поставки химического и минерального сырья (кальцинированная и каустическая сода, сера, метабисульфит натрия, барит, бентонит, соль) для промышленных предприятий Казахстана и Центральной Азии.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://globalchemicaltraders.com/">
 <meta name="theme-color" content="#0B1220">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Global Chemical Traders">
-<meta property="og:title" content="Global Chemical Traders — химическое сырьё оптом: сода, сера, реагенты в Казахстане">
-<meta property="og:description" content="Поставки кальцинированной и каустической соды, серы, метабисульфита натрия, баритового концентрата, бентонита и соли по Казахстану и Центральной Азии. Партии от 20 тонн, Ж/Д и авто, паспорта качества, НДС.">
+<meta property="og:title" content="Global Chemical Traders — химическое сырьё для развития промышленности">
+<meta property="og:description" content="Казахстанская компания: поставки химического и минерального сырья для промышленных предприятий Казахстана и Центральной Азии.">
 <meta property="og:url" content="https://globalchemicaltraders.com/">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:locale:alternate" content="kk_KZ">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://globalchemicaltraders.com/#org","name":"Global Chemical Traders","url":"https://globalchemicaltraders.com/","description":"Поставки промышленного химического и минерального сырья в Казахстан и Центральную Азию","areaServed":["KZ","UZ","KG","TJ","TM"],"knowsAbout":["Кальцинированная сода","Каустическая сода","Метабисульфит натрия","Сера гранулированная","Баритовый концентрат","Бентонит","Техническая соль","Известняк промышленный"]},{"@type":"WebSite","@id":"https://globalchemicaltraders.com/#website","url":"https://globalchemicaltraders.com/","name":"Global Chemical Traders","inLanguage":["ru","kk","en"],"publisher":{"@id":"https://globalchemicaltraders.com/#org"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://globalchemicaltraders.com/#org","name":"Global Chemical Traders","url":"https://globalchemicaltraders.com/","description":"Казахстанская компания, работающая в сфере поставок химического и минерального сырья для промышленных предприятий Казахстана и Центральной Азии","areaServed":["KZ","UZ","KG","TJ","TM"],"knowsAbout":["Кальцинированная сода","Каустическая сода","Метабисульфит натрия","Сера гранулированная","Баритовый концентрат","Бентонит","Техническая соль","Известняк промышленный"]},{"@type":"WebSite","@id":"https://globalchemicaltraders.com/#website","url":"https://globalchemicaltraders.com/","name":"Global Chemical Traders","inLanguage":["ru","kk","en"],"publisher":{"@id":"https://globalchemicaltraders.com/#org"}}]}</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 if (window.tailwind) tailwind.config = { theme: { extend: {
@@ -32,10 +32,14 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
   .bgimg{background-size:cover;background-position:center;transition:opacity .8s}
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
   .reveal.in{opacity:1;transform:none}
-  .slide{opacity:0;visibility:hidden;transition:opacity 1s,visibility 1s}
-  .slide.on{opacity:1;visibility:visible}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:#0891B2;color:#fff;font-weight:700;border-radius:.85rem;padding:1rem 1.75rem;box-shadow:0 10px 24px -8px rgba(8,145,178,.65);transition:background .2s,transform .2s}
-  .btn:hover{background:#0E7490;transform:translateY(-2px)}
+  /* слайдер: все слайды в одной ячейке сетки, высота = самый высокий слайд */
+  #top{display:grid}
+  #top>.slide{grid-area:1/1;position:relative;opacity:0;visibility:hidden;transition:opacity 1s,visibility 1s}
+  #top>.slide.on{opacity:1;visibility:visible}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:#0891B2;color:#fff;font-weight:700;border-radius:.85rem;padding:1rem 1.75rem;border:2px solid #0891B2;box-shadow:0 10px 24px -8px rgba(8,145,178,.65);transition:background .2s,transform .2s,color .2s}
+  .btn:hover{background:#0E7490;border-color:#0E7490;transform:translateY(-2px)}
+  .btn-ghost{background:transparent;border-color:rgba(255,255,255,.75);box-shadow:none}
+  .btn-ghost:hover{background:#fff;border-color:#fff;color:#0B1220}
   .fld{width:100%;border:1px solid #cbd5e1;border-radius:.75rem;padding:12px 16px;background:#fff;font-size:16px}
   .fld:focus{outline:none;box-shadow:0 0 0 2px #0891B2;border-color:#0891B2}
   /* шапка: прозрачная поверх фото, белая после прокрутки */
@@ -81,9 +85,9 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
     <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-[12.5px] font-semibold uppercase tracking-wide">
       <a href="#top" class="navlink active" data-i="n_home">Главная</a>
       <a href="#about" class="navlink" data-i="n_about">О компании</a>
+      <a href="#services" class="navlink" data-i="n_services">Направления</a>
       <a href="#catalog" class="navlink" data-i="n_catalog">Продукция</a>
-      <a href="#logistics" class="navlink" data-i="n_logistics">Логистика</a>
-      <a href="#compliance" class="navlink" data-i="n_docs">Документы</a>
+      <a href="#vision" class="navlink" data-i="n_vision">Видение</a>
       <a href="#contact" class="navlink" data-i="n_contact">Контакты</a>
     </nav>
     <div class="flex items-center gap-2 sm:gap-3">
@@ -101,50 +105,48 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
     </div>
   </div>
   <div id="mobileNav" class="hidden lg:hidden bg-white border-t border-slate-200 px-5 py-3 text-ink text-sm font-semibold uppercase tracking-wide">
-    <a href="#top" class="navlink block py-3 active" data-i="n_home">Главная</a><a href="#about" class="navlink block py-3" data-i="n_about">О компании</a><a href="#catalog" class="navlink block py-3" data-i="n_catalog">Продукция</a>
-    <a href="#logistics" class="navlink block py-3" data-i="n_logistics">Логистика</a><a href="#compliance" class="navlink block py-3" data-i="n_docs">Документы</a><a href="#contact" class="navlink block py-3" data-i="n_contact">Контакты</a>
+    <a href="#top" class="navlink block py-3 active" data-i="n_home">Главная</a><a href="#about" class="navlink block py-3" data-i="n_about">О компании</a><a href="#services" class="navlink block py-3" data-i="n_services">Направления</a>
+    <a href="#catalog" class="navlink block py-3" data-i="n_catalog">Продукция</a><a href="#vision" class="navlink block py-3" data-i="n_vision">Видение</a><a href="#contact" class="navlink block py-3" data-i="n_contact">Контакты</a>
   </div>
 </header>
 
 <!-- HERO SLIDER -->
-<section id="top" class="relative h-[100svh] min-h-[620px] max-h-[880px] overflow-hidden bg-ink text-white">
+<section id="top" class="relative bg-ink text-white overflow-hidden">
   <!-- slide 1 -->
-  <div class="slide on absolute inset-0 bg-gradient-to-br from-[#0B2A44] via-[#0B4F6C] to-[#0891B2]">
-    <div class="bgimg absolute inset-0 opacity-0" data-bg="s1"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/25"></div>
-    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center pt-16"><div class="max-w-3xl">
-      <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s1l">Поставки по Казахстану и ЦА</div>
-      <h1 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-5" data-i="s1t">Промышленное сырьё для ключевых отраслей региона</h1>
-      <p class="text-sm sm:text-lg uppercase tracking-wide font-medium text-slate-100 mb-9 max-w-2xl" data-i="s1d">Сода, сера, реагенты и минеральное сырьё напрямую от заводов. Партии от 20 тонн.</p>
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 max-w-xl">
-        <a href="#catalog" class="btn"><span data-i="s1b">Узнать больше</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
-        <form id="heroSearchForm" class="relative flex-1">
-          <input id="heroSearch" type="search" data-ph="search_ph" class="w-full h-full min-h-[3.5rem] rounded-xl bg-white/20 border border-white/40 backdrop-blur placeholder-slate-200 text-white pl-5 pr-12 text-[15px] focus:outline-none focus:bg-white/30 focus:border-white" placeholder="Поиск продуктов...">
-          <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-white" aria-label="Search"><i data-lucide="search" class="w-5 h-5"></i></button>
-        </form>
+  <div class="slide on bg-gradient-to-br from-[#0B2A44] via-[#0B4F6C] to-[#0891B2]">
+    <div class="bgimg absolute inset-0 opacity-0" data-bg="s1" data-op=".55"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 min-h-[100svh] flex items-center pt-28 pb-24"><div class="max-w-3xl">
+      <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s1l">Казахстанская компания</div>
+      <h1 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-6" data-i="s1t">Химическое сырьё для развития промышленности</h1>
+      <p class="text-base sm:text-lg font-medium text-white mb-4 max-w-2xl leading-relaxed" data-i="s1d">Global Chemical Traders — казахстанская компания, работающая в сфере поставок химического и минерального сырья для промышленных предприятий.</p>
+      <p class="text-sm sm:text-base text-slate-200 mb-9 max-w-2xl leading-relaxed" data-i="s1d2">Мы помогаем клиентам находить необходимые продукты, подбирать условия поставки и организовывать логистику с учётом требований производства. Наша цель — быть надёжным партнёром для предприятий Казахстана и Центральной Азии и создавать долгосрочные связи между производителями и потребителями сырья.</p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+        <button onclick="goContact('Закупка сырья')" class="btn"><span data-i="b_discuss">Обсудить поставку</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+        <button onclick="goContact('Инвестиции / партнёрство')" class="btn btn-ghost"><span data-i="b_partner">Стать партнёром</span></button>
       </div>
     </div></div>
   </div>
   <!-- slide 2 -->
-  <div class="slide absolute inset-0 bg-gradient-to-br from-[#0B1220] via-[#164E63] to-[#0E7490]">
-    <div class="bgimg absolute inset-0 opacity-0" data-bg="s2"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/25"></div>
-    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center pt-16"><div class="max-w-3xl">
+  <div class="slide bg-gradient-to-br from-[#0B1220] via-[#164E63] to-[#0E7490]">
+    <div class="bgimg absolute inset-0 opacity-0" data-bg="s2" data-op=".55"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 min-h-[100svh] flex items-center pt-28 pb-24"><div class="max-w-3xl">
       <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s2l">Логистика</div>
-      <h2 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-5" data-i="s2t">Железнодорожные и автомобильные поставки по графику</h2>
-      <p class="text-sm sm:text-lg uppercase tracking-wide font-medium text-slate-100 mb-9 max-w-2xl" data-i="s2d">От завода до вашего склада: накладные, тарифы, контроль веса.</p>
-      <a href="#logistics" class="btn"><span data-i="s2b">О логистике</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+      <h2 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-6" data-i="s2t">Организация поставок</h2>
+      <p class="text-base sm:text-lg text-slate-100 mb-9 max-w-2xl leading-relaxed" data-i="s2d">Помогаем подобрать условия поставки, упаковку и маршрут перевозки. Сопровождаем сделку от обсуждения потребности до доставки товара.</p>
+      <button onclick="goContact('Закупка сырья')" class="btn"><span data-i="b_discuss">Обсудить поставку</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
     </div></div>
   </div>
   <!-- slide 3 -->
-  <div class="slide absolute inset-0 bg-gradient-to-br from-[#0B1220] via-[#0F3D5E] to-[#1D4ED8]">
-    <div class="bgimg absolute inset-0 opacity-0" data-bg="s3"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/55 to-ink/25"></div>
-    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 flex items-center pt-16"><div class="max-w-3xl">
-      <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s3l">Качество и документы</div>
-      <h2 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-5" data-i="s3t">Паспорт качества и полный пакет документов на каждую партию</h2>
-      <p class="text-sm sm:text-lg uppercase tracking-wide font-medium text-slate-100 mb-9 max-w-2xl" data-i="s3d">Паспорта качества, SDS, ЭСФ. Работаем как плательщик НДС.</p>
-      <a href="#compliance" class="btn"><span data-i="s3b">Документы</span><i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+  <div class="slide bg-gradient-to-br from-[#0B1220] via-[#0F3D5E] to-[#1D4ED8]">
+    <div class="bgimg absolute inset-0 opacity-0" data-bg="s3" data-op=".55"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/30"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 min-h-[100svh] flex items-center pt-28 pb-24"><div class="max-w-3xl">
+      <div class="inline-block bg-cyan-400/25 text-cyan-300 text-[11px] sm:text-xs font-bold tracking-[.18em] uppercase px-4 py-2 rounded-full mb-6" data-i="s3l">Партнёрство</div>
+      <h2 class="text-[1.9rem] leading-[1.1] sm:text-5xl lg:text-6xl font-extrabold uppercase mb-6" data-i="s3t">Развитие партнёрств</h2>
+      <p class="text-base sm:text-lg text-slate-100 mb-9 max-w-2xl leading-relaxed" data-i="s3d">Открыты к сотрудничеству с производителями, дистрибьюторами, промышленными предприятиями и логистическими компаниями. Заинтересованы в долгосрочных проектах, которые создают ценность для всех участников.</p>
+      <button onclick="goContact('Инвестиции / партнёрство')" class="btn"><span data-i="b_partner">Стать партнёром</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
     </div></div>
   </div>
   <div class="absolute bottom-7 inset-x-0 flex justify-center items-center gap-2.5 z-10" id="dots"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
@@ -153,21 +155,23 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
 <!-- STATS -->
 <section class="bg-gradient-to-b from-mist to-white border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="150000" data-suffix="+" data-final="150 000+">150 000+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k1">тонн сырья в год</div></div>
-    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="10" data-suffix="+" data-final="10+">10+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k2">лет на рынке</div></div>
-    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="50" data-suffix="+" data-final="50+">50+</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k3">заводов-партнёров</div></div>
-    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="100" data-suffix="%" data-final="100%">100%</div><div class="mt-2 text-[11px] font-bold tracking-[.18em] uppercase text-slate-500" data-i="k4">партий с паспортом качества</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="9" data-suffix="+" data-final="9+">9+</div><div class="mt-2 text-[11px] font-bold tracking-[.14em] uppercase text-slate-500" data-i="k1">лет опыта в промышленных поставках</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="8" data-suffix="" data-final="8">8</div><div class="mt-2 text-[11px] font-bold tracking-[.14em] uppercase text-slate-500" data-i="k2">видов сырья в ассортименте</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="20" data-suffix="" data-final="20">20</div><div class="mt-2 text-[11px] font-bold tracking-[.14em] uppercase text-slate-500" data-i="k3">тонн — минимальная партия</div></div>
+    <div><div class="count text-4xl sm:text-5xl font-extrabold text-ink tabular-nums" data-to="2" data-suffix="" data-final="2">2</div><div class="mt-2 text-[11px] font-bold tracking-[.14em] uppercase text-slate-500" data-i="k4">вида доставки: авто и Ж/Д</div></div>
   </div>
 </section>
 
-<!-- INTRO -->
+<!-- О КОМПАНИИ -->
 <section id="about" class="py-16 sm:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="reveal">
-      <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="a_tag">Чем занимается наша компания</div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink leading-tight mb-6" data-i="a_title">Поставщик промышленного сырья в Казахстане и Центральной Азии</h2>
-      <p class="text-slate-500 leading-relaxed mb-4" data-i="a_p1">Мы специализируемся на бесперебойных поставках сырья для предприятий горнодобывающей, металлургической и химической промышленности Казахстана и стран Центральной Азии.</p>
-      <p class="text-slate-500 leading-relaxed" data-i="a_p2">Наша задача — снять с клиента логистические риски и вопросы качества: вы получаете готовое решение в оговорённый срок.</p>
+      <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4">Global Chemical Traders</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink leading-tight mb-6" data-i="a_title">О компании</h2>
+      <p class="text-slate-500 leading-relaxed mb-4" data-i="a_p1">Global Chemical Traders создана на основе практического опыта работы в сфере промышленных поставок, продаж и развития бизнеса.</p>
+      <p class="text-slate-500 leading-relaxed mb-4" data-i="a_p2">Мы понимаем, что для предприятия важна не только цена продукта. Имеют значение его качество, стабильность поставок, упаковка, сроки, логистика и готовность поставщика решать вопросы на каждом этапе сотрудничества.</p>
+      <p class="text-slate-500 leading-relaxed mb-4" data-i="a_p3">Поэтому мы внимательно изучаем потребности клиентов и стремимся предложить решение, которое соответствует их производственным и коммерческим задачам.</p>
+      <p class="text-slate-500 leading-relaxed" data-i="a_p4">Мы работаем над развитием связей с производителями и поставщиками Казахстана, Центральной Азии и других стран, чтобы расширять доступ предприятий к качественному сырью и новым возможностям сотрудничества.</p>
     </div>
     <div class="reveal flex flex-col gap-5">
       <div class="relative rounded-3xl overflow-hidden h-52 sm:h-72 bg-gradient-to-br from-brand to-[#0B4F6C] shadow-xl"><div class="bgimg absolute inset-0 opacity-0" data-bg="i1" data-op="1"></div></div>
@@ -176,13 +180,41 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- CATEGORIES CAROUSEL -->
-<section id="catalog" class="py-16 sm:py-24 bg-slate-50 border-y border-slate-100">
+<!-- НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ -->
+<section id="services" class="py-16 sm:py-24 bg-slate-50 border-y border-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-      <div class="text-brand text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="c_tag">Основные направления</div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink mb-4" data-i="c_title">Категории продуктов</h2>
-      <p class="text-slate-500" data-i="c_text">Высококачественное сырьё для ключевых отраслей промышленности</p>
+      <div class="text-brand text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="sv_tag">Чем мы занимаемся</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink" data-i="sv_title">Направления деятельности</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="reveal bg-white rounded-3xl p-7 sm:p-9 shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex gap-5">
+        <div class="w-14 h-14 shrink-0 rounded-2xl bg-brand flex items-center justify-center"><i data-lucide="flask-conical" class="w-7 h-7 text-white"></i></div>
+        <div><h3 class="text-xl font-extrabold text-ink mb-3" data-i="sv1t">Промышленная химия</h3><p class="text-slate-500 leading-relaxed" data-i="sv1d">Поставка химического сырья для производственных предприятий. В числе основных направлений — кальцинированная сода, бисульфит и метабисульфит натрия, каустическая сода и другие продукты в зависимости от потребностей клиента.</p></div>
+      </div>
+      <div class="reveal bg-white rounded-3xl p-7 sm:p-9 shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex gap-5">
+        <div class="w-14 h-14 shrink-0 rounded-2xl bg-brand flex items-center justify-center"><i data-lucide="mountain" class="w-7 h-7 text-white"></i></div>
+        <div><h3 class="text-xl font-extrabold text-ink mb-3" data-i="sv2t">Минеральное сырьё</h3><p class="text-slate-500 leading-relaxed" data-i="sv2d">Поиск и организация поставок минерального сырья для промышленного применения, включая серу, барит и известняк.</p></div>
+      </div>
+      <div class="reveal bg-white rounded-3xl p-7 sm:p-9 shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex gap-5">
+        <div class="w-14 h-14 shrink-0 rounded-2xl bg-brand flex items-center justify-center"><i data-lucide="route" class="w-7 h-7 text-white"></i></div>
+        <div><h3 class="text-xl font-extrabold text-ink mb-3" data-i="s2t">Организация поставок</h3><p class="text-slate-500 leading-relaxed" data-i="s2d">Помогаем подобрать условия поставки, упаковку и маршрут перевозки. Сопровождаем сделку от обсуждения потребности до доставки товара.</p></div>
+      </div>
+      <div class="reveal bg-white rounded-3xl p-7 sm:p-9 shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex gap-5">
+        <div class="w-14 h-14 shrink-0 rounded-2xl bg-brand flex items-center justify-center"><i data-lucide="handshake" class="w-7 h-7 text-white"></i></div>
+        <div><h3 class="text-xl font-extrabold text-ink mb-3" data-i="s3t">Развитие партнёрств</h3><p class="text-slate-500 leading-relaxed" data-i="s3d">Открыты к сотрудничеству с производителями, дистрибьюторами, промышленными предприятиями и логистическими компаниями. Заинтересованы в долгосрочных проектах, которые создают ценность для всех участников.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- КАТАЛОГ -->
+<section id="catalog" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <div class="text-brand text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="c_tag">Продукция</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink mb-4" data-i="c_title">Ассортимент сырья</h2>
+      <p class="text-slate-500" data-i="c_text">Химическое и минеральное сырьё для промышленных предприятий</p>
     </div>
     <div id="catTrack" class="flex gap-6 overflow-x-auto scroll-smooth pb-3">
     <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-sky-400 to-blue-700 text-white shadow-lg group">
@@ -281,120 +313,8 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- POPULAR -->
-<section id="popular" class="py-16 sm:py-24 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-      <div class="text-brand text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="pop_tag">Спрос</div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink" data-i="pop_title">Популярные позиции</h2>
-    </div>
-    <div id="popularGrid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <button onclick="openProductModal(0)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center overflow-hidden">
-        <i data-lucide="flask-conical" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="soda" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
-        <div class="font-extrabold text-ink leading-snug">Кальцинированная сода, марка А</div>
-      </div>
-    </button>
-    <button onclick="openProductModal(0)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-sky-400 to-blue-700 flex items-center justify-center overflow-hidden">
-        <i data-lucide="flask-conical" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="soda" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
-        <div class="font-extrabold text-ink leading-snug">Кальцинированная сода, марка Б</div>
-      </div>
-    </button>
-    <button onclick="openProductModal(1)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-cyan-400 to-teal-700 flex items-center justify-center overflow-hidden">
-        <i data-lucide="beaker" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="caustic" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
-        <div class="font-extrabold text-ink leading-snug">Каустическая сода, чешуя</div>
-      </div>
-    </button>
-    <button onclick="openProductModal(1)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-cyan-400 to-teal-700 flex items-center justify-center overflow-hidden">
-        <i data-lucide="beaker" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="caustic" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сода и щёлочи</div>
-        <div class="font-extrabold text-ink leading-snug">Каустическая сода, жидкая</div>
-      </div>
-    </button>
-    <button onclick="openProductModal(2)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-teal-400 to-emerald-700 flex items-center justify-center overflow-hidden">
-        <i data-lucide="test-tube-diagonal" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="meta" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Реагенты</div>
-        <div class="font-extrabold text-ink leading-snug">Метабисульфит натрия</div>
-      </div>
-    </button>
-    <button onclick="openProductModal(3)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-amber-400 to-yellow-700 flex items-center justify-center overflow-hidden">
-        <i data-lucide="sparkles" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="sulfur" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Сера</div>
-        <div class="font-extrabold text-ink leading-snug">Сера гранулированная</div>
-      </div>
-    </button>
-    <button onclick="openProductModal(4)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-slate-500 to-slate-900 flex items-center justify-center overflow-hidden">
-        <i data-lucide="gem" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="barite" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Минеральное сырьё</div>
-        <div class="font-extrabold text-ink leading-snug">Баритовый концентрат</div>
-      </div>
-    </button>
-    <button onclick="openProductModal(6)" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br from-sky-300 to-slate-600 flex items-center justify-center overflow-hidden">
-        <i data-lucide="snowflake" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="salt" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">Минеральное сырьё</div>
-        <div class="font-extrabold text-ink leading-snug">Техническая соль (галит)</div>
-      </div>
-    </button></div>
-    <div class="text-center mt-12">
-      <button onclick="openModal('offer')" class="btn"><span data-i="pop_all">Запросить полный прайс-лист</span><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
-    </div>
-  </div>
-</section>
-
-<!-- INDUSTRIES -->
-<section id="industries" class="relative py-16 sm:py-24 text-white overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0B3C55] to-[#0E7490]">
-  <div class="bgimg absolute inset-0 opacity-0" data-bg="ind"></div>
-  <div class="absolute inset-0 bg-gradient-to-br from-ink/92 via-ink/82 to-[#0E7490]/60"></div>
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
-      <div class="text-cyan-300 text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="in_tag">Отрасли</div>
-      <h2 class="text-3xl sm:text-5xl font-extrabold" data-i="in_title">Сектора, которые мы обслуживаем</h2>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="mountain" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i1t">Горнодобыча</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i1d">Реагенты для флотации, баритовый концентрат, соли.</p></div>
-      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="flame" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i2t">Металлургия</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i2d">Кальцинированная и каустическая сода для технологических процессов.</p></div>
-      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="droplets" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i3t">Водоподготовка</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i3d">Реагенты для промышленных и муниципальных очистных сооружений.</p></div>
-      <div class="reveal rounded-3xl p-7 bg-white/10 border border-white/15 backdrop-blur"><div class="w-12 h-12 rounded-xl bg-brand flex items-center justify-center mb-5"><i data-lucide="fuel" class="w-6 h-6"></i></div><h3 class="font-bold mb-2" data-i="i4t">Нефтегаз</h3><p class="text-sm text-slate-200 leading-relaxed" data-i="i4d">Баритовый концентрат и бентонит для буровых растворов.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- LOGISTICS -->
-<section id="logistics" class="py-16 sm:py-24 bg-white">
+<!-- ЛОГИСТИКА -->
+<section id="logistics" class="py-16 sm:py-24 bg-slate-50 border-y border-slate-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <div class="reveal">
       <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="l_tag">Логистика</div>
@@ -407,7 +327,7 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
       </div>
     </div>
     <div class="reveal relative rounded-3xl overflow-hidden shadow-2xl text-white min-h-[340px] sm:min-h-[430px] bg-gradient-to-br from-ink to-brandDark">
-      <div class="bgimg absolute inset-0 opacity-0" data-bg="logi"></div>
+      <div class="bgimg absolute inset-0 opacity-0" data-bg="logi" data-op=".55"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/65 to-ink/10"></div>
       <div class="relative h-full min-h-[340px] sm:min-h-[430px] flex flex-col justify-end p-7 sm:p-9">
         <div class="text-xs tracking-[.2em] uppercase text-cyan-300 mb-5 font-bold" data-i="lp_title">Параметры поставки</div>
@@ -422,8 +342,8 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
   </div>
 </section>
 
-<!-- COMPLIANCE -->
-<section id="compliance" class="py-16 sm:py-24 bg-gradient-to-b from-mist to-white border-y border-slate-100">
+<!-- ДОКУМЕНТЫ -->
+<section id="compliance" class="py-16 sm:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="text-center max-w-2xl mx-auto mb-12 reveal">
       <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="d_tag">Качество и документы</div>
@@ -450,9 +370,84 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
   </div>
 </section>
 
+<!-- ОПЫТ И ПОДХОД -->
+<section id="approach" class="py-16 sm:py-24 bg-gradient-to-b from-mist to-white border-y border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-16">
+    <div class="lg:col-span-5 reveal">
+      <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="ap_tag">Как мы работаем</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink leading-tight" data-i="ap_title">Опыт и подход</h2>
+    </div>
+    <div class="lg:col-span-7 reveal space-y-5 text-slate-600 leading-relaxed text-base sm:text-lg">
+      <p data-i="ap_p1">Наш подход основан на понимании промышленного рынка и практическом опыте работы с производителями, поставщиками и покупателями сырья.</p>
+      <p data-i="ap_p2">Мы знаем, насколько важно учитывать технические требования предприятия, особенности продукта и реальные условия доставки. Поэтому стремимся быть вовлечёнными в каждую поставку и поддерживать открытый диалог с партнёрами.</p>
+      <p class="font-semibold text-ink border-l-4 border-brand pl-5" data-i="ap_p3">Для нас основа успешной работы — ответственность за договорённости, прозрачные условия и внимание к долгосрочным интересам клиента.</p>
+    </div>
+  </div>
+</section>
+
+<!-- НАШЕ ВИДЕНИЕ -->
+<section id="vision" class="relative py-16 sm:py-24 text-white overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0B3C55] to-[#0E7490]">
+  <div class="bgimg absolute inset-0 opacity-0" data-bg="ind" data-op=".55"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-ink/93 via-ink/85 to-[#0E7490]/60"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-16">
+    <div class="lg:col-span-5 reveal">
+      <div class="text-cyan-300 font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="vi_tag">Куда мы идём</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight" data-i="vi_title">Наше видение</h2>
+    </div>
+    <div class="lg:col-span-7 reveal space-y-5 text-slate-200 leading-relaxed text-base sm:text-lg">
+      <p class="text-white font-semibold" data-i="vi_p1">Мы видим Global Chemical Traders надёжным связующим звеном между производителями химической продукции и промышленными предприятиями Казахстана и Центральной Азии.</p>
+      <p data-i="vi_p2">Наша амбиция — развивать компанию, которая не просто поставляет сырьё, но и помогает партнёрам находить новые рынки, запускать проекты и укреплять производственные связи в регионе.</p>
+      <p data-i="vi_p3">Мы верим, что Казахстан обладает большим потенциалом для развития химической промышленности. Наша задача — участвовать в этом развитии: расширять сотрудничество с отечественными и зарубежными производителями, изучать возможности локализации и поддерживать проекты по созданию продукции с более высокой добавленной стоимостью.</p>
+    </div>
+  </div>
+</section>
+
+<!-- НАШИ ЦЕЛИ -->
+<section id="goals" class="py-16 sm:py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <div class="text-brand text-xs font-bold tracking-[.2em] uppercase mb-4" data-i="go_tag">К чему мы стремимся</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink" data-i="go_title">Наши цели</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="reveal rounded-3xl p-7 bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition"><div class="text-4xl font-extrabold text-brand/30 mb-3">01</div><p class="text-slate-700 font-medium leading-relaxed" data-i="g1">Развивать стабильные поставки химического и минерального сырья для предприятий Казахстана и Центральной Азии.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition"><div class="text-4xl font-extrabold text-brand/30 mb-3">02</div><p class="text-slate-700 font-medium leading-relaxed" data-i="g2">Выстраивать прямые и долгосрочные отношения с производителями и потребителями.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition"><div class="text-4xl font-extrabold text-brand/30 mb-3">03</div><p class="text-slate-700 font-medium leading-relaxed" data-i="g3">Расширять ассортимент продукции в соответствии с потребностями промышленности.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition"><div class="text-4xl font-extrabold text-brand/30 mb-3">04</div><p class="text-slate-700 font-medium leading-relaxed" data-i="g4">Участвовать в развитии дистрибуции и продвижении продукции казахстанских производителей.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition"><div class="text-4xl font-extrabold text-brand/30 mb-3">05</div><p class="text-slate-700 font-medium leading-relaxed" data-i="g5">Изучать возможности создания новых производств и переработки сырья в Казахстане.</p></div>
+      <div class="reveal rounded-3xl p-7 bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition"><div class="text-4xl font-extrabold text-brand/30 mb-3">06</div><p class="text-slate-700 font-medium leading-relaxed" data-i="g6">Формировать партнёрства, основанные на доверии, профессионализме и взаимном развитии.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ОБРАЩЕНИЕ ОСНОВАТЕЛЯ -->
+<section id="founder" class="py-16 sm:py-24 bg-gradient-to-b from-mist to-white border-t border-slate-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+    <!-- Рамка под фото основателя. Когда пришлёте фото, оно встанет сюда (файл photos/founder.jpg) -->
+    <div class="lg:col-span-4 reveal">
+      <div id="founderPhoto" class="relative aspect-[4/5] max-w-sm mx-auto lg:max-w-none rounded-3xl border-2 border-slate-200 bg-gradient-to-b from-white to-slate-100 overflow-hidden shadow-xl">
+        <div class="absolute inset-0 flex items-center justify-center"><i data-lucide="user-round" class="w-24 h-24 text-slate-200"></i></div>
+        <div class="bgimg absolute inset-0 opacity-0" data-founder="photos/founder.jpg" data-op="1"></div>
+      </div>
+    </div>
+    <div class="lg:col-span-8 reveal">
+      <div class="text-brand font-bold text-xs tracking-[.2em] uppercase mb-4" data-i="fo_tag">Основатель</div>
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-ink leading-tight mb-2" data-i="fo_title">Обращение основателя</h2>
+      <h3 class="text-xl font-bold text-brand mb-8" data-i="fo_name">ФИО</h3>
+      <div class="space-y-5 text-slate-600 leading-relaxed text-base sm:text-lg">
+        <p data-i="fo_p1">Более девяти лет я работаю в сфере коммерции и поставок для промышленности. За это время я убедился, что успешная сделка начинается с понимания потребностей клиента и готовности брать ответственность за результат.</p>
+        <p data-i="fo_p2">Создавая Global Chemical Traders, я хотел построить компанию, которая говорит с партнёрами на одном языке, глубоко понимает рынок и помогает находить практические решения — от выбора продукта до организации поставки.</p>
+        <p data-i="fo_p3">Я вижу большие возможности в развитии химической промышленности Казахстана. У нас есть сырьё, растущий рынок и выгодное географическое положение. Вместе с партнёрами мы хотим использовать эти возможности: развивать торговые связи, поддерживать отечественных производителей и со временем участвовать в создании новых производственных проектов.</p>
+        <p class="font-semibold text-ink" data-i="fo_p4">Для меня важно строить бизнес, которому доверяют, — бизнес, основанный на честном диалоге, выполнении обязательств и долгосрочном сотрудничестве.</p>
+      </div>
+      <div class="mt-8 pt-6 border-t border-slate-200 text-ink font-extrabold italic" data-i="fo_name">ФИО</div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="relative py-16 sm:py-24 text-white overflow-hidden bg-gradient-to-br from-[#0B1220] via-[#0B2A44] to-[#0E7490]">
-  <div class="bgimg absolute inset-0 opacity-0" data-bg="contact"></div>
+  <div class="bgimg absolute inset-0 opacity-0" data-bg="contact" data-op=".55"></div>
   <div class="absolute inset-0 bg-gradient-to-br from-ink/93 via-ink/86 to-[#0E7490]/60"></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-14">
     <div class="lg:col-span-5 reveal">
@@ -460,7 +455,7 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
       <h2 class="text-3xl sm:text-5xl font-extrabold leading-tight mb-6" data-i="ct_title">Обсудим поставку или партнёрство</h2>
       <p class="text-slate-200 leading-relaxed mb-10" data-i="ct_text">Опишите задачу — мы подготовим расчёт и коммерческое предложение. Для инвесторов и партнёров готовы предоставить дополнительную информацию о компании.</p>
       <ul class="space-y-5 text-slate-100 text-sm">
-        <li class="flex gap-4"><i data-lucide="map-pin" class="w-5 h-5 text-cyan-300 shrink-0"></i><span data-i="addr">Республика Казахстан, г. Тараз, пр. Кашгари 83</span></li>
+        <li class="flex gap-4"><i data-lucide="map-pin" class="w-5 h-5 text-cyan-300 shrink-0"></i><span data-i="addr">Республика Казахстан, г. Тараз, Кашгари 83</span></li>
         <li class="flex gap-4"><i data-lucide="phone" class="w-5 h-5 text-cyan-300 shrink-0"></i>+7 (701) 858-88-11</li>
         <li class="flex gap-4"><i data-lucide="mail" class="w-5 h-5 text-cyan-300 shrink-0"></i>td@globalchemicaltraders.com</li>
       </ul>
@@ -510,24 +505,24 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
         <div class="w-10 h-10 rounded-xl bg-brand flex items-center justify-center"><i data-lucide="hexagon" class="w-5 h-5 text-white"></i></div>
         <div class="leading-none"><div class="font-extrabold tracking-wide text-sm">Global Chemical</div><div class="text-brand text-[11px] tracking-[.35em] uppercase font-bold mt-1">Traders</div></div>
       </div>
-      <p class="leading-relaxed" data-i="ft_slogan">Ваш надёжный партнёр в мире промышленного сырья для Казахстана и Центральной Азии.</p>
+      <p class="leading-relaxed" data-i="ft_slogan">Надёжный партнёр для предприятий Казахстана и Центральной Азии.</p>
     </div>
     <div>
       <h4 class="text-white font-bold uppercase tracking-wide text-[13px] mb-5" data-i="ft_nav">Навигация</h4>
       <ul class="space-y-3">
         <li><a href="#about" class="hover:text-brand transition">• <span data-i="n_about">О компании</span></a></li>
+        <li><a href="#services" class="hover:text-brand transition">• <span data-i="n_services">Направления</span></a></li>
         <li><a href="#catalog" class="hover:text-brand transition">• <span data-i="n_catalog">Продукция</span></a></li>
-        <li><a href="#logistics" class="hover:text-brand transition">• <span data-i="n_logistics">Логистика</span></a></li>
-        <li><a href="#compliance" class="hover:text-brand transition">• <span data-i="n_docs">Документы</span></a></li>
+        <li><a href="#vision" class="hover:text-brand transition">• <span data-i="n_vision">Видение</span></a></li>
         <li><a href="#contact" class="hover:text-brand transition">• <span data-i="n_contact">Контакты</span></a></li>
       </ul>
     </div>
     <div>
       <h4 class="text-white font-bold uppercase tracking-wide text-[13px] mb-5" data-i="ft_contacts">Контакты</h4>
       <ul class="space-y-4">
-        <li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i><span data-i="addr">Республика Казахстан, г. Тараз, пр. Кашгари 83</span></li>
+        <li class="flex gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i><span data-i="addr">Республика Казахстан, г. Тараз, Кашгари 83</span></li>
         <li class="flex gap-3"><i data-lucide="phone" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i>+7 (701) 858-88-11</li>
-        <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i>td@globalchemicaltraders.comz</li>
+        <li class="flex gap-3"><i data-lucide="mail" class="w-4 h-4 text-brand shrink-0 mt-0.5"></i>td@globalchemicaltraders.com</li>
       </ul>
     </div>
     <div class="rounded-2xl border border-slate-700/70 bg-white/[.03] p-6 h-fit">
@@ -580,36 +575,42 @@ const PHOTOS = {
   salt: U('photo-1518531933037-91b2f5f229cc', 800), lime: U('photo-1578496479914-7ef3b0193be3', 800)
 };
 
-/* ================== ПЕРЕВОДЫ [RU, KZ, EN] ================== */
+/* ================== ТЕКСТЫ [RU, KZ, EN] ================== */
 const K = {
-n_home:['Главная','Басты бет','Home'], n_about:['О компании','Компания туралы','About'], n_catalog:['Продукция','Өнім','Products'], n_logistics:['Логистика','Логистика','Logistics'], n_docs:['Документы','Құжаттар','Documents'], n_contact:['Контакты','Байланыс','Contacts'],
-btn_price:['Запросить цену','Баға сұрау','Request a price'], search_ph:['Поиск продуктов...','Өнімді іздеу...','Search products...'],
-s1l:['Поставки по Казахстану и ЦА','Қазақстан және ОА бойынша жеткізу','Supply across Kazakhstan & Central Asia'],
-s1t:['Промышленное сырьё для ключевых отраслей региона','Өңірдің негізгі салаларына арналған өнеркәсіптік шикізат','Industrial raw materials for the region\'s key industries'],
-s1d:['Сода, сера, реагенты и минеральное сырьё напрямую от заводов. Партии от 20 тонн.','Сода, күкірт, реагенттер және минералдық шикізат зауыттардан тікелей. Партиялар 20 тоннадан.','Soda, sulfur, reagents and minerals straight from plants. Lots from 20 tonnes.'],
-s1b:['Узнать больше','Толығырақ','Learn more'],
-s2l:['Логистика','Логистика','Logistics'],
-s2t:['Железнодорожные и автомобильные поставки по графику','Кесте бойынша теміржол және автомобиль жеткізілімдері','Rail and road deliveries on schedule'],
-s2d:['От завода до вашего склада: накладные, тарифы, контроль веса.','Зауыттан сіздің қоймаңызға дейін: жүкқұжаттар, тарифтер, салмақты бақылау.','From plant to your warehouse: waybills, tariffs, weight control.'],
-s2b:['О логистике','Логистика туралы','About logistics'],
-s3l:['Качество и документы','Сапа және құжаттар','Quality & documents'],
-s3t:['Паспорт качества и полный пакет документов на каждую партию','Әр партияға сапа паспорты және толық құжаттар топтамасы','Quality certificate and a full set of documents for every lot'],
-s3d:['Паспорта качества, SDS, ЭСФ. Работаем как плательщик НДС.','Сапа паспорттары, SDS, ЭШФ. ҚҚС төлеуші ретінде жұмыс істейміз.','Quality certificates, SDS, e-invoices. We operate as a VAT payer.'],
-s3b:['Документы','Құжаттар','Documents'],
-k1:['тонн сырья в год','жылына тонна шикізат','tonnes of raw materials per year'], k2:['лет на рынке','жыл нарықта','years on the market'], k3:['заводов-партнёров','серіктес зауыт','partner plants'], k4:['партий с паспортом качества','партия сапа паспортымен','lots with a quality certificate'],
-a_tag:['Чем занимается наша компания','Біздің компания немен айналысады','What our company does'], a_title:['Поставщик промышленного сырья в Казахстане и Центральной Азии','Қазақстан мен Орталық Азиядағы өнеркәсіптік шикізат жеткізушісі','Supplier of industrial raw materials in Kazakhstan and Central Asia'],
-a_p1:['Мы специализируемся на бесперебойных поставках сырья для предприятий горнодобывающей, металлургической и химической промышленности Казахстана и стран Центральной Азии.','Біз Қазақстан мен Орталық Азия елдерінің тау-кен, металлургия және химия өнеркәсібі кәсіпорындарына шикізатты үздіксіз жеткізуге маманданамыз.','We specialize in uninterrupted supply of raw materials to mining, metallurgical and chemical enterprises in Kazakhstan and Central Asia.'],
-a_p2:['Наша задача — снять с клиента логистические риски и вопросы качества: вы получаете готовое решение в оговорённый срок.','Біздің міндетіміз — клиенттен логистикалық тәуекелдер мен сапа мәселелерін алу: сіз келісілген мерзімде дайын шешім аласыз.','Our job is to remove logistics and quality risks for the client: you get a ready solution on the agreed date.'],
-c_tag:['Основные направления','Негізгі бағыттар','Main directions'], c_title:['Категории продуктов','Өнім санаттары','Product categories'],
-c_text:['Высококачественное сырьё для ключевых отраслей промышленности','Өнеркәсіптің негізгі салаларына арналған жоғары сапалы шикізат','High-quality raw materials for key industries'],
-no_res:['По вашему запросу ничего не найдено','Сұранысыңыз бойынша ештеңе табылмады','Nothing found for your search'],
+n_home:['Главная','Басты бет','Home'], n_about:['О компании','Компания туралы','About'], n_services:['Направления','Бағыттар','Services'], n_catalog:['Продукция','Өнім','Products'], n_vision:['Видение','Көзқарас','Vision'], n_contact:['Контакты','Байланыс','Contacts'],
+btn_price:['Запросить цену','Баға сұрау','Request a price'],
+/* --- главный экран --- */
+s1l:['Казахстанская компания','Қазақстандық компания','Kazakhstani company'],
+s1t:['Химическое сырьё для развития промышленности','Өнеркәсіпті дамытуға арналған химиялық шикізат','Chemical raw materials for industrial growth'],
+s1d:['Global Chemical Traders — казахстанская компания, работающая в сфере поставок химического и минерального сырья для промышленных предприятий.','Global Chemical Traders — өнеркәсіптік кәсіпорындарға химиялық және минералдық шикізат жеткізу саласында жұмыс істейтін қазақстандық компания.','Global Chemical Traders is a Kazakhstani company supplying chemical and mineral raw materials to industrial enterprises.'],
+s1d2:['Мы помогаем клиентам находить необходимые продукты, подбирать условия поставки и организовывать логистику с учётом требований производства. Наша цель — быть надёжным партнёром для предприятий Казахстана и Центральной Азии и создавать долгосрочные связи между производителями и потребителями сырья.','Біз клиенттерге қажетті өнімдерді табуға, жеткізу шарттарын таңдауға және өндіріс талаптарын ескере отырып логистиканы ұйымдастыруға көмектесеміз. Біздің мақсатымыз — Қазақстан мен Орталық Азия кәсіпорындары үшін сенімді серіктес болу және шикізат өндірушілері мен тұтынушылары арасында ұзақ мерзімді байланыс орнату.','We help clients find the products they need, choose supply terms and organize logistics in line with production requirements. Our goal is to be a reliable partner for enterprises in Kazakhstan and Central Asia and to build long-term links between producers and consumers of raw materials.'],
+b_discuss:['Обсудить поставку','Жеткізуді талқылау','Discuss a supply'], b_partner:['Стать партнёром','Серіктес болу','Become a partner'],
+s2l:['Логистика','Логистика','Logistics'], s2t:['Организация поставок','Жеткізуді ұйымдастыру','Supply organization'],
+s2d:['Помогаем подобрать условия поставки, упаковку и маршрут перевозки. Сопровождаем сделку от обсуждения потребности до доставки товара.','Жеткізу шарттарын, қаптаманы және тасымал бағытын таңдауға көмектесеміз. Мәмілені қажеттілікті талқылаудан бастап тауарды жеткізуге дейін сүйемелдейміз.','We help choose supply terms, packaging and transport route. We support the deal from discussing the need to delivery of the goods.'],
+s3l:['Партнёрство','Серіктестік','Partnership'], s3t:['Развитие партнёрств','Серіктестікті дамыту','Developing partnerships'],
+s3d:['Открыты к сотрудничеству с производителями, дистрибьюторами, промышленными предприятиями и логистическими компаниями. Заинтересованы в долгосрочных проектах, которые создают ценность для всех участников.','Өндірушілермен, дистрибьюторлармен, өнеркәсіптік кәсіпорындармен және логистикалық компаниялармен ынтымақтастыққа ашықпыз. Барлық қатысушыларға құндылық жасайтын ұзақ мерзімді жобаларға мүдделіміз.','We are open to cooperation with producers, distributors, industrial enterprises and logistics companies. We are interested in long-term projects that create value for all participants.'],
+/* --- цифры (анимируются при прокрутке) --- */
+k1:['лет опыта в промышленных поставках','жыл өнеркәсіптік жеткізудегі тәжірибе','years of experience in industrial supply'],
+k2:['видов сырья в ассортименте','ассортименттегі шикізат түрі','types of raw materials in range'],
+k3:['тонн — минимальная партия','тонна — ең аз партия','tonnes — minimum lot'],
+k4:['вида доставки: авто и Ж/Д','жеткізу түрі: авто және т/ж','delivery modes: road and rail'],
+/* --- о компании --- */
+a_title:['О компании','Компания туралы','About the company'],
+a_p1:['Global Chemical Traders создана на основе практического опыта работы в сфере промышленных поставок, продаж и развития бизнеса.','Global Chemical Traders өнеркәсіптік жеткізу, сату және бизнесті дамыту саласындағы практикалық тәжірибе негізінде құрылды.','Global Chemical Traders was founded on practical experience in industrial supply, sales and business development.'],
+a_p2:['Мы понимаем, что для предприятия важна не только цена продукта. Имеют значение его качество, стабильность поставок, упаковка, сроки, логистика и готовность поставщика решать вопросы на каждом этапе сотрудничества.','Кәсіпорын үшін тек өнімнің бағасы ғана емес маңызды екенін түсінеміз. Оның сапасы, жеткізудің тұрақтылығы, қаптама, мерзім, логистика және жеткізушінің ынтымақтастықтың әр кезеңінде мәселелерді шешуге дайындығы да маңызды.','We understand that the price of a product is not the only thing that matters to an enterprise. Quality, supply stability, packaging, deadlines, logistics and the supplier\'s readiness to solve issues at every stage of cooperation also count.'],
+a_p3:['Поэтому мы внимательно изучаем потребности клиентов и стремимся предложить решение, которое соответствует их производственным и коммерческим задачам.','Сондықтан біз клиенттердің қажеттіліктерін мұқият зерттеп, олардың өндірістік және коммерциялық міндеттеріне сәйкес келетін шешім ұсынуға тырысамыз.','That is why we study our clients\' needs carefully and strive to offer a solution that fits their production and commercial goals.'],
+a_p4:['Мы работаем над развитием связей с производителями и поставщиками Казахстана, Центральной Азии и других стран, чтобы расширять доступ предприятий к качественному сырью и новым возможностям сотрудничества.','Кәсіпорындардың сапалы шикізатқа және ынтымақтастықтың жаңа мүмкіндіктеріне қолжетімділігін кеңейту үшін Қазақстан, Орталық Азия және басқа елдердің өндірушілері мен жеткізушілерімен байланысты дамыту бойынша жұмыс істейміз.','We are developing ties with producers and suppliers in Kazakhstan, Central Asia and other countries to widen enterprises\' access to quality raw materials and new cooperation opportunities.'],
+/* --- направления деятельности --- */
+sv_tag:['Чем мы занимаемся','Біз немен айналысамыз','What we do'], sv_title:['Направления деятельности','Қызмет бағыттары','Areas of activity'],
+sv1t:['Промышленная химия','Өнеркәсіптік химия','Industrial chemicals'],
+sv1d:['Поставка химического сырья для производственных предприятий. В числе основных направлений — кальцинированная сода, бисульфит и метабисульфит натрия, каустическая сода и другие продукты в зависимости от потребностей клиента.','Өндірістік кәсіпорындарға химиялық шикізат жеткізу. Негізгі бағыттар қатарында — кальцийленген сода, натрий бисульфиті мен метабисульфиті, каустикалық сода және клиенттің қажеттілігіне қарай басқа да өнімдер.','Supply of chemical raw materials to production enterprises. Main lines include soda ash, sodium bisulfite and metabisulfite, caustic soda and other products depending on the client\'s needs.'],
+sv2t:['Минеральное сырьё','Минералдық шикізат','Mineral raw materials'],
+sv2d:['Поиск и организация поставок минерального сырья для промышленного применения, включая серу, барит и известняк.','Өнеркәсіптік қолдануға арналған минералдық шикізатты, соның ішінде күкірт, барит және әктасты іздеу және жеткізуді ұйымдастыру.','Sourcing and organizing supplies of mineral raw materials for industrial use, including sulfur, barite and limestone.'],
+/* --- каталог --- */
+c_tag:['Продукция','Өнім','Products'], c_title:['Ассортимент сырья','Шикізат ассортименті','Raw materials range'],
+c_text:['Химическое и минеральное сырьё для промышленных предприятий','Өнеркәсіптік кәсіпорындарға арналған химиялық және минералдық шикізат','Chemical and mineral raw materials for industrial enterprises'],
 p_pack:['Упаковка','Қаптама','Packaging'], p_min:['Мин. объём','Мин. көлем','Min. volume'], p_deliv:['Доставка','Жеткізу','Delivery'], p_deliv_v:['Авто, Ж/Д','Авто, т/ж','Road, rail'], p_btn:['Запросить цену','Баға сұрау','Request a price'], p_more:['Смотреть продукт','Өнімді қарау','View product'],
-pop_tag:['Спрос','Сұраныс','In demand'], pop_title:['Популярные позиции','Танымал позициялар','Popular products'], pop_all:['Запросить полный прайс-лист','Толық прайс-парақ сұрау','Request the full price list'],
-in_tag:['Отрасли','Салалар','Industries'], in_title:['Сектора, которые мы обслуживаем','Біз қызмет көрсететін секторлар','Sectors we serve'],
-i1t:['Горнодобыча','Тау-кен өнеркәсібі','Mining'], i1d:['Реагенты для флотации, баритовый концентрат, соли.','Флотация реагенттері, барит концентраты, тұздар.','Flotation reagents, barite concentrate, salts.'],
-i2t:['Металлургия','Металлургия','Metallurgy'], i2d:['Кальцинированная и каустическая сода для технологических процессов.','Технологиялық процестерге арналған кальцийленген және каустикалық сода.','Soda ash and caustic soda for production processes.'],
-i3t:['Водоподготовка','Су дайындау','Water treatment'], i3d:['Реагенты для промышленных и муниципальных очистных сооружений.','Өнеркәсіптік және муниципалдық тазарту имараттарына арналған реагенттер.','Reagents for industrial and municipal treatment plants.'],
-i4t:['Нефтегаз','Мұнай-газ','Oil & gas'], i4d:['Баритовый концентрат и бентонит для буровых растворов.','Бұрғылау ерітінділеріне арналған барит концентраты және бентонит.','Barite concentrate and bentonite for drilling fluids.'],
+/* --- логистика --- */
 l_tag:['Логистика','Логистика','Logistics'], l_title:['Управляем всей цепочкой поставки','Бүкіл жеткізу тізбегін басқарамыз','We manage the entire supply chain'],
 l_text:['От завода-изготовителя до склада покупателя, с соблюдением оговорённых сроков.','Өндіруші зауыттан сатып алушы қоймасына дейін, келісілген мерзімде.','From the manufacturer to the buyer\'s warehouse, within agreed deadlines.'],
 l1t:['Ж/Д вагоны и полувагоны','Т/ж вагондар мен жартылай вагондар','Rail cars and gondolas'], l1d:['Оформление накладных, оплата тарифов по РК и странам СНГ.','Жүкқұжаттарды рәсімдеу, ҚР және ТМД тарифтерін төлеу.','Waybill processing, tariff payment in Kazakhstan and CIS.'],
@@ -620,14 +621,41 @@ lp1:['Минимальная партия','Ең аз партия','Minimum lot
 lp2:['Ж/Д вагон (сера)','Т/ж вагон (күкірт)','Rail car (sulfur)'], lp2v:['от 68 тонн','68 тоннадан','from 68 tonnes'],
 lp3:['Упаковка','Қаптама','Packaging'], lp3v:['биг-бэги, мешки, навалом, цистерны','биг-бэг, қаптар, үйме, цистерна','big bags, sacks, bulk, tankers'],
 lp4:['География','География','Geography'], lp4v:['Казахстан и Центральная Азия','Қазақстан және Орталық Азия','Kazakhstan & Central Asia'],
+/* --- документы --- */
 d_tag:['Качество и документы','Сапа және құжаттар','Quality & documents'], d_title:['Документы и стандарты','Құжаттар мен стандарттар','Documents & standards'],
 d_text:['Каждая отгрузка сопровождается полным комплектом документации в соответствии с законодательством РК.','Әр жөнелту ҚР заңнамасына сай толық құжаттар топтамасымен жабдықталады.','Every shipment comes with a full set of documents in line with Kazakhstan legislation.'],
 d1t:['Паспорта качества','Сапа паспорттары','Quality certificates'], d1d:['Результаты заводских лабораторных испытаний на каждую партию.','Әр партияға зауыттық зертханалық сынақ нәтижелері.','Factory laboratory test results for every lot.'], d1b:['Запросить пример','Үлгі сұрау','Request a sample'],
 d2t:['SDS / MSDS','SDS / MSDS','SDS / MSDS'], d2d:['Паспорта безопасности химической продукции на русском и казахском языках.','Химиялық өнімнің қауіпсіздік паспорттары орыс және қазақ тілдерінде.','Safety data sheets in Russian and Kazakh.'], d2b:['Получить SDS','SDS алу','Get SDS'],
 d3t:['Статус плательщика НДС','ҚҚС төлеуші мәртебесі','VAT payer status'], d3d:['Закрывающие документы, ЭСФ и прозрачное налогообложение в РК.','Жабу құжаттары, ЭШФ және ҚР-да ашық салық салу.','Closing documents, e-invoices and transparent taxation in Kazakhstan.'], d3b:['Запросить реквизиты','Деректемелерді сұрау','Request company details'],
+/* --- опыт и подход --- */
+ap_tag:['Как мы работаем','Біз қалай жұмыс істейміз','How we work'], ap_title:['Опыт и подход','Тәжірибе және тәсіл','Experience and approach'],
+ap_p1:['Наш подход основан на понимании промышленного рынка и практическом опыте работы с производителями, поставщиками и покупателями сырья.','Біздің тәсіліміз өнеркәсіптік нарықты түсінуге және шикізат өндірушілерімен, жеткізушілерімен және сатып алушыларымен жұмыс істеудегі практикалық тәжірибеге негізделген.','Our approach is based on an understanding of the industrial market and practical experience working with producers, suppliers and buyers of raw materials.'],
+ap_p2:['Мы знаем, насколько важно учитывать технические требования предприятия, особенности продукта и реальные условия доставки. Поэтому стремимся быть вовлечёнными в каждую поставку и поддерживать открытый диалог с партнёрами.','Кәсіпорынның техникалық талаптарын, өнімнің ерекшеліктерін және жеткізудің нақты жағдайларын ескеру қаншалықты маңызды екенін білеміз. Сондықтан әр жеткізуге қатысып, серіктестермен ашық диалог жүргізуге тырысамыз.','We know how important it is to take into account an enterprise\'s technical requirements, product specifics and real delivery conditions. That is why we strive to be involved in every shipment and keep an open dialogue with partners.'],
+ap_p3:['Для нас основа успешной работы — ответственность за договорённости, прозрачные условия и внимание к долгосрочным интересам клиента.','Біз үшін табысты жұмыстың негізі — келісімдерге жауапкершілік, ашық шарттар және клиенттің ұзақ мерзімді мүдделеріне назар аудару.','For us, successful work rests on responsibility for agreements, transparent terms and attention to the client\'s long-term interests.'],
+/* --- видение --- */
+vi_tag:['Куда мы идём','Біз қайда бара жатырмыз','Where we are heading'], vi_title:['Наше видение','Біздің көзқарасымыз','Our vision'],
+vi_p1:['Мы видим Global Chemical Traders надёжным связующим звеном между производителями химической продукции и промышленными предприятиями Казахстана и Центральной Азии.','Біз Global Chemical Traders-ті химиялық өнім өндірушілері мен Қазақстан және Орталық Азия өнеркәсіптік кәсіпорындары арасындағы сенімді байланыстырушы буын ретінде көреміз.','We see Global Chemical Traders as a reliable link between producers of chemical products and industrial enterprises in Kazakhstan and Central Asia.'],
+vi_p2:['Наша амбиция — развивать компанию, которая не просто поставляет сырьё, но и помогает партнёрам находить новые рынки, запускать проекты и укреплять производственные связи в регионе.','Біздің амбициямыз — шикізатты жай жеткізіп қана қоймай, серіктестерге жаңа нарықтарды табуға, жобаларды іске қосуға және өңірдегі өндірістік байланыстарды нығайтуға көмектесетін компанияны дамыту.','Our ambition is to build a company that not only supplies raw materials but also helps partners find new markets, launch projects and strengthen production ties in the region.'],
+vi_p3:['Мы верим, что Казахстан обладает большим потенциалом для развития химической промышленности. Наша задача — участвовать в этом развитии: расширять сотрудничество с отечественными и зарубежными производителями, изучать возможности локализации и поддерживать проекты по созданию продукции с более высокой добавленной стоимостью.','Қазақстанның химия өнеркәсібін дамытуға үлкен әлеуеті бар деп сенеміз. Біздің міндетіміз — осы дамуға қатысу: отандық және шетелдік өндірушілермен ынтымақтастықты кеңейту, локализация мүмкіндіктерін зерттеу және қосылған құны жоғары өнім жасау жобаларын қолдау.','We believe Kazakhstan has great potential for developing its chemical industry. Our task is to take part in this development: expand cooperation with domestic and foreign producers, study localization opportunities and support projects that create products with higher added value.'],
+/* --- цели --- */
+go_tag:['К чему мы стремимся','Біз неге ұмтыламыз','What we strive for'], go_title:['Наши цели','Біздің мақсаттарымыз','Our goals'],
+g1:['Развивать стабильные поставки химического и минерального сырья для предприятий Казахстана и Центральной Азии.','Қазақстан мен Орталық Азия кәсіпорындарына химиялық және минералдық шикізаттың тұрақты жеткізілімін дамыту.','Develop stable supplies of chemical and mineral raw materials for enterprises in Kazakhstan and Central Asia.'],
+g2:['Выстраивать прямые и долгосрочные отношения с производителями и потребителями.','Өндірушілермен және тұтынушылармен тікелей әрі ұзақ мерзімді қарым-қатынас орнату.','Build direct, long-term relationships with producers and consumers.'],
+g3:['Расширять ассортимент продукции в соответствии с потребностями промышленности.','Өнеркәсіп қажеттіліктеріне сай өнім ассортиментін кеңейту.','Expand the product range in line with industry needs.'],
+g4:['Участвовать в развитии дистрибуции и продвижении продукции казахстанских производителей.','Қазақстандық өндірушілер өнімінің дистрибуциясын дамытуға және алға жылжытуға қатысу.','Take part in developing distribution and promoting products of Kazakhstani producers.'],
+g5:['Изучать возможности создания новых производств и переработки сырья в Казахстане.','Қазақстанда жаңа өндірістер құру және шикізатты қайта өңдеу мүмкіндіктерін зерттеу.','Study opportunities for new production and raw material processing in Kazakhstan.'],
+g6:['Формировать партнёрства, основанные на доверии, профессионализме и взаимном развитии.','Сенімге, кәсібилікке және өзара дамуға негізделген серіктестіктер қалыптастыру.','Form partnerships based on trust, professionalism and mutual growth.'],
+/* --- обращение основателя (ФИО замените на настоящее) --- */
+fo_tag:['Основатель','Негізін қалаушы','Founder'], fo_title:['Обращение основателя','Негізін қалаушының үндеуі','A message from the founder'],
+fo_name:['ФИО','Аты-жөні','Full name'],
+fo_p1:['Более девяти лет я работаю в сфере коммерции и поставок для промышленности. За это время я убедился, что успешная сделка начинается с понимания потребностей клиента и готовности брать ответственность за результат.','Тоғыз жылдан астам уақыт бойы өнеркәсіпке арналған коммерция және жеткізу саласында жұмыс істеймін. Осы уақыт ішінде табысты мәміле клиенттің қажеттіліктерін түсіну мен нәтиже үшін жауапкершілік алуға дайындықтан басталатынына көз жеткіздім.','For more than nine years I have worked in commerce and supply for industry. During this time I have become convinced that a successful deal begins with understanding the client\'s needs and a readiness to take responsibility for the result.'],
+fo_p2:['Создавая Global Chemical Traders, я хотел построить компанию, которая говорит с партнёрами на одном языке, глубоко понимает рынок и помогает находить практические решения — от выбора продукта до организации поставки.','Global Chemical Traders-ті құра отырып, серіктестермен бір тілде сөйлесетін, нарықты терең түсінетін және өнімді таңдаудан бастап жеткізуді ұйымдастыруға дейінгі практикалық шешімдерді табуға көмектесетін компания құрғым келді.','In creating Global Chemical Traders, I wanted to build a company that speaks the same language as its partners, understands the market deeply and helps find practical solutions — from choosing a product to organizing delivery.'],
+fo_p3:['Я вижу большие возможности в развитии химической промышленности Казахстана. У нас есть сырьё, растущий рынок и выгодное географическое положение. Вместе с партнёрами мы хотим использовать эти возможности: развивать торговые связи, поддерживать отечественных производителей и со временем участвовать в создании новых производственных проектов.','Қазақстанның химия өнеркәсібін дамытуда үлкен мүмкіндіктер көремін. Бізде шикізат, өсіп келе жатқан нарық және тиімді географиялық орын бар. Серіктестермен бірге осы мүмкіндіктерді пайдаланғымыз келеді: сауда байланыстарын дамыту, отандық өндірушілерді қолдау және уақыт өте келе жаңа өндірістік жобаларды құруға қатысу.','I see great opportunities in the development of Kazakhstan\'s chemical industry. We have raw materials, a growing market and a favorable geographic position. Together with partners we want to use these opportunities: develop trade links, support domestic producers and, in time, take part in creating new production projects.'],
+fo_p4:['Для меня важно строить бизнес, которому доверяют, — бизнес, основанный на честном диалоге, выполнении обязательств и долгосрочном сотрудничестве.','Мен үшін сенім артатын бизнес құру маңызды — адал диалогқа, міндеттемелерді орындауға және ұзақ мерзімді ынтымақтастыққа негізделген бизнес.','It matters to me to build a business that people trust — a business based on honest dialogue, keeping commitments and long-term cooperation.'],
+/* --- контакты и формы --- */
 ct_tag:['Контакты','Байланыс','Contact'], ct_title:['Обсудим поставку или партнёрство','Жеткізілімді немесе серіктестікті талқылайық','Let\'s discuss supply or partnership'],
 ct_text:['Опишите задачу — мы подготовим расчёт и коммерческое предложение. Для инвесторов и партнёров готовы предоставить дополнительную информацию о компании.','Міндетті сипаттаңыз — біз есеп пен коммерциялық ұсыныс дайындаймыз. Инвесторлар мен серіктестерге компания туралы қосымша ақпарат беруге дайынбыз.','Describe your task and we will prepare a quote and commercial offer. For investors and partners we can provide additional company information.'],
-addr:['Республика Казахстан, г. Алматы, пр. Достык 188','Қазақстан Республикасы, Алматы қ., Достық даңғ. 188','Republic of Kazakhstan, Almaty, Dostyk Ave. 188'],
+addr:['Республика Казахстан, г. Тараз, Кашгари 83','Қазақстан Республикасы, Тараз қ., Қашғари 83','Republic of Kazakhstan, Taraz, Kashgari 83'],
 f_type:['Тип обращения','Өтініш түрі','Request type'], f_t1:['Закупка сырья','Шикізат сатып алу','Raw material purchase'], f_t2:['Инвестиции / партнёрство','Инвестиция / серіктестік','Investment / partnership'], f_t3:['Другое','Басқа','Other'],
 f_prod:['Продукт','Өнім','Product'], f_notsel:['Не выбран','Таңдалмаған','Not selected'],
 f_vol:['Объём партии, тонн','Партия көлемі, тонна','Lot volume, tonnes'], f_volph:['Например: 68','Мысалы: 68','e.g. 68'],
@@ -639,7 +667,7 @@ f_send:['Отправить заявку','Өтінім жіберу','Send requ
 ok_t:['Заявка отправлена','Өтінім жіберілді','Request sent'], ok_d:['Мы свяжемся с вами в ближайшее время.','Жақын арада сізбен байланысамыз.','We will contact you shortly.'],
 err:['Не удалось отправить заявку. Попробуйте ещё раз или напишите на ','Өтінімді жіберу мүмкін болмады. Қайталап көріңіз немесе мына поштаға жазыңыз: ','Could not send the request. Please try again or write to '],
 sending:['Отправка...','Жіберілуде...','Sending...'],
-ft_slogan:['Ваш надёжный партнёр в мире промышленного сырья для Казахстана и Центральной Азии.','Қазақстан мен Орталық Азия үшін өнеркәсіптік шикізат әлеміндегі сенімді серіктесіңіз.','Your reliable partner in industrial raw materials for Kazakhstan and Central Asia.'],
+ft_slogan:['Надёжный партнёр для предприятий Казахстана и Центральной Азии.','Қазақстан мен Орталық Азия кәсіпорындарының сенімді серіктесі.','A reliable partner for enterprises in Kazakhstan and Central Asia.'],
 ft_nav:['Навигация','Навигация','Navigation'], ft_contacts:['Контакты','Байланыс','Contacts'], ft_cta:['Свяжитесь с нами','Бізбен байланысыңыз','Get in touch'],
 ft_cta_t:['Оставьте заявку, и мы свяжемся с вами в ближайшее время.','Өтінім қалдырыңыз, біз жақын арада сізбен байланысамыз.','Leave a request and we will contact you shortly.'], ft_btn:['Отправить','Жіберу','Send'],
 f_rights:['Все права защищены.','Барлық құқықтар қорғалған.','All rights reserved.'], f_priv:['Политика конфиденциальности','Құпиялылық саясаты','Privacy policy'], f_terms:['Условия поставки','Жеткізу шарттары','Terms of supply'],
@@ -690,16 +718,6 @@ const PRODUCTS = [
    d:['Сырьё для металлургии и строительной индустрии.','Металлургия мен құрылыс индустриясына арналған шикізат.','Raw material for metallurgy and construction.'],
    p:['Навалом / МКР','Үйме / МКР','Bulk / big bags'], m:['от 20 тонн','20 тоннадан','from 20 tonnes'] }
 ];
-const POPULAR = [
- { p:0, n:['Кальцинированная сода, марка А','Кальцийленген сода, А маркасы','Soda ash, grade A'] },
- { p:0, n:['Кальцинированная сода, марка Б','Кальцийленген сода, Б маркасы','Soda ash, grade B'] },
- { p:1, n:['Каустическая сода, чешуя','Каустикалық сода, қабыршақ','Caustic soda, flakes'] },
- { p:1, n:['Каустическая сода, жидкая','Каустикалық сода, сұйық','Caustic soda, liquid'] },
- { p:2, n:['Метабисульфит натрия','Натрий метабисульфиті','Sodium metabisulfite'] },
- { p:3, n:['Сера гранулированная','Түйіршіктелген күкірт','Granulated sulfur'] },
- { p:4, n:['Баритовый концентрат','Барит концентраты','Barite concentrate'] },
- { p:6, n:['Техническая соль (галит)','Техникалық тұз (галит)','Technical salt (halite)'] }
-];
 
 /* ================== ЯЗЫК ================== */
 const LANGS = ['ru','kz','en'];
@@ -714,7 +732,7 @@ function applyLang() {
   document.querySelectorAll('[data-i]').forEach(el => { el.textContent = t(el.dataset.i); });
   document.querySelectorAll('[data-ph]').forEach(el => el.placeholder = t(el.dataset.ph));
   document.getElementById('langLabel').textContent = lang.toUpperCase();
-  renderProducts(); renderPopular(); fillProductSelect();
+  renderProducts(); fillProductSelect();
 }
 function setLang(l) { lang = l; try { localStorage.setItem('gct_lang', l); } catch(e){} applyLang(); closeModal(); }
 const langMenu = document.getElementById('langMenu');
@@ -728,21 +746,21 @@ function loadBg(el, url) {
   im.onload = () => { el.style.backgroundImage = `url("${url}")`; el.style.opacity = el.dataset.op || '1'; };
   im.src = url;
 }
-document.querySelectorAll('[data-bg]').forEach(el => loadBg(el, PHOTOS[el.dataset.bg]));
+document.querySelectorAll('[data-bg]').forEach(el => { el.dataset.op = el.dataset.op || '.55'; loadBg(el, PHOTOS[el.dataset.bg]); });
+// фото основателя: положите файл photos/founder.jpg рядом с index.html — оно появится в рамке само
+document.querySelectorAll('[data-founder]').forEach(el => loadBg(el, el.dataset.founder));
 
-/* ================== ПОИСК И КАРУСЕЛЬ КАТЕГОРИЙ ================== */
-let query = '';
-function filteredIdx() {
-  const q = query.trim().toLowerCase();
-  const all = PRODUCTS.map((p, i) => i);
-  if (!q) return all;
-  return all.filter(i => { const p = PRODUCTS[i]; return [p.ru, p.f, ...p.n, ...p.d, ...p.cat].join(' ').toLowerCase().includes(q); });
+/* ================== КНОПКИ ГЛАВНОГО ЭКРАНА ================== */
+function goContact(type) {
+  const s = document.querySelector('#mainForm [name="Тип обращения"]'); if (s) s.value = type;
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
+
+/* ================== КАРУСЕЛЬ ПРОДУКЦИИ ================== */
 const perView = () => window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ? 2 : 1;
 function renderProducts() {
   const tr = document.getElementById('catTrack');
-  const idx = filteredIdx();
-  tr.innerHTML = idx.length ? idx.map(i => { const p = PRODUCTS[i]; return `
+  tr.innerHTML = PRODUCTS.map((p, i) => `
     <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br ${p.g} text-white shadow-lg group">
       <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="${p.photo}" data-op="1"></div>
       <i data-lucide="${p.ic}" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
@@ -753,9 +771,9 @@ function renderProducts() {
         <p class="text-sm text-slate-200 leading-relaxed mb-4">${p.d[L()]}</p>
         <button onclick="openProductModal(${i})" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">${t('p_more')} <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
-    </div>`; }).join('') : `<p class="w-full text-center text-slate-500 py-16">${t('no_res')}</p>`;
+    </div>`).join('');
   tr.querySelectorAll('[data-pbg]').forEach(el => loadBg(el, PHOTOS[el.dataset.pbg]));
-  setupCarousel(idx.length); icons();
+  setupCarousel(PRODUCTS.length); icons();
 }
 function setupCarousel(n) {
   const tr = document.getElementById('catTrack');
@@ -776,30 +794,7 @@ function updateDots() {
 document.getElementById('catTrack').addEventListener('scroll', updateDots, { passive: true });
 document.getElementById('catPrev').addEventListener('click', () => { const tr = document.getElementById('catTrack'); tr.scrollBy({ left: -(tr.clientWidth + 24), behavior: 'smooth' }); });
 document.getElementById('catNext').addEventListener('click', () => { const tr = document.getElementById('catTrack'); tr.scrollBy({ left: tr.clientWidth + 24, behavior: 'smooth' }); });
-window.addEventListener('resize', () => setupCarousel(filteredIdx().length));
-const heroSearch = document.getElementById('heroSearch');
-document.getElementById('heroSearchForm').addEventListener('submit', e => {
-  e.preventDefault(); query = heroSearch.value; renderProducts();
-  document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-});
-heroSearch.addEventListener('input', () => { if (!heroSearch.value.trim() && query) { query = ''; renderProducts(); } });
-
-/* ================== ПОПУЛЯРНЫЕ ПОЗИЦИИ ================== */
-function renderPopular() {
-  document.getElementById('popularGrid').innerHTML = POPULAR.map(x => { const p = PRODUCTS[x.p]; return `
-    <button onclick="openProductModal(${x.p})" class="text-left bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1 transition border border-slate-100 flex flex-col">
-      <div class="relative h-40 bg-gradient-to-br ${p.g} flex items-center justify-center overflow-hidden">
-        <i data-lucide="${p.ic}" class="w-14 h-14 text-white/60"></i>
-        <div class="bgimg absolute inset-0 opacity-0" data-pbg="${p.photo}" data-op="1"></div>
-      </div>
-      <div class="p-5">
-        <div class="text-[10px] font-bold tracking-[.16em] uppercase text-brand mb-1.5">${p.cat[L()]}</div>
-        <div class="font-extrabold text-ink leading-snug">${x.n[L()]}</div>
-      </div>
-    </button>`; }).join('');
-  document.querySelectorAll('#popularGrid [data-pbg]').forEach(el => loadBg(el, PHOTOS[el.dataset.pbg]));
-  icons();
-}
+window.addEventListener('resize', () => setupCarousel(PRODUCTS.length));
 function fillProductSelect() {
   const sel = document.getElementById('prodSelect'); const cur = sel.value;
   sel.innerHTML = `<option value="Не указан">${t('f_notsel')}</option>` + PRODUCTS.map(p => `<option value="${p.ru}">${p.n[L()]}</option>`).join('');
@@ -807,20 +802,20 @@ function fillProductSelect() {
 }
 
 /* ================== СЛАЙДЕР ================== */
-const slides = document.querySelectorAll('.slide'), dots = document.querySelectorAll('#dots .dot');
+const slides = document.querySelectorAll('#top > .slide'), dots = document.querySelectorAll('#dots .dot');
 let cur = 0, timer;
 function show(i) {
   cur = (i + slides.length) % slides.length;
   slides.forEach((s, k) => s.classList.toggle('on', k === cur));
   dots.forEach((d, k) => d.classList.toggle('on', k === cur));
 }
-function auto() { clearInterval(timer); timer = setInterval(() => show(cur + 1), 7000); }
+function auto() { clearInterval(timer); timer = setInterval(() => show(cur + 1), 9000); }
 dots.forEach((d, k) => d.addEventListener('click', () => { show(k); auto(); }));
 auto();
 
 /* ================== ШАПКА: прозрачная → белая, подсветка раздела ================== */
 const hdr = document.getElementById('hdr');
-const spyIds = ['top', 'about', 'catalog', 'logistics', 'compliance', 'contact'];
+const spyIds = ['top', 'about', 'services', 'catalog', 'vision', 'contact'];
 function onScroll() {
   const open = !document.getElementById('mobileNav').classList.contains('hidden');
   hdr.classList.toggle('solid', window.scrollY > 40 || open);
@@ -916,7 +911,7 @@ function runCount(el) {
   const to = +el.dataset.to, suf = el.dataset.suffix || '', dur = 2500, t0 = performance.now();
   (function step(now) {
     const p = Math.min(1, (now - t0) / dur);
-    el.textContent = fmtNum(to * (1 - Math.pow(1 - p, 1.5))) + suf;   // ровный разгон, мягкое замедление в конце
+    el.textContent = fmtNum(to * (1 - Math.pow(1 - p, 1.5))) + suf;
     if (p < 1) requestAnimationFrame(step); else el.textContent = el.dataset.final;
   })(t0);
 }
