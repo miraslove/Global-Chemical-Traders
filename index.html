@@ -217,92 +217,108 @@ if (window.tailwind) tailwind.config = { theme: { extend: {
       <p class="text-slate-500" data-i="c_text">Химическое и минеральное сырьё для промышленных предприятий</p>
     </div>
     <div id="catTrack" class="flex gap-6 overflow-x-auto scroll-smooth pb-3">
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-sky-400 to-blue-700 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="soda" data-op="1"></div>
-      <i data-lucide="flask-conical" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Сода и щёлочи · Na₂CO₃</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Кальцинированная сода</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Марка А и Б. Стекольная, химическая промышленность и металлургия.</p>
-        <button onclick="openProductModal(0)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-sky-400 to-blue-700">
+        <i data-lucide="flask-conical" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="soda" data-op="1" style="background-image: url(&quot;photos/soda.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">Na₂CO₃</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Сода и щёлочи</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Кальцинированная сода</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Марка А и Б. Стекольная, химическая промышленность и металлургия.</p>
+        <button onclick="openProductModal(0)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-cyan-400 to-teal-700 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="caustic" data-op="1"></div>
-      <i data-lucide="beaker" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Сода и щёлочи · NaOH</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Каустическая сода</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Чешуированная и жидкая. Водоочистка, нефтехимия, цветная металлургия.</p>
-        <button onclick="openProductModal(1)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-cyan-400 to-teal-700">
+        <i data-lucide="beaker" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="caustic" data-op="1" style="background-image: url(&quot;photos/caustic.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">NaOH</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Сода и щёлочи</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Каустическая сода</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Чешуированная и жидкая. Водоочистка, нефтехимия, цветная металлургия.</p>
+        <button onclick="openProductModal(1)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-teal-400 to-emerald-700 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="meta" data-op="1"></div>
-      <i data-lucide="test-tube-diagonal" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Реагенты · Na₂S₂O₅</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Метабисульфит натрия</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Реагент для флотации руд цветных металлов, водоочистки и пищевой промышленности.</p>
-        <button onclick="openProductModal(2)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-teal-400 to-emerald-700">
+        <i data-lucide="test-tube-diagonal" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="meta" data-op="1" style="background-image: url(&quot;photos/meta.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">Na₂S₂O₅</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Реагенты</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Метабисульфит натрия</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Реагент для флотации руд цветных металлов, водоочистки и пищевой промышленности.</p>
+        <button onclick="openProductModal(2)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-amber-400 to-yellow-700 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="sulfur" data-op="1"></div>
-      <i data-lucide="sparkles" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Сера · S</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Сера гранулированная</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Техническая сера для производства серной кислоты и удобрений.</p>
-        <button onclick="openProductModal(3)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-amber-400 to-yellow-700">
+        <i data-lucide="sparkles" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="sulfur" data-op="1" style="background-image: url(&quot;photos/sulfur.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">S</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Сера</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Сера гранулированная</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Техническая сера для производства серной кислоты и удобрений.</p>
+        <button onclick="openProductModal(3)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-slate-500 to-slate-900 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="barite" data-op="1"></div>
-      <i data-lucide="gem" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · BaSO₄</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Баритовый концентрат</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Утяжелитель буровых растворов для нефтегазодобычи.</p>
-        <button onclick="openProductModal(4)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-slate-500 to-slate-900">
+        <i data-lucide="gem" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="barite" data-op="1" style="background-image: url(&quot;photos/barite.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">BaSO₄</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Минеральное сырьё</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Баритовый концентрат</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Утяжелитель буровых растворов для нефтегазодобычи.</p>
+        <button onclick="openProductModal(4)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-orange-400 to-amber-800 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="bentonite" data-op="1"></div>
-      <i data-lucide="mountain-snow" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · Bentonite</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Бентонит</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Бентонитовая глина для буровых растворов и литейного производства.</p>
-        <button onclick="openProductModal(5)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-orange-400 to-amber-800">
+        <i data-lucide="mountain-snow" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="bentonite" data-op="1" style="background-image: url(&quot;photos/bentonite.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">Bentonite</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Минеральное сырьё</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Бентонит</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Бентонитовая глина для буровых растворов и литейного производства.</p>
+        <button onclick="openProductModal(5)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-sky-300 to-slate-600 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="salt" data-op="1"></div>
-      <i data-lucide="snowflake" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · NaCl</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Техническая соль (галит)</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Металлургия, дорожные реагенты и водоочистка.</p>
-        <button onclick="openProductModal(6)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-sky-300 to-slate-600">
+        <i data-lucide="snowflake" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="salt" data-op="1" style="background-image: url(&quot;photos/salt.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">NaCl</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Минеральное сырьё</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Техническая соль (галит)</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Металлургия, дорожные реагенты и водоочистка.</p>
+        <button onclick="openProductModal(6)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br from-stone-400 to-stone-700 text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="lime" data-op="1"></div>
-      <i data-lucide="layers" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">Минеральное сырьё · CaCO₃</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">Известняк промышленный</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">Сырьё для металлургии и строительной индустрии.</p>
-        <button onclick="openProductModal(7)" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-stone-400 to-stone-700">
+        <i data-lucide="layers" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="lime" data-op="1" style="background-image: url(&quot;photos/lime.jpg&quot;); opacity: 1;"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">CaCO₃</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">Минеральное сырьё</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">Известняк промышленный</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">Сырьё для металлургии и строительной индустрии.</p>
+        <button onclick="openProductModal(7)" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">Смотреть продукт <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div></div>
     <div id="catNav" class="flex items-center justify-center gap-5 mt-8">
@@ -763,15 +779,17 @@ const perView = () => window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ?
 function renderProducts() {
   const tr = document.getElementById('catTrack');
   tr.innerHTML = PRODUCTS.map((p, i) => `
-    <div class="cat-card relative h-[380px] rounded-3xl overflow-hidden bg-gradient-to-br ${p.g} text-white shadow-lg group">
-      <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="${p.photo}" data-op="1"></div>
-      <i data-lucide="${p.ic}" class="absolute top-6 right-6 w-12 h-12 text-white/35"></i>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/5"></div>
-      <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col">
-        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-cyan-300 mb-2">${p.cat[L()]} · ${p.f}</span>
-        <h3 class="text-xl font-extrabold leading-snug mb-2">${p.n[L()]}</h3>
-        <p class="text-sm text-slate-200 leading-relaxed mb-4">${p.d[L()]}</p>
-        <button onclick="openProductModal(${i})" class="self-start text-sm font-bold flex items-center gap-1.5 hover:text-cyan-300 transition">${t('p_more')} <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+    <div class="cat-card flex flex-col rounded-3xl overflow-hidden bg-white border border-slate-100 shadow-md hover:shadow-2xl hover:-translate-y-1 transition group">
+      <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br ${p.g}">
+        <i data-lucide="${p.ic}" class="absolute inset-0 m-auto w-16 h-16 text-white/40"></i>
+        <div class="bgimg absolute inset-0 opacity-0 group-hover:scale-105 transition-transform duration-700" data-pbg="${p.photo}" data-op="1"></div>
+        <span class="absolute top-4 left-4 bg-white/95 text-ink text-[10px] font-bold tracking-[.14em] uppercase px-3 py-1.5 rounded-full shadow">${p.f}</span>
+      </div>
+      <div class="p-6 flex flex-col flex-1">
+        <span class="text-[10px] font-bold tracking-[.18em] uppercase text-brand mb-2">${p.cat[L()]}</span>
+        <h3 class="text-lg font-extrabold text-ink leading-snug mb-2">${p.n[L()]}</h3>
+        <p class="text-sm text-slate-500 leading-relaxed mb-5 flex-1">${p.d[L()]}</p>
+        <button onclick="openProductModal(${i})" class="self-start text-sm font-bold text-brand hover:text-brandDark flex items-center gap-1.5 transition">${t('p_more')} <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
       </div>
     </div>`).join('');
   tr.querySelectorAll('[data-pbg]').forEach(el => loadBg(el, PHOTOS[el.dataset.pbg]));
